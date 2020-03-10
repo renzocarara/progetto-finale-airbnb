@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    // relazione 1 a n tra users e apartments
+    public function apartments() {
+        // ho una relazione 1 a n con la tabella requests (la parte dipendente che ha FK)
+        // questa è la parte che comanda
+        return $this->hasMany('App\Apartment');
+
+    }
+
 }
