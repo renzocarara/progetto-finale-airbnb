@@ -16,7 +16,7 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            // unca colonna "service", stringa, che può assumer 6 valori diversi
+            // unica colonna "service", stringa, che può assumer 6 valori diversi
             $table->string('service', 20);
 
             $table->timestamps();
