@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
+
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -11,6 +12,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(UsersTableSeeder::class);
+        // NOTA:
+        // You need to run the "">composer dumpautoload" command to generate a new classmap
+        // every time you add a file to database/, otherwise it will not be autoloaded.
+
+         $this->call(UsersTableSeeder::class);
+         $this->call(ApartmentsTableSeeder::class);
+         $this->call(RequestsTableSeeder::class);
+
+          // $this->call(InfosSeeder::class);
+         //
+         // $this->call(SponsorshipsTableSeeder::class);
+         // $this->call(ServicesTableSeeder::class);
+
+         // tabelle ponte
+         // $this->call(Apartments_ServicesTableSeeder::class);
+         // $this->call(Apartments_SponsorshipTableSeeder::class);
+
     }
 }

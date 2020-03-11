@@ -20,6 +20,7 @@ class CreateApartmentsTable extends Migration
             $table->string('title');
             $table->string('state');
             $table->string('city');
+            $table->string('street');
             $table->integer('number');
             $table->integer('zip');
             $table->float('lon',11,8);

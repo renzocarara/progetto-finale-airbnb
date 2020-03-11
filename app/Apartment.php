@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Apartment extends Model
 {
     //
+
+    protected $fillable = [
+        'user_id', 'title', 'state', 'city', 'street', 'number', 'zip', 'lon', 'lat', 'views'
+    ];
+
+
     public function info() {
         // ho una relazione 1 a 1 con la tabella info (la parte dipendente che ha FK)
         // questa è la parte che comanda

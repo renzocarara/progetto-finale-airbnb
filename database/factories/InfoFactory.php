@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\User;
+use App\Info;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -17,12 +17,15 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Info::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => $faker->password,
-        'remember_token' => Str::random(10),
+
+        // 'apartment_id' => $faker->numberBetween(1,20),
+        // 'summary' => $faker->unique()->text,
+        // 'room_num' => 'Italy',
+        // 'beds_num' => $faker->streetName,
+        // 'bathroom_num' => $faker->numberBetween(1,99),
+        // 'sq_mt' => $faker->postcode,
+        // 'image' => $faker->latitude($min = -90, $max = 90),
     ];
 });

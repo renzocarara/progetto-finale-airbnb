@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\User;
+use App\Request;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -17,12 +17,14 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(User::class, function (Faker $faker) {
+$factory->define(Request::class, function (Faker $faker) {
     return [
-        'name' => $faker->name,
+
+        // $table->bigIncrements('id');
+        // $table->timestamps();
+
+        'apartment_id' => $faker->numberBetween(1, 30),
         'email' => $faker->unique()->safeEmail,
-        'email_verified_at' => now(),
-        'password' => $faker->password,
-        'remember_token' => Str::random(10),
+        'message' => $faker->text()
     ];
 });

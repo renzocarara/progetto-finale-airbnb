@@ -12,22 +12,13 @@ class UsersTableSeeder extends Seeder
      *
      * @return void
      */
+     // numero di utenti "fake" da creare
+     public $num_of_users = 20;
+
     public function run()
     {
-        //
+        // chiamo la funzione "factory" per num_of_users volte, per riempiere le righe della tabella
+        factory(App\User::class, $this->num_of_users)->create();
 
-        // leggo il file 'users.php' dove c'e un array con chiave 'users_table'
-        $users = config('users.users_table');
-        // ciclo i dati letti dal file
-        foreach ($users as $user) {
-            // creo un nuovo oggetto di tipo Tag
-            $new_user = new User();
-            // ci assegno i dati che ho messo in '$tags', letti dal file tag.php, cioè l'array con chiave 'tag_db'
-
-            $new_user->fill($user);
-
-            // salvo l'oggetto nel DB
-            $new_user->save();
-        }
     }
 }
