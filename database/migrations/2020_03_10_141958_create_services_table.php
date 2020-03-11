@@ -16,15 +16,8 @@ class CreateServicesTable extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            // $table->boolean('wi-fi');
-            // $table->boolean('parking');
-            // $table->boolean('reception');
-            // $table->boolean('sauna');
-            // $table->boolean('swimming_pool');
-            // $table->boolean('seasight');
-
-            // qui dichiaro la relazione tra tabella apartments e tabella services
-            //$table->foreign('_id')->references('id')->on('users');
+            // unca colonna "service", stringa, che può assumer 6 valori diversi
+            $table->string('service', 20);
 
             $table->timestamps();
 
