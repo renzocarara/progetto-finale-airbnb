@@ -30,9 +30,8 @@ class Apartment extends Model
     }
 
     public function sponsorships() {
-        // ho una relazione 1 a n con la tabella sponsorship (la parte dipendente che ha FK)
-        // questa è la parte che comanda (1 appartemento, molte sponsorships)
-        return $this->hasMany('App\Sponsorship');
+        // ho una relazione n a n con la tabella sponsorship
+        return $this->belongsToMany('App\Sponsorship');
 
     }
 

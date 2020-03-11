@@ -16,13 +16,7 @@ class CreateSponsorshipsTable extends Migration
         Schema::create('sponsorships', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->unsignedBigInteger('apartment_id');
-
-            $table->dateTime('start_date');
-            $table->dateTime('end_date');
             $table->string('type');
-
-            $table->foreign('apartment_id')->references('id')->on('apartments');
 
             $table->timestamps();
         });

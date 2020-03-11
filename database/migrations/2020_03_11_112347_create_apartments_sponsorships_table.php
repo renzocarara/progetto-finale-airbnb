@@ -1,0 +1,44 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateApartmentsSponsorshipsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('apartments_sponsorships', function (Blueprint $table) {
+
+            $table->bigIncrements('id'); // chiave primaria
+
+            $table->bigInteger('apartment_id')->unsigned(); // colonna che conterrà id di apartment
+            $table->bigInteger('sponsorship_id')->unsigned(); // colonna che conterrà id dei service
+            $table->dateTime('start_date'); // colonna che conterrà id dei service
+
+            // dichiaro che la chiave (colonna) 'apartment_id' è una FOREIGN KEY (chiave esterna),
+            // che fa riferimento alla colonna 'id' della tabella 'apartments'
+            $table->foreign('apartment_id')->references('id')->on('apartments');
+            // dichiaro che la chiave (colonna) 'sponsorship_id' è una FOREIGN KEY (chiave esterna),
+            // che fa riferimento alla colonna 'id' della tabella 'services'
+            $table->foreign('sponsorship_id')->references('id')->on('services');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('apartments_sponsorships');
+    }
+}
