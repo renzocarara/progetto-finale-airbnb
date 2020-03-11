@@ -31,7 +31,7 @@ class Apartment extends Model
 
     public function sponsorships() {
         // ho una relazione n a n con la tabella sponsorship
-        return $this->belongsToMany('App\Sponsorship');
+        return $this->belongsToMany('App\Sponsorship')->withPivot('start_date');
 
     }
 
