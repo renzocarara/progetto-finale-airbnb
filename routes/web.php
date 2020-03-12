@@ -16,4 +16,4 @@ Route::get('/', 'Public1\HomeController@index')->name('public');
 
 Auth::routes();
 
-Route::get('/admin', 'Admin\HomeController@index')->middleware('auth')->name('admin');
+Route::get('/admin/apartment', 'Admin\HomeController@index')->middleware('auth')->name('admin');
