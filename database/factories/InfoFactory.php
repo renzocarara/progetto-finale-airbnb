@@ -20,12 +20,15 @@ use Illuminate\Support\Str;
 $factory->define(Info::class, function (Faker $faker) {
     return [
 
-        // 'apartment_id' => $faker->numberBetween(1,20),
-        // 'summary' => $faker->unique()->text,
-        // 'room_num' => 'Italy',
-        // 'beds_num' => $faker->streetName,
-        // 'bathroom_num' => $faker->numberBetween(1,99),
-        // 'sq_mt' => $faker->postcode,
-        // 'image' => $faker->latitude($min = -90, $max = 90),
+         'apartment_id' => $faker->unique()->numberBetween(1,20),
+         'summary' => $faker->unique->sentence($nbWords = 10, $variableNbWords = true),
+         'room_num' => $faker->numberBetween(1, 8),
+         'beds_num' => $faker->numberBetween(1, 10),
+         'bathroom_num' => $faker->numberBetween(1,3),
+         'sq_mt' => $faker->numberBetween(20,200),
+        // 'image' => $faker->imageUrl($width = 640, $height = 480, 'city')
+        
+        // qui si potrebbe usare una randomElement su un array di 20 immagini diverse
+         'image' => 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
     ];
 });
