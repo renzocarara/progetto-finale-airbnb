@@ -20,8 +20,7 @@ class DatabaseSeeder extends Seeder
          $this->call(ApartmentsTableSeeder::class);
          $this->call(RequestsTableSeeder::class);
          $this->call(InfosTableSeeder::class);
-         //
-         // $this->call(SponsorshipsTableSeeder::class);
+         $this->call(SponsorshipsTableSeeder::class);
          // $this->call(ServicesTableSeeder::class);
 
          // tabelle ponte
