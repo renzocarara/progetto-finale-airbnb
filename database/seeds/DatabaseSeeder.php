@@ -21,11 +21,11 @@ class DatabaseSeeder extends Seeder
          $this->call(RequestsTableSeeder::class);
          $this->call(InfosTableSeeder::class);
          $this->call(SponsorshipsTableSeeder::class);
-         // $this->call(ServicesTableSeeder::class);
+         $this->call(ServicesTableSeeder::class);
 
          // tabelle ponte
-         // $this->call(Apartments_ServicesTableSeeder::class);
-         // $this->call(Apartments_SponsorshipTableSeeder::class);
+         $this->call(ApartmentsServicesTableSeeder::class);
+         $this->call(ApartmentsSponsorshipsTableSeeder::class);
 
     }
 }

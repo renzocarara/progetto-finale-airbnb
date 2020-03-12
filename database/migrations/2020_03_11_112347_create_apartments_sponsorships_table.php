@@ -19,7 +19,7 @@ class CreateApartmentsSponsorshipsTable extends Migration
 
             $table->bigInteger('apartment_id')->unsigned(); // colonna che conterrà id di apartment
             $table->bigInteger('sponsorship_id')->unsigned(); // colonna che conterrà id dei sponsorship
-            $table->dateTime('start_date'); // colonna che conterrà la dat di inizio della sponsorship
+            $table->timestamp('start_date'); // colonna che conterrà la dat di inizio della sponsorship
 
             // dichiaro che la chiave (colonna) 'apartment_id' è una FOREIGN KEY (chiave esterna),
             // che fa riferimento alla colonna 'id' della tabella 'apartments'
