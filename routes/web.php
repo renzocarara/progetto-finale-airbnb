@@ -12,10 +12,8 @@
 */
 
 
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', 'Public1\HomeController@index')->name('public');
 
 Auth::routes();
 
 Route::get('/admin', 'Admin\HomeController@index')->middleware('auth')->name('admin');
-
-
