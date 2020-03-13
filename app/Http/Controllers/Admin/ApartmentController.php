@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Auth;
 
 use App\Apartment;
+use App\Service;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -36,7 +37,10 @@ class ApartmentController extends Controller
      */
     public function create()
     {
-        //
+        // leggo tutti i servizi presenti nel DB, ottengo una collection
+        $services = Service::all();
+
+        return view("admin.create", ['services' => $services]);
     }
 
     /**
@@ -47,7 +51,7 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

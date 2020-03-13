@@ -33,25 +33,75 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="title">Titolo:</label>
-                    <input type="text" class="form-control" id="title" name="title" placeholder="titolo del post" value="{{ old('title') }}">
+                    <label for="title">Breve descrizione dell'appartamento:</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="descrivi il tuo appartamento" value="{{ old('title') }}">
                 </div>
 
                 <div class="form-group">
-                    <label for="author">Autore:</label>
-                    <input type="text" class="form-control" id="author" name="author" placeholder="nome dell'autore" value="{{ old('author') }}">
+                    <label for="city">Città:</label>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="inserisci la Città" value="{{ old('city') }}">
                 </div>
 
                 <div class="form-group">
-                    <label for="text">Testo:</label>
-                    <textarea class="form-control" id="text" rows=8 name="content" placeholder="scrivi qui il tuo articolo...">{{ old('content') }}</textarea>
+                    <label for="street">Via:</label>
+                    <input type="text" class="form-control" id="street" name="street" placeholder="inserisci la via" value="{{ old('street') }}">
                 </div>
 
-                {{-- questo campo serve per la selezione del file immagine, l'attributo 'type' dell'<input> è "file" --}}
                 <div class="form-group">
-                    <label for="image">Immagine dell'appartemento:</label>
+                    <label for="number">Numero:</label>
+                    <input type="text" class="form-control" id="number" name="number" placeholder="inserisci il numero civico" value="{{ old('number') }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="zip">CAP:</label>
+                    <input type="text" class="form-control" id="zip" name="zip" placeholder="inserisci il CAP" value="{{ old('zip') }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="room_num">Numero di stanze:</label>
+                    <input type="number" class="form-control" id="room_num" name="room_num" min="1" max="10" placeholder="Inserisci numero di stanze" value="{{ old('room_num') }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="beds_num">Numero di letti:</label>
+                    <input type="number" class="form-control" id="beds_num" name="beds_num" min="1" max="10" placeholder="Inserisci numero di letti" value="{{ old('beds_num') }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="bathroom_num">Numero di bagni:</label>
+                    <input type="number" class="form-control" id="bathroom_num" name="bathroom_num" min="1" max="5" placeholder="Inserisci numero di bagni" value="{{ old('bathroom_num') }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="sq_mt">Superficie in mq:</label>
+                    <input type="number" class="form-control" id="sq_mt" name="sq_mt" min="25" max="200" placeholder="Inserisci metratura" value="{{ old('sq_mt') }}">
+                </div>
+
+                <div class="form-group">
+                    @if($services->count() > 0)
+                        <p>Seleziona i servizi</p>
+                        @foreach ($services as $service)
+                            <label for="service_{{ $service->id }}">
+                                <input id="service_{{ $service->id }}" type="checkbox" name="service_id[]" value="{{ $service->id }}"
+                                {{in_array($service->id, old('service_id', array())) ? 'checked' : ''}} >
+                                {{ $service->service }}
+                            </label>
+                        @endforeach
+                    @endif
+                </div>
+
+
+                </div>
+
+                <div class="form-group">
+                    <label for="image">Immagine dell'appartamento:</label>
                     <input type="file" class="form-control-file" id="image" name="image">
                 </div>
+
+
+
+                {{-- questo campo serve per la selezione del file immagine, l'attributo 'type' dell'<input> è "file" --}}
+
 
 
                         {{--  ---------------- VALIDAZIONE DATI - GESTIONE ERRORI ------------------------------- --}}
