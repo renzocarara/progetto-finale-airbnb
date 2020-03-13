@@ -97,10 +97,10 @@
 
 
                 {{-- questo campo serve per la selezione del file immagine, l'attributo 'type' dell'<input> è "file" --}}
-                {{-- <div class="form-group">
+                <div class="form-group">
                     <label for="image">Immagine dell'appartamento:</label>
                     <input type="file" class="form-control-file" id="image" name="image">
-                </div> --}}
+                </div>
 
 
 
