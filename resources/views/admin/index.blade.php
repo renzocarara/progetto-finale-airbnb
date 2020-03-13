@@ -26,10 +26,7 @@
                      <tr>
                          <th>ID</th>
                          <th>Titolo Appartamento</th>
-                         {{-- <th>Slug</th>
-                         <th>Autore</th>
-                         <th>Categoria</th> --}}
-                         <th>Azioni</th>
+                         <th>Operazioni</th>
                      </tr>
                  </thead>
                  <tbody>
@@ -37,10 +34,6 @@
                      <tr>
                          <td>{{ $apartment->id }}</td>
                          <td>{{ $apartment->title }}</td>
-                         {{-- <td>{{ $apartment->slug }}</td>
-                         <td>{{ $apartment->author }}</td> --}}
-                         {{-- se non è associata una categoria al post, visualizzo solo un trattino '-' --}}
-                         {{-- <td>{{ $apartment->category ? $apartment->category->name : '-' }}</td> --}}
                          <td>
                              <a class="btn btn-dark mt-1" href="{{ route('admin.apartment.show', ['apartment' => $apartment->id ]) }}">
                                  Visualizza
@@ -54,7 +47,11 @@
                      </tr>
                      @empty
                      <tr>
-                         <td colspan="5">Non hai appartamenti in affitto</td>
+                         <td colspan="5">
+                             <div class="alert alert-warning" role="alert">
+                                 Non hai appartamenti nel DB di BoolBnB!
+                             </div>
+                         </td>
                      </tr>
                      @endforelse
                  </tbody>

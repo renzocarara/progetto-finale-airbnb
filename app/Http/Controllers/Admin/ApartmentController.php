@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Apartment;
 
 use App\Http\Controllers\Controller;
@@ -16,15 +18,10 @@ class ApartmentController extends Controller
      */
     public function index()
     {
-        // questo metodo recupera  dal DB tutti gli appartamenti dell'utente autenticato e poi ritorna una view che
-        // riceve in ingresso la collection degli appartamenti e la visualizza in pagina
+        $user_id = Auth::user()->id;
 
-// dd($user_id);
-
-        // leggo tutti gli appartamenti dal DB e ottengo una collection
-         $apartments = Apartment::all();
-      // $apartments = Apartment::where('user_id', $user_id)->first();
-      // $apartments = Apartment::where('user_id', 21)->first();
+        // leggo dal DB tutti gli appartamenti associati all'utente che ha id=$user_id e ottengo una collection
+         $apartments = Apartment::where('user_id', $user_id)->get();
 
         // imposto la paginazione automatica di Laravel
         // $posts = Post::paginate(4);

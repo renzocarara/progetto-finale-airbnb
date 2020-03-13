@@ -12,15 +12,22 @@
 */
 
 // ROTTE PUBBLICHE (controllers in Public1)
+// +-----------+-----------------------------------+-------------------------+--------------------------------------------------------+--------------+
+// | Method    | URI in barra indirizzi            | Nome della rotta        | Controller @ metodo invocato                           | Middleware   |
+// +-----------+-----------------------------------+-------------------------+--------------------------------------------------------+--------------+
+// | GET|HEAD  | /                                 | public                  | App\Http\Controllers\Public1\HomeController@index      | web          |
+// +-----------+-----------------------------------+-------------------------+--------------------------------------------------------+--------------+
 Route::get('/', 'Public1\HomeController@index')->name('public');
 
+
+// ROTTE DI DEFAULT PER GESTIRE LOGIN E REGISTRAZIONE (controllers in Auth)
 Auth::routes();
 
 
 // ROTTE AUTENTICATE (controllers in Admin)
-// +-----------+-------------------------+---------------------+----------------------------------------------------+--------------------------------+
-// | Method    | URI in barra indirizzi  | Nome della rotta    | Controller @ metodo invocato                       | Middleware                     |
-// +-----------+-------------------------+---------------------+----------------------------------------------------+--------------------------------+
+// +-----------+-----------------------------------+-------------------------+--------------------------------------------------------+--------------+
+// | Method    | URI in barra indirizzi            | Nome della rotta        | Controller @ metodo invocato                           | Middleware   |
+// +-----------+-----------------------------------+-------------------------+--------------------------------------------------------+--------------+
 // |  POST      | admin/apartment                  | admin.apartment.store   | App\Http\Controllers\Admin\ApartmentController@store   | web,auth     |
 // |  GET|HEAD  | admin/apartment                  | admin.apartment.index   | App\Http\Controllers\Admin\ApartmentController@index   | web,auth     |
 // |  GET|HEAD  | admin/apartment/create           | admin.apartment.create  | App\Http\Controllers\Admin\ApartmentController@create  | web,auth     |
@@ -40,16 +47,16 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     // queste 7, definite con ::resource(), sono le rotte di default per implementare le CRUD
     Route::resource('/apartment', 'ApartmentController');
 
-// sovrascrivo la rotta di default definita da Laravel, aggiungendogli un parametro
-    // Route::get('/apartment', 'ApartmentController@inde');
-
-
-
     // la 'admin.home' è la rotta autenticata iniziale, che ritorna la view 'admin\home.blade.php'
     Route::get('/home', 'HomeController@index')->name('home'); // homepage della parte autenticata: 'admin.home'
+
+    // questa rotta invoca la funzione account che ritorna una view con il profilo dell'utente (nome, cognome, etc)
+    // +-----------+-------------------------+---------------------+----------------------------------------------------+--------------+
+    // | Method    | URI in barra indirizzi  | Nome della rotta    | Controller @ metodo invocato                       | Middleware   |
+    // +-----------+-------------------------+---------------------+----------------------------------------------------+--------------+
+    // | GET|HEAD  | admin/account           | admin.account       | App\Http\Controllers\Admin\HomeController@account  | web,auth     |
+    // +-----------+-------------------------+---------------------+----------------------------------------------------+--------------+
+    Route::get('/account', 'HomeController@account')->name('account');
 });
-// Route::get('/admin/apartment', 'Admin\HomeController@index')->name('admin.apartment'); // homepage della parte autenticata: 'admin.apartment'
-
-
 
 ?>
