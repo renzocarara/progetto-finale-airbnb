@@ -23,7 +23,7 @@ class CreateInfosTable extends Migration
             $table->tinyInteger('beds_num');
             $table->tinyInteger('bathroom_num');
             $table->integer('sq_mt');
-            $table->string('image');
+            $table->string('image')->nullable();
 
             $table->foreign('apartment_id')->references('id')->on('apartments');
 

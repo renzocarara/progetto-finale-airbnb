@@ -33,7 +33,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="title">Breve descrizione dell'appartamento:</label>
+                    <label for="title">Breve descrizione identificativa:</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="descrivi il tuo appartamento" value="{{ old('title') }}">
                 </div>
 
@@ -60,6 +60,11 @@
                 <div class="form-group">
                     <label for="state">Stato:</label>
                     <input type="text" class="form-control" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state') }}">
+                </div>
+
+                <div class="form-group">
+                    <label for="summary">Descrizione dettagliata:</label>
+                    <input type="text" class="form-control" id="summary" name="summary" placeholder="descrivi dettagliatamente il tuo appartamento" value="{{ old('summary') }}">
                 </div>
 
                 <div class="form-group">

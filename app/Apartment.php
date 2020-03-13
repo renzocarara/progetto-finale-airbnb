@@ -9,7 +9,7 @@ class Apartment extends Model
     //
 
     protected $fillable = [
-     'title', 'state', 'city', 'street', 'number', 'zip'//, 'lon', 'lat', 'views'
+     'title', 'state', 'city', 'street', 'number', 'zip',
     ];
 
 
