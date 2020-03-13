@@ -58,6 +58,11 @@
                 </div>
 
                 <div class="form-group">
+                    <label for="state">Stato:</label>
+                    <input type="text" class="form-control" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state') }}">
+                </div>
+
+                <div class="form-group">
                     <label for="room_num">Numero di stanze:</label>
                     <input type="number" class="form-control" id="room_num" name="room_num" min="1" max="10" placeholder="Inserisci numero di stanze" value="{{ old('room_num') }}">
                 </div>
@@ -91,16 +96,14 @@
                 </div>
 
 
-                </div>
-
-                <div class="form-group">
+                {{-- questo campo serve per la selezione del file immagine, l'attributo 'type' dell'<input> è "file" --}}
+                {{-- <div class="form-group">
                     <label for="image">Immagine dell'appartamento:</label>
                     <input type="file" class="form-control-file" id="image" name="image">
-                </div>
+                </div> --}}
 
 
 
-                {{-- questo campo serve per la selezione del file immagine, l'attributo 'type' dell'<input> è "file" --}}
 
 
 

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Apartment;
 use App\Service;
+use App\Info;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -51,7 +52,32 @@ class ApartmentController extends Controller
      */
     public function store(Request $request)
     {
-        
+
+        $user_id = Auth::user()->id;
+
+        // metto i dati ricevuti (in POST) tramite il parametro $request in una variabile
+        // è un array
+        $form_data_received=$request->all();
+        // creo un nuovo oggetto di classe Apartment, da scrivere poi nel DB
+        $new_apartment = new Apartment();
+        // valorizzo il nuovo oggetto con i dati ricevuti
+        $new_apartment->fill($form_data_received);
+
+        // scrivo nel nuovo oggetto apartment, l'id dell'utente
+        $new_apartment->user_id=$user_id;
+        $new_apartment->lon=112.67563423;
+        $new_apartment->lat=45.90907856;
+        $new_apartment->views=33;
+
+        // dd($new_apartment);
+
+
+        // alla fine scrivo il nuovo oggetto nel DB
+        $new_apartment->save();
+
+
+        // faccio una REDIRECT verso la rotta 'apartment.index'
+        return redirect() -> route('admin.apartment.index');
     }
 
     /**
