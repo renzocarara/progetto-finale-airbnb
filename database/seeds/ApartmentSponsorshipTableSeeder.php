@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 
 
-class ApartmentsSponsorshipsTableSeeder extends Seeder
+class ApartmentSponsorshipTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
     public function run()
     {
         //
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 1,
                 'sponsorship_id' => 1,
@@ -22,7 +22,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 1,
                 'sponsorship_id' => 2,
@@ -30,7 +30,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 1,
                 'sponsorship_id' => 3,
@@ -38,7 +38,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 2,
                 'sponsorship_id' => 1,
@@ -46,7 +46,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 2,
                 'sponsorship_id' => 2,
@@ -54,7 +54,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 2,
                 'sponsorship_id' => 3,
@@ -62,7 +62,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 3,
                 'sponsorship_id' => 2,
@@ -70,7 +70,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 3,
                 'sponsorship_id' => 1,
@@ -78,7 +78,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 4,
                 'sponsorship_id' => 2,
@@ -86,7 +86,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 4,
                 'sponsorship_id' => 1,
@@ -94,7 +94,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 4,
                 'sponsorship_id' => 3,
@@ -102,7 +102,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 5,
                 'sponsorship_id' => 1,
@@ -110,7 +110,7 @@ class ApartmentsSponsorshipsTableSeeder extends Seeder
             ]
         ]);
 
-        DB::table('apartments_sponsorships')->insert([
+        DB::table('apartment_sponsorship')->insert([
             [
                 'apartment_id' => 5,
                 'sponsorship_id' => 2,

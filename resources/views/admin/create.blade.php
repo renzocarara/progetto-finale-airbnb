@@ -33,7 +33,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="title">Descrizione sntetica:</label>
+                    <label for="title">Descrizione sintetica:</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="descrivi il tuo appartamento" value="{{ old('title') }}">
                 </div>
 

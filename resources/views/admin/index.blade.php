@@ -25,7 +25,7 @@
                  <thead>
                      <tr>
                          <th>ID</th>
-                         <th>Breve descrizione appartamento</th>
+                         <th>Descrizione sintetica</th>
                          <th>Operazioni</th>
                      </tr>
                  </thead>

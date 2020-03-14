@@ -24,8 +24,8 @@ class DatabaseSeeder extends Seeder
          $this->call(ServicesTableSeeder::class);
 
          // tabelle ponte
-         $this->call(ApartmentsServicesTableSeeder::class);
-         $this->call(ApartmentsSponsorshipsTableSeeder::class);
+         $this->call(ApartmentServiceTableSeeder::class);
+         $this->call(ApartmentSponsorshipTableSeeder::class);
 
     }
 }

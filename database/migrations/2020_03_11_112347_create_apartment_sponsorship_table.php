@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateApartmentsServicesTable extends Migration
+class CreateApartmentSponsorshipTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,20 @@ class CreateApartmentsServicesTable extends Migration
      */
     public function up()
     {
-        Schema::create('apartments_services', function (Blueprint $table) {
+        Schema::create('apartment_sponsorship', function (Blueprint $table) {
+
+            $table->bigIncrements('id'); // chiave primaria
 
             $table->bigInteger('apartment_id')->unsigned(); // colonna che conterrà id di apartment
-            $table->bigInteger('service_id')->unsigned(); // colonna che conterrà id dei service
+            $table->bigInteger('sponsorship_id')->unsigned(); // colonna che conterrà id dei sponsorship
+            $table->timestamp('start_date'); // colonna che conterrà la dat di inizio della sponsorship
+
             // dichiaro che la chiave (colonna) 'apartment_id' è una FOREIGN KEY (chiave esterna),
             // che fa riferimento alla colonna 'id' della tabella 'apartments'
             $table->foreign('apartment_id')->references('id')->on('apartments');
-            // dichiaro che la chiave (colonna) 'service_id' è una FOREIGN KEY (chiave esterna),
-            // che fa riferimento alla colonna 'id' della tabella 'services'
-            $table->foreign('service_id')->references('id')->on('services');
-            // dichiaro che la combinazione delle 2 colonne 'apartment_id' e 'service_id' formano una chiave primaria
-            $table->primary(['apartment_id', 'service_id']);
+            // dichiaro che la chiave (colonna) 'sponsorship_id' è una FOREIGN KEY (chiave esterna),
+            // che fa riferimento alla colonna 'id' della tabella 'sponsorships'
+            $table->foreign('sponsorship_id')->references('id')->on('sponsorships');
 
             $table->timestamps();
         });
@@ -37,6 +39,6 @@ class CreateApartmentsServicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('apartments_services');
+        Schema::dropIfExists('apartment_sponsorship');
     }
 }
