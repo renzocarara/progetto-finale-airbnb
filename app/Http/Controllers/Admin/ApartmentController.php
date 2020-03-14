@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Facades\Auth;
-
 use App\Apartment;
 use App\Service;
 use App\Info;
