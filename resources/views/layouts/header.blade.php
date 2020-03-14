@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('public') }}">
+        <a class="logo-link d-inline-block navbar-brand" href="{{ route('public') }}">
             {{-- {{ config('app.name', 'Boolbnb') }} --}}
             <img class="logo" src="{{ asset('images/team05_logo.png') }}" alt="logo team05">
         </a>

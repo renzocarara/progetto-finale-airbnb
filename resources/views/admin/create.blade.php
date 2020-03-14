@@ -33,7 +33,7 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="title">Breve descrizione identificativa:</label>
+                    <label for="title">Descrizione sntetica:</label>
                     <input type="text" class="form-control" id="title" name="title" placeholder="descrivi il tuo appartamento" value="{{ old('title') }}">
                 </div>
 

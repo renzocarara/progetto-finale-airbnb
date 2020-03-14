@@ -10882,7 +10882,12 @@ a.text-dark:focus {
   }
 }
 
-.logo {
+.logo-link {
   height: 55px;
+  padding: 0;
+}
+
+.logo {
+  height: 100%;
 }
 
