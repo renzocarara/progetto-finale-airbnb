@@ -131,9 +131,9 @@ class ApartmentController extends Controller
         // 1. l'utente seleziona un file tramite l'apposito campo del form
         // 2. recupero il path di questo file e lo passo ad una funzione 'put' che ne fa una copia in una cartella ('uploads')
         // della mia applicazione e in più mi restituise il percorso di dove ha messo questa copia
-        // 3. salvo nel DB, nell'apposita colonna che ho creato (cover_image), il percorso del file
+        // 3. salvo nel DB, nell'apposita colonna che ho creato (image), il percorso del file
         //
-        // ulteriori steps:
+        // ulteriori steps da fare:
         // 1. nel file 'config/filesystems.php' metto il valore 'public', come scritto qui sotto
         // 'default' => env('FILESYSTEM_DRIVER', 'public'),
         // 2. creare da terminale (attenzione NON powershell, ma semplice terminale) un SYMLINK (link virtuale che viene creato sotto
@@ -201,11 +201,11 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Apartment $apartment, Info $info)
+    // public function show(Apartment $apartment, Info $info)
+    public function show(Apartment $apartment)
     {
-        return view('admin.show',[
-            'apartments' => $apartment
-        ]);
+
+        return view('admin.show',['apartments' => $apartment]);
     }
 
     /**
