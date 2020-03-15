@@ -10882,6 +10882,14 @@ a.text-dark:focus {
   }
 }
 
+/* variabili per lo style */
+
+/* common style */
+
+h5 {
+  color: #61CE4E;
+}
+
 /* header style */
 
 .logo-link {
@@ -10902,5 +10910,15 @@ a.text-dark:focus {
      object-fit: contain;
   -o-object-position: center;
      object-position: center;
+}
+
+input[id^=service_] {
+  margin-left: 25px;
+}
+
+.apt-show-row {
+  border: 1px solid #61CE4E;
+  border-radius: 5px;
+  margin-bottom: 15px;
 }
 

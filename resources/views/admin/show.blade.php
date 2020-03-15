@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    <div class="row">
+    <div class="row apt-show-row">
         <div class="card-body">
             <h5 class="card-title">Indirizzo</h5>
             <p class="card-text">
@@ -32,7 +32,7 @@
 
     <div class="row">
 
-        <div class="card-body col-9 col-sm-6 col-lg-3">
+        <div class="card-body  apt-show-row col-9 col-sm-6 col-lg-3">
             <h5 class="card-title">Spazi</h5>
             <p class="card-text">
                 <ul class="list-group">
@@ -44,7 +44,7 @@
             </p>
         </div>
 
-        <div class="card-body col-9 col-sm-6 col-lg-3">
+        <div class="card-body  apt-show-row col-9 col-sm-6 col-lg-3">
             <h5 class="card-title">Servizi</h5>
             <p class="card-text">
                 <ul class="list-group">
