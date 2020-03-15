@@ -10,7 +10,7 @@
     <section class="container">
 
         <h2 class="d-inline-block">Inserimento nuovo appartamento</h2>
-        <a class="btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">Back</a>
+        <a class="btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
         <div>
 
             {{-- il blocco che segue serve per la validazione dei dati del form --}}

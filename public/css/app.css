@@ -10897,9 +10897,10 @@ a.text-dark:focus {
 
 .apt-img {
   width: 200px;
-}
-
-.apt-infos {
-  margin-bottom: 20px;
+  height: 130px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
 }
 

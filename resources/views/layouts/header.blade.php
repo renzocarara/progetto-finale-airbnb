@@ -35,8 +35,7 @@
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('admin.home') }}">Pannello di controllo</a>
                             <a class="dropdown-item" href="{{ route('admin.account') }}">Profilo</a>
-                            <a class="dropdown-item" href="#">menu da definire</a>
-                            <a class="dropdown-item" href="#">menu da definire</a>
+                            <a class="dropdown-item" href="{{ route('admin.apartment.create') }}">Nuovo appartamento</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">

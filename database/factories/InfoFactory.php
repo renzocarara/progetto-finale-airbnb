@@ -21,13 +21,12 @@ $factory->define(Info::class, function (Faker $faker) {
     return [
 
          'apartment_id' => $faker->unique()->numberBetween(1,20),
-         'summary' => $faker->unique->sentence($nbWords = 10, $variableNbWords = true),
+         'summary' => $faker->text($maxNbChars = 400),
          'room_num' => $faker->numberBetween(1, 8),
          'beds_num' => $faker->numberBetween(1, 10),
          'bathroom_num' => $faker->numberBetween(1,3),
          'sq_mt' => $faker->numberBetween(20,200),
-
-        // qui si potrebbe usare una randomElement() su un array di 20 immagini diverse
-         'image' => 'uploads/default_apt_image.jpeg'
+         'image' => $faker->randomElement(['uploads/apt_image1.jpeg', 'uploads/apt_image2.jpeg', 'uploads/apt_image3.jpeg',
+         'uploads/apt_image4.jpeg', 'uploads/apt_image5.jpeg', 'uploads/apt_image6.jpeg', 'uploads/apt_image7.jpeg'])
     ];
 });
