@@ -10882,6 +10882,8 @@ a.text-dark:focus {
   }
 }
 
+/* header style */
+
 .logo-link {
   height: 55px;
   padding: 0;
@@ -10889,5 +10891,15 @@ a.text-dark:focus {
 
 .logo {
   height: 100%;
+}
+
+/* show style */
+
+.apt-img {
+  width: 200px;
+}
+
+.apt-infos {
+  margin-bottom: 20px;
 }
 

@@ -21,7 +21,7 @@ $factory->define(Apartment::class, function (Faker $faker) {
     return [
 
         'user_id' => $faker->numberBetween(1,20),
-        'title' => $faker->text,
+        'title' => $faker->text($maxNbChars = 255),
         'state' => 'Italy',
         'city' => $faker->randomElement(['Milano','Roma','Torino','Napoli','Palermo','Bari','Venezia','Firenze','Bologna','Genova']),
         'street' => $faker->streetName,

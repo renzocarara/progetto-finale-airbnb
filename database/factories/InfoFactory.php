@@ -26,9 +26,8 @@ $factory->define(Info::class, function (Faker $faker) {
          'beds_num' => $faker->numberBetween(1, 10),
          'bathroom_num' => $faker->numberBetween(1,3),
          'sq_mt' => $faker->numberBetween(20,200),
-        // 'image' => $faker->imageUrl($width = 640, $height = 480, 'city')
-        
-        // qui si potrebbe usare una randomElement su un array di 20 immagini diverse
-         'image' => 'https://images.pexels.com/photos/276724/pexels-photo-276724.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'
+
+        // qui si potrebbe usare una randomElement() su un array di 20 immagini diverse
+         'image' => 'uploads/default_apt_image.jpeg'
     ];
 });
