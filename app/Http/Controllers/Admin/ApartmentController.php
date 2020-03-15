@@ -201,9 +201,11 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Apartment $apartment, Info $info)
     {
-        //
+        return view('admin.show',[
+            'apartments' => $apartment
+        ]);
     }
 
     /**
