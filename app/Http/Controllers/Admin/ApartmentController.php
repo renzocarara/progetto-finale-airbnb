@@ -205,7 +205,7 @@ class ApartmentController extends Controller
     public function show(Apartment $apartment)
     {
         // ritorno la view show passandogli la variabile $apartment ricevuta in ingresso
-        return view('admin.show',['apartments' => $apartment]);
+        return view('admin.show',['apartment' => $apartment]);
     }
 
     /**

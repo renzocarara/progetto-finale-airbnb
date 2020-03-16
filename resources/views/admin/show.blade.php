@@ -12,9 +12,9 @@
 
     <div class="row">
         <div class="card-body">
-            <img class="card-img-top apt-img" src="{{$apartments->info->image ? asset('storage/' . $apartments->info->image) : asset('storage/')}}" alt="{{$apartments->title}}">
-            <h3 class="card-title">{{$apartments->title}}</h3>
-            <p class="card-text">{{$apartments->info->summary}}</p>
+            <img class="card-img-top apt-img" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/')}}" alt="{{$apartment->title}}">
+            <h3 class="card-title">{{$apartment->title}}</h3>
+            <p class="card-text">{{$apartment->info->summary}}</p>
         </div>
     </div>
 
@@ -23,8 +23,8 @@
             <h5 class="card-title">Indirizzo</h5>
             <p class="card-text">
                 <ul class="list-group col-6">
-                <li class="list-group-item">{{$apartments->street}}, {{$apartments->number}}</li>
-                <li class="list-group-item">{{$apartments->city}}, {{$apartments->zip}}, {{$apartments->state}}</li>
+                <li class="list-group-item">{{$apartment->street}}, {{$apartment->number}}</li>
+                <li class="list-group-item">{{$apartment->city}}, {{$apartment->zip}}, {{$apartment->state}}</li>
             </ul>
             </p>
         </div>
@@ -35,10 +35,10 @@
             <h5 class="card-title">Spazi</h5>
             <p class="card-text">
                 <ul class="list-group">
-                    <li class="list-group-item">Stanze: {{$apartments->info->room_num}}</li>
-                    <li class="list-group-item">Posti letto: {{$apartments->info->beds_num}}</li>
-                    <li class="list-group-item">Bagni: {{$apartments->info->bathroom_num}}</li>
-                    <li class="list-group-item">Metri quadri: {{$apartments->info->sq_mt}}</li>
+                    <li class="list-group-item">Stanze: {{$apartment->info->room_num}}</li>
+                    <li class="list-group-item">Posti letto: {{$apartment->info->beds_num}}</li>
+                    <li class="list-group-item">Bagni: {{$apartment->info->bathroom_num}}</li>
+                    <li class="list-group-item">Metri quadri: {{$apartment->info->sq_mt}}</li>
                 </ul>
             </p>
         </div>
@@ -47,7 +47,7 @@
             <h5 class="card-title">Servizi</h5>
             <p class="card-text">
                 <ul class="list-group">
-                    @forelse ($apartments->services as $service)
+                    @forelse ($apartment->services as $service)
                         <li class='list-group-item'>{{$service->service}}</li>
                     @empty
                         <li class='list-group-item'>Non sono presenti servizi</li>
