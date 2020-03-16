@@ -13,7 +13,7 @@ class InfosTableSeeder extends Seeder
      * @return void
      */
      // numero di appartamenti "info" da creare (tanti quanti gli apartments)
-     public $num_of_Infos = 20;
+     public $num_of_Infos = 30;
 
     public function run()
     {

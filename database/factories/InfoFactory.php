@@ -20,7 +20,7 @@ use Illuminate\Support\Str;
 $factory->define(Info::class, function (Faker $faker) {
     return [
 
-         'apartment_id' => $faker->unique()->numberBetween(1,20),
+         'apartment_id' => $faker->unique()->numberBetween(1,30),
          'summary' => $faker->text($maxNbChars = 400),
          'room_num' => $faker->numberBetween(1, 8),
          'beds_num' => $faker->numberBetween(1, 10),
