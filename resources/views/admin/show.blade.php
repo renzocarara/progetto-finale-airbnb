@@ -28,7 +28,7 @@
             <p class="card-text">
                 <ul class="list-group col-6">
                 <li class="list-group-item">{{$apartment->street}}, {{$apartment->number}}</li>
-                <li class="list-group-item">{{$apartment->city}}, {{$apartment->zip}}, {{$apartment->state}}</li>
+                <li class="list-group-item">{{$apartment->zip}} {{$apartment->city}}, {{$apartment->state}}</li>
             </ul>
             </p>
         </div>
