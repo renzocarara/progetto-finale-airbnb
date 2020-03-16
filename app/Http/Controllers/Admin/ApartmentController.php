@@ -260,22 +260,58 @@ class ApartmentController extends Controller
         // ----------------------------- VALIDAZIONE DATI -------------------------------------
 
         $form_data_received=$request->all();
+
+        // scrivo nella tabella apartments
         $apartment->update($form_data_received);
-        $apartment->info->update($form_data_received);
+
+        // scrivo nella tabella apartment_service
         // aggiorno i servizi nel DB
         // service_id è l'array che ho usato nel form e che deve contenere i servizi checkati dall'utente
         // (l'utente potrebbe anche non selezionarne alcuno ovviamente...)
         // se così fosse nella collection che mi arriva, la chiave service_id non sarebbe definita
          if(isset($form_data_received['service_id'])) {
-            // aggiorno i servizi del appartamento ($apartament->services()) chiamando la sync()
+            // aggiorno i servizi dell'appartamento ($apartament->services()) chiamando la sync()
             // la sync() prende in input un array di servizi e fa una 'sincronizzazione'
-            // la sync() aggiunge al appartamento i servizi che trova nell'array che gli passo e rimuove tutti gli altri
+            // la sync() aggiunge all'appartamento i servizi che trova nell'array che gli passo e rimuove tutti gli altri
             $apartment->services()->sync($form_data_received['service_id']);
         } else {
             // la chiave 'service_id' non è definita nell'array di dati che mi è arrivato
-            // assumo che non ci siano servizi da associare al appartamento, passo alla sync() un array vuoto
+            // assumo che non ci siano servizi da associare all'appartamento, passo alla sync() un array vuoto
             $apartment->services()->sync([]);
         }
+
+        // ----------------------------- GESTIONE FILEs -------------------------------------
+        // si compone sinteticamente di 3 steps:
+        // 1. l'utente seleziona un file tramite l'apposito campo del form
+        // 2. recupero il path di questo file e lo passo ad una funzione 'put' che ne fa una copia in una cartella ('uploads')
+        // della mia applicazione Laravel e in più mi restituise il percorso di dove ha messo questa copia
+        // 3. inserisco il nuovo path nell'oggetto che userò per fare l'update del DB
+        //
+        // verifico che il campo image ricevuto dal form non sia vuoto
+        if(!empty($form_data_received['image'])) {
+
+            // se l'appartamento aveva già un'immagine associata, la cancello prima di collegare quella nuova
+            if(!empty($apartment->image)) {
+                // cancello l'immagine precedente, viene fisicamente eliminato il file dalla cartella 'uploads'
+                Storage::delete($apartment->image);
+            }
+
+            // estraggo il percorso del file selezionato dall'utente
+            $image = $form_data_received['image'];
+            // passo alla funzione 'put' 2 parametri:
+            // la cartella ('uploads') dove mettere il file e il percorso ('$image') da dove prendere il file
+            // la 'put', oltre a fare la copia del file, mi restituisce il path di dove ha salvato il file
+            $image_path = Storage::put('uploads', $image);
+
+            // inserico il nuovo path fornitomi dalla funzione 'put' nell'oggetto che contiene i dati da aggiornare
+            $apartment->info->image = $image_path;
+        }
+        // ------------------------------ GESTIONE FILEs -------------------------------------
+
+        // scrivo nella tabella infos
+        // NOTA: l'update() lavora solo sui dati dichiarati "fillable"
+        $apartment->info->update($form_data_received);
+
 
         return redirect() -> route('admin.apartment.index');
     }

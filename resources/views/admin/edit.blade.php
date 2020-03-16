@@ -110,7 +110,7 @@
                         <div class="form-group col-12">
 
                             @if($services->count() > 0)
-                                <p>Seleziona i servizi</p>
+                                <p>Seleziona i servizi:</p>
                                 @foreach ($services as $service)
 
                                     <label for="service_{{ $service->id }}">
@@ -140,9 +140,11 @@
 
                     {{-- questo campo serve per la selezione del file immagine, l'attributo 'type' dell'<input> è "file" --}}
                     <h5>Immagine</h5>
+
                     <div class="row apt-show-row">
                         <div class="form-group  col-12">
-                            <label for="image">Carica un'mmagine dell'appartamento:</label>
+                            <p class="mt-3"><img class="card-img-top apt-img" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/')}}" alt="{{$apartment->title}}"></p>
+                            <label for="image">Carica una nuova immagine:</label>
                             <input type="file" class="form-control-file" id="image" name="image">
                         </div>
                     </div>

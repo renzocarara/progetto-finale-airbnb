@@ -10890,19 +10890,6 @@ h5 {
   color: #61CE4E;
 }
 
-/* header style */
-
-.logo-link {
-  height: 55px;
-  padding: 0;
-}
-
-.logo {
-  height: 100%;
-}
-
-/* show style */
-
 .apt-img {
   width: 200px;
   height: 130px;
@@ -10921,4 +10908,17 @@ input[id^=service_] {
   border-radius: 5px;
   margin-bottom: 15px;
 }
+
+/* header style */
+
+.logo-link {
+  height: 55px;
+  padding: 0;
+}
+
+.logo {
+  height: 100%;
+}
+
+/* show style */
 

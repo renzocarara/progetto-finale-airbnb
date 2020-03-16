@@ -1,5 +1,21 @@
 /* common style */
-
 h5 {
     color: $boolbnb_green;
+}
+
+.apt-img {
+    width: 200px;
+    height: 130px;
+    object-fit: contain;
+    object-position: center;
+}
+
+input[id^="service_"] {
+    margin-left: 25px;
+}
+
+.apt-show-row {
+    border: 1px solid $boolbnb_green;
+    border-radius: 5px;
+    margin-bottom: 15px;
 }
