@@ -1,4 +1,6 @@
 @extends('layouts.view_structure')
+{{-- imposto il titolo della pagina --}}
+@section('page-title', "BoolBnB - Login")
 
 @section('content')
 <div class="container">

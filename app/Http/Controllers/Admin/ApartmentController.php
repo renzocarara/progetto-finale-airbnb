@@ -214,9 +214,15 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Apartment $apartment)
     {
         //
+        // leggo l'elenco  dei servizi presenti nel DB, ottengo una collection
+        $services = Service::all();
+
+        // gli passo anche l'elenco con i nomi dei servizi associabili all'appartemento
+        return view('admin.edit',['apartment' => $apartment, 'services' => $services ]);
+
     }
 
     /**
@@ -226,9 +232,52 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Apartment $apartment)
     {
         //
+
+        // ----------------------------- VALIDAZIONE DATI -------------------------------------
+        // questi sono tutti i dati che mi arrivano, sui quali applico delle regole di validazione
+        // in base anche a quello che ho definito nel mio DB
+        $request->validate([
+            // tabella apartments
+            'title' => 'required|max:255', // richiesto e massimo lungo 255caratteri
+            'state' => 'required|max:50', // richiesto e massimo lungo 50caratteri
+            'city' => 'required|max:50', // richiesto e massimo lungo 50caratteri
+            'street' => 'required|max:80', // richiesto e massimo lungo 255caratteri
+            'number' => 'required|max:5', // massimo numero di cifre che compongono il numero
+            'zip' => 'required|max:5', //  massimo numero di cifre che compongono il numero
+
+            // tabella infos
+            'summary' => 'required|max:1000', //  massimo numero di caratteri
+            'room_num' => 'required|max:2', //  massimo numero di cifre che compongono il numero
+            'beds_num' => 'required|max:2', //  massimo numero di cifre che compongono il numero
+            'bathroom_num' => 'required|max:1', //  massimo numero di cifre che compongono il numero
+            'sq_mt' => 'required|max:3', //  massimo numero di cifre che compongono il numero
+            'image' => 'image' // deve essere una file di immagine
+
+        ]);
+        // ----------------------------- VALIDAZIONE DATI -------------------------------------
+
+        $form_data_received=$request->all();
+        $apartment->update($form_data_received);
+        $apartment->info->update($form_data_received);
+        // aggiorno i servizi nel DB
+        // service_id è l'array che ho usato nel form e che deve contenere i servizi checkati dall'utente
+        // (l'utente potrebbe anche non selezionarne alcuno ovviamente...)
+        // se così fosse nella collection che mi arriva, la chiave service_id non sarebbe definita
+         if(isset($form_data_received['service_id'])) {
+            // aggiorno i servizi del appartamento ($apartament->services()) chiamando la sync()
+            // la sync() prende in input un array di servizi e fa una 'sincronizzazione'
+            // la sync() aggiunge al appartamento i servizi che trova nell'array che gli passo e rimuove tutti gli altri
+            $apartment->services()->sync($form_data_received['service_id']);
+        } else {
+            // la chiave 'service_id' non è definita nell'array di dati che mi è arrivato
+            // assumo che non ci siano servizi da associare al appartamento, passo alla sync() un array vuoto
+            $apartment->services()->sync([]);
+        }
+
+        return redirect() -> route('admin.apartment.index');
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.view_structure')
 
 {{-- imposto il titolo della pagina --}}
-@section('page-title', "BoolBnB - Inserisci nuovo appartamento")
+@section('page-title', "BoolBnB - Modifica appartamento")
 
 @section('content')
 
@@ -9,7 +9,7 @@
 
     <section class="container">
 
-        <h1 class="d-inline-block">Inserimento nuovo appartamento</h1>
+        <h1 class="d-inline-block">Modifica appartamento</h1>
         <a class="btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
 
         <div>
@@ -30,9 +30,10 @@
 
             {{-- NOTA: perchè il form possa gestire anche i file bisogna aggiungere questo attributo:
                  enctype="multipart/form-data" --}}
-            <form class="w-100" enctype="multipart/form-data" method="post" action="{{ route('admin.apartment.store') }}">
+            <form class="w-100" enctype="multipart/form-data" method="post" action="{{ route('admin.apartment.update', $apartment->id) }}">
 
                 @csrf
+                @method('PUT')
 
                 <div class="container">
 
@@ -40,7 +41,7 @@
                     <div class="row apt-show-row">
                         <div class="form-group col-12">
                             <label for="title">Descrizione sintetica (max 255 caratteri):</label>
-                            <input type="text" class="form-control" id="title" name="title" placeholder="descrivi brevemente il tuo appartamento" value="{{ old('title') }}">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="descrivi brevemente il tuo appartamento" value="{{  $apartment->title }}">
                         </div>
                     </div>
 
@@ -49,29 +50,27 @@
                     <div class="row apt-show-row">
                         <div class="form-group col-12 col-sm-9 col-lg-8">
                             <label for="street">Via/Piazza/etc (max 80 caratteri):</label>
-                            <input type="text" class="form-control" id="street" name="street" placeholder="inserisci l'indirizzo" value="{{ old('street') }}">
+                            <input type="text" class="form-control" id="street" name="street" placeholder="inserisci l'indirizzo" value="{{ old('street', $apartment->street ) }}">
                         </div>
 
                         <div class="form-group col-5 col-sm-3 col-lg-2">
                             <label for="number">Numero civico:</label>
-                            <input type="text" class="form-control" id="number" name="number" placeholder="inserisci il numero civico" value="{{ old('number') }}">
+                            <input type="text" class="form-control" id="number" name="number" placeholder="inserisci il numero civico" value="{{ old('number', $apartment->number ) }}">
                         </div>
-                    {{-- </div> --}}
 
-                    {{-- <div class="row"> --}}
                         <div class="form-group col-8 col-sm-6 col-lg-5">
                             <label for="city">Città (max 50 caratteri):</label>
-                            <input type="text" class="form-control" id="city" name="city" placeholder="inserisci la città" value="{{ old('city') }}">
+                            <input type="text" class="form-control" id="city" name="city" placeholder="inserisci la città" value="{{ old('city', $apartment->city ) }}">
                         </div>
 
                         <div class="form-group col-4 col-sm-4 col-lg-3">
                             <label for="zip">CAP:</label>
-                            <input type="text" class="form-control" id="zip" name="zip" placeholder="inserisci il CAP" value="{{ old('zip') }}">
+                            <input type="text" class="form-control" id="zip" name="zip" placeholder="inserisci il CAP" value="{{ old('zip', $apartment->zip ) }}">
                         </div>
 
                         <div class="form-group col-9 col-sm-6 col-lg-4">
                             <label for="state">Stato (max 50 caratteri):</label>
-                            <input type="text" class="form-control" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state') }}">
+                            <input type="text" class="form-control" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state', $apartment->state ) }}">
                         </div>
                     </div>
 
@@ -79,46 +78,63 @@
                     <div class="row apt-show-row">
                         <div class="form-group col-12">
                             <label for="summary">Descrizione dettagliata (max 1000 caratteri):</label>
-                            <textarea class="form-control" id="summary" rows=6 name="summary" placeholder="scrivi qui una descrizione del tuo appartamento...">{{ old('summary') }}</textarea>
+                            <textarea class="form-control" id="summary" rows=6 name="summary" placeholder="scrivi qui una descrizione del tuo appartamento...">{{ old('summary', $apartment->info->summary ) }}</textarea>
                         </div>
                     </div>
 
                     <h5>Spazi</h5>
                     <div class="row apt-show-row">
                         <div class="form-group col-6 col-sm-3">
-                            <label for="room_num">Num. stanze:</label>
-                            <input type="number" class="form-control" id="room_num" name="room_num" min="1" max="10" placeholder="inserisci numero di stanze" value="{{ old('room_num') }}">
+                            <label for="room_num">Numero stanze:</label>
+                            <input type="number" class="form-control" id="room_num" name="room_num" min="1" max="10" placeholder="inserisci numero di stanze" value="{{ old('room_num', $apartment->info->room_num ) }}">
                         </div>
 
                         <div class="form-group col-6 col-sm-3">
-                            <label for="beds_num">Num. letti:</label>
-                            <input type="number" class="form-control" id="beds_num" name="beds_num" min="1" max="10" placeholder="inserisci numero di letti" value="{{ old('beds_num') }}">
+                            <label for="beds_num">Numero letti:</label>
+                            <input type="number" class="form-control" id="beds_num" name="beds_num" min="1" max="10" placeholder="inserisci numero di letti" value="{{ old('beds_num', $apartment->info->beds_num ) }}">
                         </div>
 
                         <div class="form-group col-6 col-sm-3">
-                            <label for="bathroom_num">Num. bagni:</label>
-                            <input type="number" class="form-control" id="bathroom_num" name="bathroom_num" min="1" max="5" placeholder="inserisci numero di bagni" value="{{ old('bathroom_num') }}">
+                            <label for="bathroom_num">Numero bagni:</label>
+                            <input type="number" class="form-control" id="bathroom_num" name="bathroom_num" min="1" max="5" placeholder="inserisci numero di bagni" value="{{ old('bathroom_num', $apartment->info->bathroom_num ) }}">
                         </div>
 
                         <div class="form-group col-6 col-sm-3">
                             <label for="sq_mt">superficie(mq):</label>
-                            <input type="number" class="form-control" id="sq_mt" name="sq_mt" min="25" max="200" placeholder="inserisci la metratura" value="{{ old('sq_mt') }}">
+                            <input type="number" class="form-control" id="sq_mt" name="sq_mt" min="25" max="200" placeholder="inserisci la metratura" value="{{ old('sq_mt', $apartment->info->sq_mt ) }}">
                         </div>
                     </div>
 
                     <h5>Servizi</h5>
                     <div class="row apt-show-row">
                         <div class="form-group col-12">
+
                             @if($services->count() > 0)
                                 <p>Seleziona i servizi</p>
                                 @foreach ($services as $service)
+
                                     <label for="service_{{ $service->id }}">
-                                        <input id="service_{{ $service->id }}" type="checkbox" name="service_id[]" value="{{ $service->id }}"
-                                        {{in_array($service->id, old('service_id', array())) ? 'checked' : ''}} >
+                                        <input id="service_{{ $service->id }}" type="checkbox"
+
+                                        @if($errors->any())
+                                        {{-- se ci sono stati degli errori al submit, la pagina viene ricaricata,
+                                        verifico se il servizio che sto scrivendo/ciclando è uno di quelli che l'utente aveva checkato precedentemente,
+                                        (lo faccio controllando l'array service_id con la funzione in_array())
+                                        se sì, aggiungo 'checked' in modo che appaia come checkato --}}
+                                        {{ in_array($service->id, old('service_id', array())) ? 'checked' : '' }}
+                                    @else
+                                        {{-- la funzione contains() verifica se nei service associati a questo post (cioè nella collection: $apartment->services)  --}}
+                                        {{-- è contenuto il service che sto ciclando in questo momento (col foreach sto ciclando l'elenco completo letto da DB di tutti i tipi di service ) --}}
+                                        {{-- se sì, aggiungo 'checked' e il service verrà visualizzato come 'checkato', altrimenti non aggiungo niente --}}
+                                        {{ ($apartment->services)->contains($service) ? 'checked' : '' }}
+                                    @endif
+                                        name="service_id[]" value="{{ $service->id }}">
                                         {{ $service->service }}
                                     </label>
                                 @endforeach
+
                             @endif
+
                         </div>
                     </div>
 
@@ -143,7 +159,7 @@
                     {{--  ---------------- VALIDAZIONE DATI - GESTIONE ERRORI ------------------------------- --}}
 
 
-                    <button type="submit" class="btn btn-success">Crea</button>
+                    <button type="submit" class="btn btn-success">Modifica</button>
                     <button type="reset" class="btn btn-warning">Reset</button>
 
                 </div>

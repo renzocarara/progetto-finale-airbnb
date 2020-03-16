@@ -11,6 +11,10 @@
 
  @extends('layouts.view_structure')
 
+ {{-- imposto il titolo della pagina --}}
+ @section('page-title', "BoolBnB - I tuoi appartamenti")
+
+
  @section('content')
  <div class="container">
      <div class="row">

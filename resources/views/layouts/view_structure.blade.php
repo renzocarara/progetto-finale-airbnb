@@ -2,6 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     @include('layouts.head')
+    <title>@yield('page-title')</title>
 </head>
 <body>
     <div id="app">

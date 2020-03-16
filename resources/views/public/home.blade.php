@@ -1,5 +1,9 @@
 @extends('layouts.view_structure')
 
+{{-- imposto il titolo della pagina --}}
+@section('page-title', "BoolBnB")
+
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

@@ -4,7 +4,7 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-<title>{{ config('app.name', 'BoolBnB') }}</title>
+{{-- <title>{{ config('app.name', 'BoolBnB') }}</title> --}}
 <link rel="icon" href="{{ asset('images/team05_favicon.png') }}" type="image/png" />
 
 <!-- Scripts -->

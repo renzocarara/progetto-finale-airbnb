@@ -1,5 +1,9 @@
 @extends('layouts.view_structure')
 
+{{-- imposto il titolo della pagina --}}
+@section('page-title', "BoolBnB - Dettagli appartamento")
+
+
 @section('content')
 <div class="container">
 
@@ -51,7 +55,7 @@
                         <li class='list-group-item'>{{$service->service}}</li>
                     @empty
                         <li class='list-group-item'>Non sono presenti servizi</li>
-                    @endforelse ($services as $key => $value)
+                    @endforelse
                 </ul>
             </p>
         </div>
