@@ -6,8 +6,6 @@
 
 @section('content')
 <div class="container">
-
-
     <div class="row">
         <div class="col-12">
             <h1 class="d-inline-block mb-3">Dettagli appartamento</h1>
@@ -40,12 +38,13 @@
 
     {{-- descrizione, spazi e servizi --}}
     <div class="row">
-        <div class="card-body apt-show-row col-9 col-sm-5 col-lg-5">
+        <div class="card-body apt-show-row col-9 col-sm-5 col-lg-6">
+            <h5 class="card-title">Descrizione:</h5>
             <p class="card-text">{{$apartment->info->summary}}</p>
             <p class="card-text">{{$apartment->info->summary}}</p>
         </div>
 
-        <div class="card-body apt-show-row col-9 col-sm-5 offset-sm-2 col-lg-5 offset-lg-2">
+        <div class="card-body apt-show-row col-9 col-sm-5 offset-sm-2 col-lg-5 offset-lg-1">
             <div class="">
                 <h5 class="card-title">Spazi</h5>
                 <p class="card-text">

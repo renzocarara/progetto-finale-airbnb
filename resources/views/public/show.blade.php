@@ -33,6 +33,7 @@
     {{-- descrizione, spazi e servizi --}}
     <div class="row">
         <div class="card-body apt-show-row col-9 col-sm-5 col-lg-5">
+            <h5 class="card-title">Descrizione</h5>
             <p class="card-text">{{$apartment->info->summary}}</p>
             <p class="card-text">{{$apartment->info->summary}}</p>
         </div>
