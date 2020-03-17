@@ -39,18 +39,27 @@
                          <td>{{ $apartment->id }}</td>
                          <td>{{ $apartment->title }}</td>
                          <td>
+                         @if(!$apartment->trashed())
                              <a class="btn btn-dark mt-1" href="{{ route('admin.apartment.show', ['apartment' => $apartment->id ]) }}">
                                  Visualizza
                              </a>
                              <a class="btn btn-secondary mt-1" href="{{ route('admin.apartment.edit', ['apartment' => $apartment->id ]) }}">
                                  Modifica
                              </a>
-                             <!-- Bottone che usa un modal di Bootstrap per richiedere la conferma dell'operzione di cancellazione-->
-                             {{-- @include('admin.apartment.common.delete_confirmation') --}}
-                         </td>
+                             <form action="{{ route('admin.apartment.destroy', ['apartment' => $apartment->id]) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" class="btn btn-danger" value="Sospendi annuncio">
+                            </form>
+                            @else
+                            <a class="btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}">
+                                Ripristina
+                            </a>
+                            @endif
+                        </td>
                      </tr>
-                     @empty
-                     <tr>
+                    @empty
+                    <tr>
                          <td colspan="5">
                              <div class="alert alert-warning" role="alert">
                                  Non hai appartamenti nel DB di BoolBnB!

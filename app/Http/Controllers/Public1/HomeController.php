@@ -17,7 +17,10 @@ class HomeController extends Controller
     }
 
     public function show($id) {
-        dd ($apartment);
+
+        $apartment = Apartment::find($id);
+        // dd ($apartment);
+
         return view('public.show', ["apartment"=>$apartment]);
     }
 }

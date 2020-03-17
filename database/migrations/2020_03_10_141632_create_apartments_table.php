@@ -26,6 +26,7 @@ class CreateApartmentsTable extends Migration
             $table->float('lon',11,8);
             $table->float('lat',11,8);
             $table->integer('views');
+            $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users');
             //

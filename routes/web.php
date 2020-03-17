@@ -58,6 +58,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     // | GET|HEAD  | admin/account           | admin.account       | App\Http\Controllers\Admin\HomeController@account  | web,auth     |
     // +-----------+-------------------------+---------------------+----------------------------------------------------+--------------+
     Route::get('/account', 'HomeController@account')->name('account');
+
+    Route::get('/apartment/restore/{id}', 'ApartmentController@restore')->name('apartment.restore');
 });
 
 ?>

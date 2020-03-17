@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Apartment extends Model
 {
@@ -45,4 +46,6 @@ class Apartment extends Model
         // relazione molti a molti con la tabella services
         return $this->belongsToMany('App\Service');
     }
+
+    use SoftDeletes;
 }

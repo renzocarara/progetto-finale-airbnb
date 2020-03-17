@@ -31,7 +31,8 @@ class ApartmentController extends Controller
         $user_id = Auth::user()->id;
 
         // leggo dal DB tutti gli appartamenti associati all'utente loggato e ottengo una collection
-         $apartments = Apartment::where('user_id', $user_id)->get();
+
+        $apartments = Apartment::where('user_id', $user_id)->withTrashed()->get();
 
         // imappartamentoo la paginazione automatica di Laravel
         // $appartamentos = appartamento::paginate(4);
@@ -322,8 +323,25 @@ class ApartmentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Apartment $apartment)
     {
-        //
+        
+        $apartment->delete();
+        return redirect() -> route('admin.apartment.index');
+
+    }
+
+      /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function restore($id)
+    {
+        Apartment::onlyTrashed()->where('id', $id)->restore();
+        
+        return redirect() -> route('admin.apartment.index');
+
     }
 }
