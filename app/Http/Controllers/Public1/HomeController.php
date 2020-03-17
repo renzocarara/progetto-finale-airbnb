@@ -13,7 +13,11 @@ use App\Info;
 class HomeController extends Controller
 {
     public function index() {
-        return view('public.home');
+
+      $apartments = Apartment::all();
+
+
+        return view('public.home', ["apartments"=>$apartments]);
     }
 
     public function show($id) {
