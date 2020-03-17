@@ -1,5 +1,4 @@
 /* header style */
-
 .logo-link {
     height: 55px;
     padding: 0;
@@ -7,4 +6,18 @@
 
 .logo {
     height: 100%;
+}
+
+.jumbo {
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background-image: url("public/images/jumbo-loft.jpg");
+    background-size: cover;
+
+    .white-form-container {
+        background-color: rgba(0, 0, 0, .5);
+        width: 60%;
+        border-radius: 5px;
+        padding: 30px;
+    }
 }

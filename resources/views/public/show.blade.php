@@ -7,14 +7,6 @@
 @section('content')
 <div class="container">
 
-
-    <div class="row">
-        <div class="col-12">
-            <h1 class="d-inline-block mb-3">Dettagli appartamento</h1>
-            <a class="btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
-        </div>
-    </div>
-
     {{-- immagine e titolo --}}
     <div class="row">
         <div class="card apt-show-row ">
@@ -32,7 +24,7 @@
             <p class="card-text">
                 <ul class="list-group col-6">
                 <li class="list-group-item">{{$apartment->street}}, {{$apartment->number}}</li>
-                <li class="list-group-item">{{$apartment->zip}} {{$apartment->city}}, {{$apartment->state}}</li>
+                <li class="list-group-item">{{$apartment->city}}, {{$apartment->zip}}, {{$apartment->state}}</li>
             </ul>
             </p>
         </div>
@@ -70,5 +62,29 @@
             </div>
         </div>
     </div>
+
+    {{-- mappa, email --}}
+    <div class="row">
+        <div class="map card-body apt-show-row col-9 col-sm-5 col-lg-5">
+            <img src="https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=45.13327&lon=7.70791&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*" alt="">
+        </div>
+        <div class="email card-body apt-show-row col-9 col-sm-5 offset-sm-2 col-lg-5 offset-lg-2">
+            <form>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Indirizzo e-mail</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Inserisci la tua e-mail">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Messaggio:</label>
+                    <input type="textarea" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+            </form>
+
+        </div>
+
+
+
+    </div>
+
 </div>
 @endsection

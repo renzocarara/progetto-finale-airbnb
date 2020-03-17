@@ -1,4 +1,16 @@
 /* common style */
+.green {
+    color: $boolbnb_green;
+}
+
+.bckg-green {
+    background-color: $boolbnb_green;
+}
+
+.wht {
+    color: white;
+}
+
 h5 {
     color: $boolbnb_green;
 }
@@ -8,6 +20,10 @@ h5 {
     height: 130px;
     object-fit: contain;
     object-position: center;
+}
+
+.apt-img-lg {
+    width: 50%;
 }
 
 input[id^="service_"] {
