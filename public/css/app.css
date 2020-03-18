@@ -11045,6 +11045,11 @@ table tbody tr td a.suspended {
   border-color: blue;
 }
 
+.trashed_apt {
+  font-style: italic;
+  color: gray;
+}
+
 footer {
   margin-top: 100px;
 }
