@@ -49503,6 +49503,7 @@ module.exports = function(module) {
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+// require('jquery');
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -49525,7 +49526,31 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 
 var app = new Vue({
   el: '#app'
-});
+}); // ---------------------------- TOMTOM -----------------------------------------
+
+$(document).ready(function () {
+  // se l'id "map" è definito, vuol dire che mi trovo sulla pagina "show" dove devo visualizzare la mappa,
+  // altrimenti non faccio nulla
+  if ($("#map").length) {
+    var Apt_location = [45.46738025, 9.14222736]; // coordinate [lat, lon]
+
+    var map = tomtom.L.map('map', {
+      key: 'BG5ffg9ACWQBPZZHShDaXxBnheo0bD36',
+      // api-key di tomtom
+      basePath: '../',
+      // path di dove si trova la cartella con SDK di TomTom
+      center: Apt_location,
+      // array che contiene coordinate di un punto specifico
+      zoom: 13 // livello di zoomata
+
+    }); // aggiungo un marker sulla mappa (map), nella posizione specificata nell'array Apt_location
+
+    var Apt_location_marker = tomtom.L.marker(Apt_location).addTo(map); // aggiungo un popup sul marker, con una descrizione testuale della posizione
+
+    Apt_location_marker.bindPopup("BoolBnB, Via Pietro Rubens, 20146 Milano, Italia");
+  }
+}); // end document ready
+// ---------------------------- TOMTOM -----------------------------------------
 
 /***/ }),
 
@@ -49674,8 +49699,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\MAMP\htdocs\boolean\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\MAMP\htdocs\boolean\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\BOOLEAN\ESERCIZI\progetto-finale-airbnb\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\BOOLEAN\ESERCIZI\progetto-finale-airbnb\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

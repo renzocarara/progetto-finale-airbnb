@@ -4,6 +4,8 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+// require('jquery');
+
 require('./bootstrap');
 
 window.Vue = require('vue');
@@ -30,3 +32,30 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app',
 });
+
+// ---------------------------- TOMTOM -----------------------------------------
+
+$(document).ready(function() {
+
+    // se l'id "map" è definito, vuol dire che mi trovo sulla pagina "show" dove devo visualizzare la mappa,
+    // altrimenti non faccio nulla
+    if ($("#map").length) {
+
+        var Apt_location = [45.46738025, 9.14222736]; // coordinate [lat, lon]
+
+        var map = tomtom.L.map('map', {
+            key: 'BG5ffg9ACWQBPZZHShDaXxBnheo0bD36', // api-key di tomtom
+            basePath: '../', // path di dove si trova la cartella con SDK di TomTom
+            center: Apt_location, // array che contiene coordinate di un punto specifico
+            zoom: 13 // livello di zoomata
+        });
+        // aggiungo un marker sulla mappa (map), nella posizione specificata nell'array Apt_location
+        var Apt_location_marker = tomtom.L.marker(Apt_location).addTo(map);
+
+        // aggiungo un popup sul marker, con una descrizione testuale della posizione
+        Apt_location_marker.bindPopup("BoolBnB, Via Pietro Rubens, 20146 Milano, Italia");
+
+    }
+}); // end document ready
+
+// ---------------------------- TOMTOM -----------------------------------------

@@ -67,7 +67,8 @@
     {{-- mappa, email --}}
     <div class="row">
         <div class="map card-body apt-show-row col-9 col-sm-5 col-lg-5">
-            <img src="https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=45.13327&lon=7.70791&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*" alt="">
+            {{-- <img src="https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=45.13327&lon=7.70791&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*" alt=""> --}}
+            <div id="map"></div>
         </div>
         <div class="email card-body apt-show-row col-9 col-sm-5 offset-sm-2 col-lg-5 offset-lg-2">
             <form>
@@ -80,11 +81,7 @@
                     <input type="textarea" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
                 </div>
             </form>
-
         </div>
-
-
-
     </div>
 
 </div>

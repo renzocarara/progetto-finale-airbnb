@@ -10961,6 +10961,11 @@ input[id^=service_] {
   width: 100%;
 }
 
+#map {
+  width: 100%;
+  height: 320px;
+}
+
 footer {
   margin-top: 100px;
 }

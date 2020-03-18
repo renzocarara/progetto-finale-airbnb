@@ -4,8 +4,10 @@
 <!-- CSRF Token -->
 <meta name="csrf-token" content="{{ csrf_token() }}">
 
-{{-- <title>{{ config('app.name', 'BoolBnB') }}</title> --}}
 <link rel="icon" href="{{ asset('images/team05_favicon.png') }}" type="image/png" />
+
+<!-- TomTom -->
+<script src="{{ asset('tomtom_sdk/tomtom.min.js') }}"></script>
 
 <!-- Scripts -->
 <script src="{{ asset('js/app.js') }}" defer></script>
@@ -16,6 +18,9 @@
 
 <!-- Fontawesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+
+<!-- TomTom -->
+<link rel="stylesheet" type="text/css" href="{{ asset('tomtom_sdk/map.css') }}" />
 
 <!-- Styles -->
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
