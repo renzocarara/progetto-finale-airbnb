@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Apartment;
 use App\Service;
 use App\Info;
+use App\Sponsorship;
 use Illuminate\Support\Facades\DB;
 // aggiungo questa 'use' per poter usare la funzione Storage()
 use Illuminate\Support\Facades\Storage;
@@ -31,11 +32,13 @@ class ApartmentController extends Controller
         $user_id = Auth::user()->id;
 
         // leggo dal DB tutti gli appartamenti associati all'utente loggato e ottengo una collection
-
         $apartments = Apartment::where('user_id', $user_id)->withTrashed()->get();
 
         // imappartamentoo la paginazione automatica di Laravel
         // $appartamentos = appartamento::paginate(4);
+
+        // $elenco_sponsor_attivi= [2 => true, 5 => false, 8=> false]
+
 
         // ritorno la view che visualizzerà una pagina con l'elenco degli appartamenti dell'utente loggato
         // l'elenco glielo passo come parametro
@@ -325,23 +328,47 @@ class ApartmentController extends Controller
      */
     public function destroy(Apartment $apartment)
     {
-        
+
         $apartment->delete();
         return redirect() -> route('admin.apartment.index');
 
     }
 
-      /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function restore($id)
     {
         Apartment::onlyTrashed()->where('id', $id)->restore();
-        
+
         return redirect() -> route('admin.apartment.index');
 
     }
+    // public function sponsor(Apartment $apartment)
+    public function sponsor(Apartment $apartment)
+    {
+
+        // leggo l'elenco dele sponsorship presenti nel DB, ottengo una collection
+        $sponsorships = Sponsorship::all();
+
+        return view('admin.sponsor', ['apartment' => $apartment, 'sponsorships' => $sponsorships]);
+    }
+
+
+    public function checkout(Request $request, Apartment $apartment)
+    {
+        //
+        $form_data_received=$request->all();
+
+        if(!empty($form_data_received['sponsorship_id'])) {
+            // uso l'attach per aggiungere la sponsorship ricevuta in $request
+            // NOTA: la sync() non funzionerebbe perchè cancellerebbe le eventuali sponsorizzazioni
+            // già presenti su quell'appartamento
+            $apartment->sponsorships()->attach($form_data_received['sponsorship_id']);
+
+        }
+
+        // serve passargli un parametro apartment??????! o ne facciamo a meno?
+        return view('admin.checkout', ['apartment' => $apartment]);
+
+    }
+
 }

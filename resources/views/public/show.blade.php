@@ -31,7 +31,6 @@
         <div class="card-body apt-show-row col-sm-12 col-lg-6">
             <h5 class="card-title">Descrizione</h5>
             <p class="card-text">{{$apartment->info->summary}}</p>
-            <p class="card-text">{{$apartment->info->summary}}</p>
         </div>
 
         <div class="card-body apt-show-row col-sm-12 col-lg-5 offset-lg-1">

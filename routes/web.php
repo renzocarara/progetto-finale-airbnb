@@ -60,6 +60,10 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::get('/account', 'HomeController@account')->name('account');
 
     Route::get('/apartment/restore/{id}', 'ApartmentController@restore')->name('apartment.restore');
+
+    Route::get('apartment/{apartment}/sponsor', 'ApartmentController@sponsor')->name('apartment.sponsor');
+    Route::post('apartment/{apartment}/checkout', 'ApartmentController@checkout')->name('apartment.checkout');
+
 });
 
 ?>

@@ -17,6 +17,8 @@ class CreateSponsorshipsTable extends Migration
             $table->bigIncrements('id');
 
             $table->string('type');
+            $table->float('price', 4, 2);
+            $table->integer('hours');
 
             $table->timestamps();
         });

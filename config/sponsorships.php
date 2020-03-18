@@ -4,9 +4,9 @@
 // in questo caso voglio popolare la tabella 'sponsorships'
 return [
     'sponsorships_table' => [
-        ['type' => 'base'], // 24ore
-        ['type' => 'double'], // 48ore
-        ['type' => 'premium'] // 144ore
+        ['type' => 'base', 'price' => 2.99, 'hours' => 24],
+        ['type' => 'double', 'price' => 5.99, 'hours' => 48],
+        ['type' => 'premium', 'price' => 9.99, 'hours' => 144] 
     ]
 ]
 ?>

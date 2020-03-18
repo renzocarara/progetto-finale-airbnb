@@ -51,6 +51,17 @@
                                 @method('DELETE')
                                 <input type="submit" class="btn btn-danger" value="Sospendi annuncio">
                             </form>
+{{-- if($elenco_sponsor_attivi['$apartment->id']==false) --}}
+{{-- if appartamento non ha sponsorizzazioni attive  (now() > data_fine_sponsorizzazione)
+     (bisogna leggere dal DB tabella apartments_sponsorship tutti i record con id=apartment_id) --}}
+
+                            <a class="btn btn-dark mt-1" href="{{ route('admin.apartment.sponsor', ['apartment' => $apartment->id ]) }}">
+                                Sponsorizza
+                            </a>
+
+{{-- else (ci sono sponsorizzazioni attive)
+visualizzo dicitura "SPONSORIZZAZIONI ATTIVE" e non permetto al'utenet di attivarne altre --}}
+
                             @else
                             <a class="btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}">
                                 Ripristina
