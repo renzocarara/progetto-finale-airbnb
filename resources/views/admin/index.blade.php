@@ -63,8 +63,9 @@
 
                             <a class="btn btn-dark mt-1" href="{{ route('admin.apartment.sponsor', ['apartment' => $apartment->id ]) }}">
                                 Sponsorizza
-                                {{-- Giada, per sponsorizza userei questa icona qui sotto --}}
+                                {{-- Giada, per 'sponsorizza' userei questa icona qui sotto --}}
                                 {{-- <i class="fas fa-award"></i> --}}
+                                {{-- le icone le ingrandirei un pochino aggiungendo la classe fa-lg oppure fa-2x --}}
                             </a>
 
 {{-- else (ci sono sponsorizzazioni attive)
