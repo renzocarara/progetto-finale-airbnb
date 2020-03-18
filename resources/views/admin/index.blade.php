@@ -40,20 +40,20 @@
                         <td>{{ $apartment->title }}</td>
                         <td>
                         @if(!$apartment->trashed())
-                            <a class="sm-margin btn btn-dark mt-1" href="{{ route('admin.apartment.show', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="visualizza">
+                            <a id="display_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.show', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="visualizza">
                                 {{-- Visualizza --}}
-                                <i class="far fa-eye"></i>
+                                <i class="far fa-eye fa-lg"></i>
                             </a>
-                            <a class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.edit', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="modifica">
+                            <a  id="modify_apt"class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.edit', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="modifica">
                             {{-- Modifica --}}
-                            <i class="fas fa-pen"></i>
+                            <i class="fas fa-pen fa-lg"></i>
                             </a>
-                            <form action="{{ route('admin.apartment.destroy', ['apartment' => $apartment->id]) }}" method="post">
+                            <form class="d-inline-block" action="{{ route('admin.apartment.destroy', ['apartment' => $apartment->id]) }}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button class="sm-margin btn btn-warning" type="submit" name="button" data-toggle="tooltip" data-placement="top" title="sospendi annuncio">
+                            <button  id="suspend_apt" class="sm-margin btn btn-secondary mt-1" type="submit" name="button" data-toggle="tooltip" data-placement="top" title="sospendi annuncio">
                                 {{-- Sospendi annuncio --}}
-                                <i class="fas fa-pause"></i>
+                                <i class="fas fa-pause fa-lg"></i>
                             </button>
 
                             </form>
@@ -61,20 +61,18 @@
 {{-- if appartamento non ha sponsorizzazioni attive  (now() > data_fine_sponsorizzazione)
      (bisogna leggere dal DB tabella apartments_sponsorship tutti i record con id=apartment_id) --}}
 
-                            <a class="btn btn-dark mt-1" href="{{ route('admin.apartment.sponsor', ['apartment' => $apartment->id ]) }}">
-                                Sponsorizza
-                                {{-- Giada, per 'sponsorizza' userei questa icona qui sotto --}}
-                                {{-- <i class="fas fa-award"></i> --}}
-                                {{-- le icone le ingrandirei un pochino aggiungendo la classe fa-lg oppure fa-2x --}}
+                            <a  id="sponsor_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.sponsor', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="sponsorizza">
+                                {{-- Sponsorizza --}}
+                                <i class="fas fa-award fa-lg"></i>
                             </a>
 
 {{-- else (ci sono sponsorizzazioni attive)
 visualizzo dicitura "SPONSORIZZAZIONI ATTIVE" e non permetto al'utenet di attivarne altre --}}
 
                             @else
-                                <a class="suspended sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}" data-toggle="tooltip" data-placement="top" title="ripristina">
+                                <a  id="display_apt"class="suspended sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}" data-toggle="tooltip" data-placement="top" title="ripristina">
                                     {{-- Ripristina --}}
-                                    <i class="fas fa-trash-restore-alt"></i>
+                                    <i class="fas fa-trash-restore-alt fa-lg"></i>
                                 </a>
                             @endif
                         </td>
