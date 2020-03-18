@@ -10894,6 +10894,10 @@ a.text-dark:focus {
   color: #1B3C59;
 }
 
+.sm-margin {
+  margin: 2px;
+}
+
 .bckg-green {
   background-color: #61CE4E;
 }
@@ -10975,7 +10979,12 @@ input[id^=service_] {
   height: 100%;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 766px) {
+  .card {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+
   .img-container {
     height: 270px;
   }
@@ -11005,6 +11014,10 @@ input[id^=service_] {
     margin-left: 15px;
     margin-right: 15px;
   }
+}
+
+table tbody tr td a.suspended {
+  background-color: red;
 }
 
 footer {
