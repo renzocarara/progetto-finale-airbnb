@@ -14,10 +14,12 @@ class HomeController extends Controller
 {
     public function index() {
 
-      $apartments = Apartment::all();
+        $apartments = Apartment::all()->shuffle();
+        //   seleziono dal db solo gli apt sponsorizzati
+        $apt_sponsor = Apartment::all()->shuffle();
 
 
-        return view('public.home', ["apartments"=>$apartments]);
+        return view('public.home', ["apartments"=>$apartments, 'apts_sponsor'=>$apt_sponsor]);
     }
 
     public function show($id) {
