@@ -10943,16 +10943,42 @@ input[id^=service_] {
 .jumbo {
   padding-top: 150px;
   padding-bottom: 150px;
-  background-image: url(/images/jumbo-loft.jpg?bbc197b458e125a4058d5277cc2bf9c3);
-  background-size: cover;
   margin-bottom: 100px;
 }
 
-.jumbo .white-form-container {
+.jumbo .blk-form-container {
   background-color: rgba(0, 0, 0, 0.7);
-  width: 60%;
   border-radius: 5px;
+  width: 60%;
   padding: 30px;
+}
+
+.jumbo .blk-form-container i {
+  margin-left: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .jumbo .blk-form-container {
+    width: 100%;
+  }
+}
+
+.apt-card:hover {
+  text-decoration: none;
+}
+
+.img-container {
+  height: 220px;
+}
+
+.img-container .img-apt-card {
+  height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .img-container {
+    height: 270px;
+  }
 }
 
 /* show style */
@@ -10961,9 +10987,24 @@ input[id^=service_] {
   width: 100%;
 }
 
+.apt-show-row {
+  margin-top: 15px;
+}
+
+.apt-show-row img {
+  width: 100%;
+}
+
 #map {
   width: 100%;
   height: 320px;
+}
+
+@media screen and (max-width: 575px) {
+  .apt-show-row {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
 }
 
 footer {

@@ -1,0 +1,17 @@
+.apt-card:hover {
+    text-decoration: none;
+}
+
+.img-container {
+    height: 220px;
+
+    .img-apt-card {
+        height: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .img-container {
+        height: 270px;
+    }
+}

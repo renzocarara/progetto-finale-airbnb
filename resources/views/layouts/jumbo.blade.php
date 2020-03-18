@@ -1,7 +1,7 @@
 <div class="jumbo jumbotron jumbotron-fluid">
     <div class="container">
         <div class="container">
-            <div class="white-form-container">
+            <div class="blk-form-container">
                 <div class="flex">
                     <h1 class="display-5 mb-3 green">Cerca il tuo appartamento</h1>
                 </div>
