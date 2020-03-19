@@ -6,6 +6,9 @@
 
 <link rel="icon" href="{{ asset('images/team05_favicon.png') }}" type="image/png" />
 
+<!-- Braintree -->
+<script src="https://js.braintreegateway.com/web/dropin/1.22.1/js/dropin.min.js"></script>
+
 <!-- TomTom -->
 <script src="{{ asset('tomtom_sdk/tomtom.min.js') }}"></script>
 

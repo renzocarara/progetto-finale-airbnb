@@ -351,18 +351,6 @@ class ApartmentController extends Controller
 
     public function checkout(Request $request, Apartment $apartment)
     {
-        //
-        $form_data_received=$request->all();
-
-        if(!empty($form_data_received['sponsorship_id'])) {
-            // uso l'attach per aggiungere la sponsorship ricevuta in $request
-            // NOTA: la sync() non funzionerebbe perchè cancellerebbe le eventuali sponsorizzazioni
-            // già presenti su quell'appartamento
-            $apartment->sponsorships()->attach($form_data_received['sponsorship_id']);
-
-        }
-
-        // serve passargli un parametro apartment??????! o ne facciamo a meno?
         return view('admin.checkout', ['apartment' => $apartment]);
 
     }

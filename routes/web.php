@@ -62,7 +62,10 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
     Route::get('/apartment/restore/{id}', 'ApartmentController@restore')->name('apartment.restore');
 
     Route::get('apartment/{apartment}/sponsor', 'ApartmentController@sponsor')->name('apartment.sponsor');
-    Route::post('apartment/{apartment}/checkout', 'ApartmentController@checkout')->name('apartment.checkout');
+
+    Route::get('apartment/{apartment}/checkout', 'ApartmentController@checkout')->name('apartment.checkout');
+
+    Route::post('/payment/{apartment}/make', 'PaymentsController@make')->name('payment.make');
 
 });
 

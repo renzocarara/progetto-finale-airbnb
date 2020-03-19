@@ -8,7 +8,11 @@
 <div class="container">
 
 <h1>Complimenti, pagamento effettuato</h1>
-<p>Il tuo appartamento apparirà in evidenza...</p>
+<p>Il tuo appartamento {{ $apartment->title}} apparirà in evidenza...</p>
+
+<a class="btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
+
+
 
 </div>
 @endsection

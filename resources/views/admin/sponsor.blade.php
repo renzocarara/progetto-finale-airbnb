@@ -16,24 +16,53 @@
     <div class="card-body">
         <h5 class="card-title">Seleziona la sponsorizzazione:</h5>
         <div class="card-text">
-            <form class="w-100" enctype="multipart/form-data" method="post" action="{{ route('admin.apartment.checkout',  ['apartment' => $apartment->id ]) }}">
-
+            <form class="w-100" method="post" action="{{ route('admin.payment.make', ['apartment' => $apartment->id ] ) }}">
                 @csrf
-
                 @foreach ($sponsorships as $sponsorship)
+
                     <label for="sponsor_{{ $sponsorship->id }}">
 
-                    <input id="sponsor_{{ $sponsorship->id }}" type="radio" name="sponsorship_id" value="{{ $sponsorship->id }}" >
+                    <input id="sponsor_{{ $sponsorship->id }}" type="radio" name="sponsorship_id" value="{{ $sponsorship->id }}" {{$loop->first ? "checked" : ""}} >
                         {{ $sponsorship->type }} - {{ $sponsorship->price }} € per {{ $sponsorship->hours }} ore di sponsorizzazione!  
                     </label>
                     <br>
                 @endforeach
 
-                <p>qui campi per CC, scadenza, CVV --->BRAIN TREE</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2">
+                            <div id="dropin-container"></div>
+                            <button type="submit" id="submit-button">Request payment method</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+           
+           <script>
+                var button = document.querySelector('#submit-button');
+                    
+                braintree.dropin.create({
 
-                <button type="submit" class="btn btn-success">Paga</button>
+                    authorization: '{{ Braintree_ClientToken::generate() }}',
 
-           </form>
+                    container: '#dropin-container'
+
+                    }, 
+                    function (createErr, instance) {
+                        
+                        $('#submit-button').click(function () {
+                            instance.requestPaymentMethod(function (err, payload) {
+                                $.get('{{ route("admin.payment.make",  ["apartment" => $apartment->id] ) }}', {payload}, function (response) {
+                                    if (response.success) {
+                                        alert('Payment successfull!');
+                                    } else {
+                                        alert('Payment failed');
+                                    }
+                                }, 'json');
+                            });
+                        });
+                });
+            </script>
        </div>
     </div>
 </div>
