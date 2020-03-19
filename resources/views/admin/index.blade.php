@@ -37,11 +37,9 @@
                     @forelse ($apartments as $apartment)
                     <tr>
                         <td>{{ $apartment->id }}</td>
-                        @if(!$apartment->trashed())
-                            <td>{{ $apartment->title }}</td>
-                        @else
-                            <td class="trashed_apt">{{ $apartment->title }}</td>
-                        @endif
+
+                        <td class="{{($apartment->trashed() ? 'trashed_apt' : '')}}">{{ $apartment->title }}</td>
+                        
                         <td>
                         @if(!$apartment->trashed())
                             <a id="display_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.show', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="visualizza">
