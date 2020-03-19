@@ -34,14 +34,10 @@ class ApartmentController extends Controller
         // leggo dal DB tutti gli appartamenti associati all'utente loggato e ottengo una collection
         $apartments = Apartment::where('user_id', $user_id)->withTrashed()->get();
 
-        // imappartamentoo la paginazione automatica di Laravel
-        // $appartamentos = appartamento::paginate(4);
-
-        // $elenco_sponsor_attivi= [2 => true, 5 => false, 8=> false]
+        // $elenco_sponsor_attivi= [2, 5, 8] // contiene gli id degli apt con sponsorizzazione
 
 
         // ritorno la view che visualizzerà una pagina con l'elenco degli appartamenti dell'utente loggato
-        // l'elenco glielo passo come parametro
         return view('admin.index', ['apartments' => $apartments]);
     }
 
