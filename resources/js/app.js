@@ -47,19 +47,22 @@ $(document).ready(function() {
     // altrimenti non faccio nulla
     if ($("#map").length) {
 
-        var Apt_location = [45.46738025, 9.14222736]; // coordinate [lat, lon]
+        var lat = $("#map").attr('data-lat');
+        var lon = $("#map").attr('data-lon');
+        var address = $("#map").attr('data-address');
+        var Apt_location = [lat, lon]; // coordinate [lat, lon]
 
         var map = tomtom.L.map('map', {
             key: 'BG5ffg9ACWQBPZZHShDaXxBnheo0bD36', // api-key di tomtom
             basePath: '../', // path di dove si trova la cartella con SDK di TomTom
-            center: Apt_location, // array che contiene coordinate di un punto specifico
-            zoom: 13 // livello di zoomata
+            center: Apt_location, // array che contiene le coordinate della posizione
+            zoom: 0 // livello di zoomata
         });
         // aggiungo un marker sulla mappa (map), nella posizione specificata nell'array Apt_location
         var Apt_location_marker = tomtom.L.marker(Apt_location).addTo(map);
 
-        // aggiungo un popup sul marker, con una descrizione testuale della posizione
-        Apt_location_marker.bindPopup("BoolBnB, Via Pietro Rubens, 20146 Milano, Italia");
+        // aggiungo un popup sul marker, con l'indirizzo della posizione
+        Apt_location_marker.bindPopup(address);
 
     }
 }); // end document ready

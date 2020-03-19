@@ -10,3 +10,5 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
+#aggiungo path per ignorare app.js sotto la cartella public/js
+/public/js/app.js

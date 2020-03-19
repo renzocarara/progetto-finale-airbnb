@@ -62,8 +62,10 @@
     {{-- mappa, email --}}
     <div class="row">
         <div class="map card-body apt-show-row col-sm-12 col-lg-6">
-            {{-- <img src="https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=45.13327&lon=7.70791&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*" alt=""> --}}
-            <div id="map"></div>
+            <div id="map" data-lat="{{ $apartment->lat }}" data-lon="{{ $apartment->lon }}"
+                          data-address="{{ $apartment->street }} {{ $apartment->number }},
+                                        {{ $apartment->zip }} {{ $apartment->city }}, {{ $apartment->state }}">
+            </div>
         </div>
         <div class="email card-body apt-show-row col-sm-12 col-lg-5 offset-lg-1">
             <form>
