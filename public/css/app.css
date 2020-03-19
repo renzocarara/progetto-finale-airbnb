@@ -10957,6 +10957,9 @@ input[id^=service_] {
 }
 
 .jumbo {
+  background-image: url(/images/jumbo-loft.jpg?bbc197b458e125a4058d5277cc2bf9c3);
+  background-size: cover;
+  background-position: center;
   padding-top: 150px;
   padding-bottom: 150px;
   margin-bottom: 100px;
@@ -10989,6 +10992,10 @@ input[id^=service_] {
 
 .img-container .img-apt-card {
   height: 100%;
+}
+
+.card-body {
+  color: black;
 }
 
 @media screen and (max-width: 766px) {
@@ -11060,6 +11067,57 @@ table tbody tr td a.suspended {
 .trashed_apt {
   font-style: italic;
   color: gray;
+}
+
+#display_apt,
+#modify_apt,
+#suspend_apt,
+#sponsor_apt {
+  width: 35px;
+  padding: 2px;
+}
+
+.frm-search {
+  margin-right: 30px;
+}
+
+.research {
+  margin-top: 30px;
+}
+
+.control-panel {
+  margin-top: 100px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.btn-container .btn-control {
+  width: 40%;
+}
+
+@media screen and (max-width: 529px) {
+  .btn-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .btn-container .btn-control {
+    width: 48%;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .btn-container {
+    flex-wrap: wrap;
+  }
+
+  .btn-container .btn-control {
+    margin-top: 10px;
+    width: 100%;
+  }
 }
 
 footer {

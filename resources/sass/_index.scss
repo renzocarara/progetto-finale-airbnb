@@ -32,3 +32,8 @@ table tbody tr td a.suspended {
     font-style: italic;
     color: gray;
 }
+
+#display_apt, #modify_apt, #suspend_apt, #sponsor_apt {
+    width: 35px;
+    padding: 2px;
+}

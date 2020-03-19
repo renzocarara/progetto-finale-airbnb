@@ -20,7 +20,7 @@ metodo che la richiama: 'index'  --}}
   <div class="row">
       <div class="col-12">
           <h1 class="d-inline-block mb-5">Tutti i tuoi appartamenti</h1>
-          <a class="btn btn-primary float-right" href="{{ route('admin.apartment.create') }}">Inserisci nuovo appartamento</a>
+          <a class="return-button btn btn-primary float-right" href="{{ route('admin.apartment.create') }}">Inserisci nuovo appartamento</a>
       </div>
   </div>
   <div class="row">
@@ -46,7 +46,7 @@ metodo che la richiama: 'index'  --}}
                               {{-- Visualizza --}}
                               <i class="far fa-eye fa-lg"></i>
                           </a>
-                          <a  id="modify_apt"class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.edit', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="modifica">
+                          <a  id="modify_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.edit', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="modifica">
                           {{-- Modifica --}}
                           <i class="fas fa-pen fa-lg"></i>
                           </a>

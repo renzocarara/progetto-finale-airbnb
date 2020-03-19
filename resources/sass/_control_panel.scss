@@ -1,0 +1,34 @@
+.control-panel {
+    margin-top: 100px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+
+    .btn-control {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 529px) {
+    .btn-container {
+        display: flex;
+        justify-content: space-between;
+
+        .btn-control {
+            width: 48%;
+        }
+    }
+}
+
+@media screen and (max-width: 365px) {
+    .btn-container {
+        flex-wrap: wrap;
+
+        .btn-control {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+}
