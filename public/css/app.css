@@ -11028,7 +11028,6 @@ input[id^=service_] {
   }
 }
 
-<<<<<<< Updated upstream
 table tbody tr td a.suspended {
   background-color: red;
   border-color: red;
@@ -11061,10 +11060,6 @@ table tbody tr td a.suspended {
 .trashed_apt {
   font-style: italic;
   color: gray;
-=======
-.btn-index {
-  width: 50px;
->>>>>>> Stashed changes
 }
 
 footer {
