@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-12">
             <h1 class="d-inline-block mb-3">Dettagli appartamento</h1>
-            <a class="btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
+            <a class="return-button btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
         </div>
     </div>
 

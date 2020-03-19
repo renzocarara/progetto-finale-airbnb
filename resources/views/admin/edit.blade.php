@@ -10,7 +10,7 @@
     <section class="container">
 
         <h1 class="d-inline-block">Modifica appartamento</h1>
-        <a class="btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
+        <a class="return-button btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
 
         <div>
 

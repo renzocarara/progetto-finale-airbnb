@@ -7,20 +7,32 @@
     color: $boolbnb_blue;
 }
 
-.sm-margin {
-    margin: 2px;
-}
-
 .bckg-green {
     background-color: $boolbnb_green;
+}
+
+.bckg-blue {
+    background-color: $boolbnb_blue;
 }
 
 .wht {
     color: white;
 }
 
+.sm-margin {
+    margin: 2px;
+}
+
+h1 {
+    margin-top: 30px;
+}
+
 h5 {
     color: $boolbnb_green;
+}
+
+.return-button {
+    margin-top: 30px;
 }
 
 .apt-img {

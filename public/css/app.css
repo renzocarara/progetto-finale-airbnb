@@ -10894,20 +10894,32 @@ a.text-dark:focus {
   color: #1B3C59;
 }
 
-.sm-margin {
-  margin: 2px;
-}
-
 .bckg-green {
   background-color: #61CE4E;
+}
+
+.bckg-blue {
+  background-color: #1B3C59;
 }
 
 .wht {
   color: white;
 }
 
+.sm-margin {
+  margin: 2px;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
 h5 {
   color: #61CE4E;
+}
+
+.return-button {
+  margin-top: 30px;
 }
 
 .apt-img {
@@ -11016,6 +11028,7 @@ input[id^=service_] {
   }
 }
 
+<<<<<<< Updated upstream
 table tbody tr td a.suspended {
   background-color: red;
   border-color: red;
@@ -11048,6 +11061,10 @@ table tbody tr td a.suspended {
 .trashed_apt {
   font-style: italic;
   color: gray;
+=======
+.btn-index {
+  width: 50px;
+>>>>>>> Stashed changes
 }
 
 footer {
