@@ -68,3 +68,23 @@ $(document).ready(function() {
 }); // end document ready
 
 // ---------------------------- TOMTOM -----------------------------------------
+
+// $(document).ready(function() {
+//     $("#prosegui").click(function() {
+//         // controlli sugli input di validita'
+//         //chiamata ajax
+//         $('#address input').attr('readonly', true);
+//         $('#infos').removeClass('d-none');
+//         $(this).addClass('d-none');
+//         $('#modifica').removeClass('d-none');
+//     });
+//
+//     $("#modifica").click(function() {
+//         // controlli sugli input di validita'
+//         //chiamata ajax
+//         $('#infos').addClass('d-none');
+//         $('#address input').attr('readonly', false);
+//         $(this).addClass('d-none');
+//         $('#prosegui').removeClass('d-none');
+//     });
+// });
