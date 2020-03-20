@@ -23,7 +23,7 @@
                     <label for="sponsor_{{ $sponsorship->id }}">
 
                     <input id="sponsor_{{ $sponsorship->id }}" type="radio" name="sponsorship_id" value="{{ $sponsorship->id }}" {{$loop->first ? "checked" : ""}} >
-                        {{ $sponsorship->type }} - {{ $sponsorship->price }} € per {{ $sponsorship->hours }} ore di sponsorizzazione!  
+                        {{ $sponsorship->type }} - {{ $sponsorship->price }} € per {{ $sponsorship->hours }} ore di sponsorizzazione!
                     </label>
                     <br>
                 @endforeach
@@ -32,25 +32,28 @@
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2">
                             <div id="dropin-container"></div>
-                            <button type="submit" id="submit-button">Request payment method</button>
+                            <button type="button" id="submit-button">Request payment method</button>
+                            <button class="d-none" type="submit" id="payment-button">Paga</button>
                         </div>
                     </div>
                 </div>
             </form>
-           
+
            <script>
                 var button = document.querySelector('#submit-button');
-                    
+
                 braintree.dropin.create({
 
                     authorization: '{{ Braintree_ClientToken::generate() }}',
 
                     container: '#dropin-container'
 
-                    }, 
+                    },
                     function (createErr, instance) {
-                        
+
                         $('#submit-button').click(function () {
+                            $(this).hide(); // nascondo bottoncino "Request"
+                            $("#payment-button").removeClass('d-none').addClass('d-block'); // faccio apparire il pulsante "Paga"
                             instance.requestPaymentMethod(function (err, payload) {
                                 $.get('{{ route("admin.payment.make",  ["apartment" => $apartment->id] ) }}', {payload}, function (response) {
                                     if (response.success) {
