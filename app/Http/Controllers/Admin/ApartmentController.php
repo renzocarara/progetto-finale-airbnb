@@ -113,7 +113,7 @@ class ApartmentController extends Controller
         $new_apartment->lon=112.67563423;
         $new_apartment->lat=45.90907856;
 
-        // imappartamentoo a zero, il valore iniziale delle visualizzazioni dell'appartmaneto
+        // metto a zero, il valore iniziale delle visualizzazioni dell'appartmaneto
         $new_apartment->views=0;
 
         // alla fine scrivo il nuovo oggetto nel DB

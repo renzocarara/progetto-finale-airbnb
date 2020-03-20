@@ -8,26 +8,20 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1>{{ __('messages.account_title') }}</h1>
+            <h1>Il tuo profilo</h1>
             <div class="card">
-                <div class="card-header">{{ __('messages.account_subtitle', ['name' => Auth::user()->name]) }}</div>
+                <div class="card-header">Ciao <strong class="green h5">{{ Auth::user()->name }}</strong> !</div>
 
                 <div class="card-body">
-                    <h2>{{ __('messages.account_details_title')}}</h2>
+                    <h3>Ecco i tuoi dettagli:</h3>
                     <ul>
-                        <li>{{ __('messages.firstname') }}: {{ $user_details->name }}</li>
-                        <li>{{ __('messages.lastname') }}: {{ $user_details->lastname }}</li>
-                        <li>Data di nascita: {{ $user_details->date_of_birth }}</li>
-                        <li>Registrato dal: {{ $user_details->created_at }}</li>
-                        {{-- visualizzo il API token, se esiste --}}
-                        {{-- <li>API token: {{ Auth::user()->api_token ?? '-'}}</li> --}}
+                        <li>Nome: <strong>{{ $user_details->name }}</strong></li>
+                        <li>Cognome: <strong>{{ $user_details->lastname }}</strong></li>
+                        <li>Data di nascita: <strong>{{ $user_details->date_of_birth }}</strong></li>
+                        <li>E-mail di autenticazione: <strong>{{ $user_details->email }}</strong></li>
+                        <li>Registrato dal: <strong>{{ $user_details->created_at }}</strong></li>
+
                     </ul>
-                     {{-- questo pulsante mim serve per generare un API token per l'utente --}}
-                     {{-- utilizzando il quale può accedere con successo alle chiamate API --}}
-                    {{-- <form action="{{ route('admin.token') }}" method="post">
-                        @csrf
-                        <input class="btn btn-primary" type="submit" value="Richiedi api_token">
-                    </form> --}}
                 </div>
             </div>
         </div>
