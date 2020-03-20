@@ -27,8 +27,8 @@ $factory->define(Apartment::class, function (Faker $faker) {
         'street' => $faker->streetName,
         'number' => $faker->numberBetween(1,99),
         'zip' => $faker->postcode,
-        'lon' => $faker->latitude($min = -90, $max = 90),
-        'lat' => $faker->longitude($min = -180, $max = 180),
+        'lat' => $faker->latitude($min = -90, $max = 90),
+        'lon' => $faker->longitude($min = -180, $max = 180),
         'views' => $faker->numberBetween(1,5000),
     ];
 });

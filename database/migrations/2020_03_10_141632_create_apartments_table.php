@@ -21,11 +21,11 @@ class CreateApartmentsTable extends Migration
             $table->string('state');
             $table->string('city');
             $table->string('street');
-            $table->integer('number');
+            $table->string('number'); // numero civico
             $table->integer('zip');
-            $table->float('lon',11,8);
-            $table->float('lat',11,8);
-            $table->integer('views');
+            $table->float('lon', 9,6);
+            $table->float('lat', 8,6);
+            $table->integer('views'); // numero visualizzazioni pagina
             $table->softDeletes();
 
             $table->foreign('user_id')->references('id')->on('users');

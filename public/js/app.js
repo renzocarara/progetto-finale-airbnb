@@ -49548,7 +49548,7 @@ $(document).ready(function () {
       // path di dove si trova la cartella con SDK di TomTom
       center: Apt_location,
       // array che contiene le coordinate della posizione
-      zoom: 0 // livello di zoomata
+      zoom: 12 // livello di zoomata
 
     }); // aggiungo un marker sulla mappa (map), nella posizione specificata nell'array Apt_location
 
