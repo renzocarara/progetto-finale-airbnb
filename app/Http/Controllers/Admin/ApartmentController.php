@@ -108,11 +108,6 @@ class ApartmentController extends Controller
         // scrivo nel nuovo oggetto apartment, l'id dell'utente
         $new_apartment->user_id=$user_id;
 
-        // qui dovrò calcolare lat e lon in base all'indirizzano
-        // per il momento valori cablati...
-        $new_apartment->lon=112.67563423;
-        $new_apartment->lat=45.90907856;
-
         // metto a zero, il valore iniziale delle visualizzazioni dell'appartmaneto
         $new_apartment->views=0;
 

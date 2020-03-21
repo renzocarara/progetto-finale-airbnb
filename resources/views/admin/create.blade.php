@@ -73,9 +73,7 @@
                             <label for="number">Numero civico:</label>
                             <input type="text" class="form-control" id="number" name="number" placeholder="inserisci il numero civico" value="{{ old('number') }}">
                         </div>
-                    {{-- </div> --}}
 
-                    {{-- <div class="row"> --}}
                         <div class="form-group col-8 col-sm-6 col-lg-5">
                             <label for="city">Città (max 50 caratteri):</label>
                             <input type="text" class="form-control" id="city" name="city" placeholder="inserisci la città" value="{{ old('city') }}">
@@ -90,6 +88,12 @@
                             <label for="state">Stato (max 50 caratteri):</label>
                             <input type="text" class="form-control" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state') }}">
                         </div>
+                    </div>
+
+                    {{-- campi nascosti per salvare i valori di latitudine e longitudine che arrivano da chiamata AJAX a TomTom --}}
+                    <div class="form-group">
+                      <input id="lat-input" type="hidden" name="lat" value="{{ old('lat') }}">
+                      <input id="lon-input" type="hidden" name="lon" value="{{ old('lon') }}">
                     </div>
 
                     <h5>Descrizione</h5>

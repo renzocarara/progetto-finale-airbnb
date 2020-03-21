@@ -49567,9 +49567,7 @@ $(document).ready(function () {
     $('#err-create-list').addClass('d-none').removeClass('d-block'); // se non ci sono errori attivo il modal per procedere con la creazione dell'appartamento
 
     if (checkCreateFormData()) {
-      //chiamata ajax potrei invece farla partire con un altro evento (es:tutti i campi address completi??)
-      // ci sarebbe però il problema che potrebbero partirmi più chiamate ajax e accavallarsi
-      // non ci sono erorri, visualizzo il modal che chiede all'utente se procedere o meno con la creazione
+      // non ci sono errori, visualizzo il modal che chiede all'utente se procedere o meno con la creazione
       $('#create-modal').modal();
     } else {
       // ci sono errori sui dati del form, visualizzo il modal che avvisa l'utente che ci sono errori
@@ -49577,11 +49575,52 @@ $(document).ready(function () {
 
       $(window).scrollTop(0);
     }
-  });
+  }); // end click event
+  // intercetto l'evento 'perdita del focus' sui campi della sezione indirizzo
+
+  $('#street, #number, #city, #state').on('focusout', function () {
+    console.log("focusout");
+    var apiKey = "BG5ffg9ACWQBPZZHShDaXxBnheo0bD36";
+    var street = $('#street').val().trim();
+    var number = $('#number').val().trim();
+    var city = $('#city').val().trim();
+    var state = $('#state').val().trim(); // verifico se sono "non nulli" tutti e 4 i campi che compongono l'indirizzo
+
+    if (street && number && city && state) {
+      // ho tutti i dati che compongono l'indirizzo per poter far partire la chiamta ajax verso TOMTOM
+      var baseUrl = "https://api.tomtom.com/";
+      var endPoint = "search/2/geocode/";
+      var apiUrl = baseUrl + endPoint + street + " " + number + " " + city + " " + state + ".json"; // esempio: https://api.tomtom.com/search/2/geocode/via%20carlo%20dolci%2032%20milano%20italia.json?countrySet=IT&key=*****
+
+      $.ajax({
+        type: "GET",
+        url: apiUrl,
+        data: {
+          "countrySet": 'IT',
+          "key": apiKey
+        },
+        success: function success(data) {
+          console.log(data); // recupero lat e lon dalla risposta che mi è arrivata
+
+          var lat = data.results[0].position.lat;
+          var lon = data.results[0].position.lon; // inserisco i valori di lat e lon nel form, in 2 campi 'input' nascosti
+
+          $('#lat-input').val(lat);
+          $('#lon-input').val(lon);
+          console.log($('#lat-input').val());
+          console.log($('#lon-input').val());
+        },
+        error: function error() {
+          alert("Indirizzo non trovato!");
+        }
+      }); // end ajax call
+    } // end if
+
+  }); // end focusout event
 }); // end document ready
 
 function checkCreateFormData() {
-  // controlli di validità sui dati del form
+  // controlli di validità sui dati del form della pagina 'create'
   // se c'e un errore rendo visibili gli alert d'errore
   // controllo che sia presente un valore e che sia diverso da "spazi"
   if (!$('#title').val().trim()) {
