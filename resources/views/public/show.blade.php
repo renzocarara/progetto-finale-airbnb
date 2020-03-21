@@ -10,7 +10,7 @@
     {{-- immagine, titolo e indirizzo --}}
     <div class="row">
         <div class="card apt-show-row col-sm-12 col-lg-6">
-            <img class="card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage//uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
+            <img class="card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
             <div class="card-body">
                 <h3 class="card-title">{{$apartment->title}}</h3>
             </div>
