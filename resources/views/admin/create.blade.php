@@ -14,7 +14,7 @@
 
         <div>
 
-            {{-- il blocco che segue serve per la validazione dei dati del form --}}
+            {{-- il blocco che segue serve per la validazione, 'lato server', dei dati del form --}}
             @if ($errors->any())
             <div class="alert alert-danger">
                 <ul>
@@ -25,8 +25,25 @@
             </div>
             @endif
 
+            {{-- il blocco che segue serve per la validazione, 'lato client', dei dati del form --}}
+            <div id="err-create-list" class="alert alert-danger d-none">
+                <ul>
+                    <li id="err-create-title" class="d-none">Il campo Titolo è obbligatorio.</li>
+                    <li id="err-create-street" class="d-none">Il campo Via/Piazza è obbligatorio.</li>
+                    <li id="err-create-number" class="d-none">Il campo Numero civico è obbligatorio.</li>
+                    <li id="err-create-city" class="d-none">Il campo Città è obbligatorio.</li>
+                    <li id="err-create-zip" class="d-none">Il campo CAP è obbligatorio.</li>
+                    <li id="err-create-state" class="d-none">Il campo Stato è obbligatorio.</li>
+                    <li id="err-create-summary" class="d-none">Il campo Decrizione dettagliata è obbligatorio.</li>
+                    <li id="err-create-room-num" class="d-none">Il campo Numero di stanze è obbligatorio.</li>
+                    <li id="err-create-beds-num" class="d-none">Il campo Numero di letti è obbligatorio.</li>
+                    <li id="err-create-bathroom" class="d-none">Il campo Numero di bagni è obbligatorio.</li>
+                    <li id="err-create-sq-mt" class="d-none">Il campo Superficie(mq) è obbligatorio.</li>
+                </ul>
+            </div>
+
             {{-- al submit chiamo la route 'store' che non corrisponde ad una view da visualizzare, --}}
-            {{-- ma è solo del codice che elabora i dati del form e crea un oggetto Post da scrivere nel DB --}}
+            {{-- ma è solo del codice che elabora i dati del form e crea un oggetto Apartment da scrivere nel DB --}}
 
             {{-- NOTA: perchè il form possa gestire anche i file bisogna aggiungere questo attributo:
                  enctype="multipart/form-data" --}}
@@ -143,8 +160,8 @@
                     {{--  ---------------- VALIDAZIONE DATI - GESTIONE ERRORI ------------------------------- --}}
 
 
-                    <button type="submit" class="btn btn-success">Crea</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
+                    @include('admin.create_modal')
+                    <button type="reset" class="btn btn-blue">Reset</button>
 
                 </div>
             </form>

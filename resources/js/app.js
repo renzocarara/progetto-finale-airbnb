@@ -69,22 +69,80 @@ $(document).ready(function() {
 
 // ---------------------------- TOMTOM -----------------------------------------
 
-// $(document).ready(function() {
-//     $("#prosegui").click(function() {
-//         // controlli sugli input di validita'
-//         //chiamata ajax
-//         $('#address input').attr('readonly', true);
-//         $('#infos').removeClass('d-none');
-//         $(this).addClass('d-none');
-//         $('#modifica').removeClass('d-none');
-//     });
-//
-//     $("#modifica").click(function() {
-//         // controlli sugli input di validita'
-//         //chiamata ajax
-//         $('#infos').addClass('d-none');
-//         $('#address input').attr('readonly', false);
-//         $(this).addClass('d-none');
-//         $('#prosegui').removeClass('d-none');
-//     });
-// });
+// ---------------------------- create blade -----------------------------------------
+$(document).ready(function() {
+    $("#create-btn").click(function() {
+        // nascondo eventuali messaggi d'errore precedentemente visualizzati
+        $('#err-create-list ul li').addClass('d-none').removeClass('d-block');
+        $('#err-create-list').addClass('d-none').removeClass('d-block');
+
+        // se non ci sono errori attivo il modal per procedere con la creazione dell'appartamento
+        if (checkCreateFormData()) {
+            //chiamata ajax potrei invece farla partire con un altro evento (es:tutti i campi address completi??)
+            // ci sarebbe però il problema che potrebbero partirmi più chiamate ajax e accavallarsi
+
+            // non ci sono erorri, visualizzo il modal che chiede all'utente se procedere o meno con la creazione
+            $('#create-modal').modal();
+
+        } else {
+            // ci sono errori sui dati del form, visualizzo il modal che avvisa l'utente che ci sono errori
+            $('#err-create-modal').modal();
+
+            // riporto lo scroll a inizio pagina per mostrare la lista errori all'utente
+            $(window).scrollTop(0);
+        }
+    });
+}); // end document ready
+
+function checkCreateFormData() {
+    // controlli di validità sui dati del form
+
+    // se c'e un errore rendo visibili gli alert d'errore
+    // controllo che sia presente un valore e che sia diverso da "spazi"
+    if (!$('#title').val().trim()) {
+        $('#err-create-title').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#state').val().trim()) {
+        $('#err-create-state').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#city').val().trim()) {
+        $('#err-create-city').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#street').val().trim()) {
+        $('#err-create-street').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#number').val().trim()) {
+        $('#err-create-number').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#zip').val().trim()) {
+        $('#err-create-zip').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#summary').val().trim()) {
+        $('#err-create-summary').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#room_num').val().trim()) {
+        $('#err-create-room-num').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#beds_num').val().trim()) {
+        $('#err-create-beds-num').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#bathroom_num').val().trim()) {
+        $('#err-create-bathroom').removeClass('d-none').addClass('d-block');
+    }
+    if (!$('#sq_mt').val().trim()) {
+        $('#err-create-sq-mt').removeClass('d-none').addClass('d-block');
+    }
+
+    if ($('#err-create-list ul li').hasClass('d-block')) {
+        // se c'è almeno un alert che è stato reso visibile, rendo visibile il div che li contiene
+        $('#err-create-list').removeClass('d-none').addClass('d-block');
+
+        // ritorno falso per indicare che ci sono errori
+        return false;
+    } else {
+        // non ci sono errori, ritorno true
+        return true;
+    }
+
+}
+// ---------------------------- create blade -----------------------------------------

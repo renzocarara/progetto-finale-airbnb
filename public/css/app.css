@@ -10959,10 +10959,8 @@ input[id^=service_] {
 }
 
 .btn-blue:hover {
-  background-color: #61CE4E;
-  color: #1B3C59;
-  font-weight: bold;
-  border: 2px solid #1B3C59;
+  color: white;
+  border: 2px solid #61CE4E;
   transition: 0.4s ease-in-out;
 }
 
@@ -10974,11 +10972,8 @@ input[id^=service_] {
 }
 
 .btn-green:hover {
-  background-color: #1B3C59;
-  color: #1B3C59;
   color: white;
-  font-weight: bold;
-  border: 2px solid #61CE4E;
+  border: 2px solid #1B3C59;
   transition: 0.4s ease-in-out;
 }
 

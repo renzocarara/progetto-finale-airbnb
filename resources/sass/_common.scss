@@ -1,4 +1,5 @@
 /* common style */
+
 .green {
     color: $boolbnb_green;
 }
@@ -69,10 +70,8 @@ input[id^="service_"] {
     border: 2px solid $boolbnb_blue;
 
     &:hover {
-        background-color: $boolbnb_green;
-        color: $boolbnb_blue;
-        font-weight: bold;
-        border: 2px solid $boolbnb_blue;
+        color: white;
+        border: 2px solid $boolbnb_green;
         transition: 0.4s ease-in-out;
     }
 }
@@ -84,11 +83,8 @@ input[id^="service_"] {
     border: 2px solid $boolbnb_green;
 
     &:hover {
-        background-color: $boolbnb_blue;
-        color: $boolbnb_blue;
         color: white;
-        font-weight: bold;
-        border: 2px solid $boolbnb_green;
+        border: 2px solid $boolbnb_blue;
         transition: 0.4s ease-in-out;
     }
 }
