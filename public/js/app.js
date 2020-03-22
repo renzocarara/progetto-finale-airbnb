@@ -49555,7 +49555,7 @@ $(document).ready(function () {
       // path di dove si trova la cartella con SDK di TomTom
       center: Apt_location,
       // array che contiene le coordinate della posizione
-      zoom: 12 // livello di zoomata
+      zoom: 14 // livello di zoomata
 
     }); // aggiungo un marker sulla mappa (map), nella posizione specificata nell'array Apt_location
 
@@ -49585,13 +49585,13 @@ $(document).ready(function () {
   }); // end click event
   // intercetto l'evento 'perdita del focus' sui campi della sezione indirizzo
 
-  $('#street, #number, #city, #state').on('focusout', function () {
+  $('.street-field, .number-field, .city-field, .state-field').on('focusout', function () {
     console.log("focusout");
     var apiKey = "BG5ffg9ACWQBPZZHShDaXxBnheo0bD36";
-    var street = $('#street').val().trim();
-    var number = $('#number').val().trim();
-    var city = $('#city').val().trim();
-    var state = $('#state').val().trim(); // verifico se sono "non nulli" tutti e 4 i campi che compongono l'indirizzo
+    var street = $('.street-field').val().trim();
+    var number = $('.number-field').val().trim();
+    var city = $('.city-field').val().trim();
+    var state = $('.state-field').val().trim(); // verifico se sono "non nulli" tutti e 4 i campi che compongono l'indirizzo
 
     if (street && number && city && state) {
       // ho tutti i dati che compongono l'indirizzo per poter far partire la chiamta ajax verso TOMTOM
@@ -49612,10 +49612,10 @@ $(document).ready(function () {
           var lat = data.results[0].position.lat;
           var lon = data.results[0].position.lon; // inserisco i valori di lat e lon nel form, in 2 campi 'input' nascosti
 
-          $('#lat-input').val(lat);
-          $('#lon-input').val(lon);
-          console.log($('#lat-input').val());
-          console.log($('#lon-input').val());
+          $('.lat-input').val(lat);
+          $('.lon-input').val(lon);
+          console.log($('.lat-input').val());
+          console.log($('.lon-input').val());
         },
         error: function error() {
           alert("Indirizzo non trovato!");
@@ -49634,23 +49634,23 @@ function checkCreateFormData() {
     $('#err-create-title').removeClass('d-none').addClass('d-block');
   }
 
-  if (!$('#state').val().trim()) {
+  if (!$('.state-field').val().trim()) {
     $('#err-create-state').removeClass('d-none').addClass('d-block');
   }
 
-  if (!$('#city').val().trim()) {
+  if (!$('.city-field').val().trim()) {
     $('#err-create-city').removeClass('d-none').addClass('d-block');
   }
 
-  if (!$('#street').val().trim()) {
+  if (!$('.street-field').val().trim()) {
     $('#err-create-street').removeClass('d-none').addClass('d-block');
   }
 
-  if (!$('#number').val().trim()) {
+  if (!$('.number-field').val().trim()) {
     $('#err-create-number').removeClass('d-none').addClass('d-block');
   }
 
-  if (!$('#zip').val().trim()) {
+  if (!$('.zip-field').val().trim()) {
     $('#err-create-zip').removeClass('d-none').addClass('d-block');
   }
 

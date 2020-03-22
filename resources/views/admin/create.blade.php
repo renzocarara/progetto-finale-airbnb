@@ -66,34 +66,34 @@
                     <div class="row apt-show-row">
                         <div class="form-group col-12 col-sm-9 col-lg-8">
                             <label for="street">Via/Piazza/etc (max 80 caratteri):</label>
-                            <input type="text" class="form-control" id="street" name="street" placeholder="inserisci l'indirizzo" value="{{ old('street') }}">
+                            <input type="text" class="form-control street-field" id="street" name="street" placeholder="inserisci l'indirizzo" value="{{ old('street') }}">
                         </div>
 
                         <div class="form-group col-5 col-sm-3 col-lg-2">
                             <label for="number">Numero civico:</label>
-                            <input type="text" class="form-control" id="number" name="number" placeholder="inserisci il numero civico" value="{{ old('number') }}">
+                            <input type="text" class="form-control number-field" id="number" name="number" placeholder="inserisci il numero civico" value="{{ old('number') }}">
                         </div>
 
                         <div class="form-group col-8 col-sm-6 col-lg-5">
                             <label for="city">Città (max 50 caratteri):</label>
-                            <input type="text" class="form-control" id="city" name="city" placeholder="inserisci la città" value="{{ old('city') }}">
+                            <input type="text" class="form-control city-field" id="city" name="city" placeholder="inserisci la città" value="{{ old('city') }}">
                         </div>
 
                         <div class="form-group col-4 col-sm-4 col-lg-3">
                             <label for="zip">CAP:</label>
-                            <input type="text" class="form-control" id="zip" name="zip" placeholder="inserisci il CAP" value="{{ old('zip') }}">
+                            <input type="text" class="form-control zip-field" id="zip" name="zip" placeholder="inserisci il CAP" value="{{ old('zip') }}">
                         </div>
 
                         <div class="form-group col-9 col-sm-6 col-lg-4">
                             <label for="state">Stato (max 50 caratteri):</label>
-                            <input type="text" class="form-control" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state') }}">
+                            <input type="text" class="form-control state-field" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state') }}">
                         </div>
                     </div>
 
                     {{-- campi nascosti per salvare i valori di latitudine e longitudine che arrivano da chiamata AJAX a TomTom --}}
                     <div class="form-group">
-                      <input id="lat-input" type="hidden" name="lat" value="{{ old('lat') }}">
-                      <input id="lon-input" type="hidden" name="lon" value="{{ old('lon') }}">
+                      <input class="lat-input" type="hidden" name="lat" value="{{ old('lat') }}">
+                      <input class="lon-input" type="hidden" name="lon" value="{{ old('lon') }}">
                     </div>
 
                     <h5>Descrizione</h5>
