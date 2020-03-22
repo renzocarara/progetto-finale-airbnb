@@ -78,7 +78,7 @@ visualizzo dicitura "SPONSORIZZAZIONI GIA' ATTIVA" e non permetto al'uteNTE di a
 
 {{-- @endif --}}
                             @else
-                                <a  id="display_apt"class="suspended sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}" data-toggle="tooltip" data-placement="top" title="ripristina">
+                                <a  id="display_apt"class="suspended sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}" data-toggle="tooltip" data-placement="top" title="ripristina annuncio">
                                     {{-- Ripristina --}}
                                     <i class="fas fa-trash-restore-alt fa-lg"></i>
                                 </a>
