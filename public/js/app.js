@@ -49530,7 +49530,14 @@ var app = new Vue({
 $(function () {
   $('[data-toggle="tooltip"]').tooltip();
 }); // ------------------ ATTIVAZIONE TOOLTIPs DI BOOSTRAP -------------------------
-// ---------------------------- TOMTOM -----------------------------------------
+// premendo il tasto ENTER mentre uno dei campi del form ha il focus,
+// si scatena l'evento "submit del form", per evitare questo
+// blocco la possibilità di invio del form premendo il tasto ENTER
+// l'invio deve avvenire solo con l'evento click sul bottone del modal corrispondente
+
+$(document).on("keydown", ":input:not(textarea)", function (event) {
+  return event.key != "Enter";
+}); // ---------------------------- TOMTOM -----------------------------------------
 
 $(document).ready(function () {
   // se l'id "map" è definito, vuol dire che mi trovo sulla pagina "show" dove devo visualizzare la mappa,

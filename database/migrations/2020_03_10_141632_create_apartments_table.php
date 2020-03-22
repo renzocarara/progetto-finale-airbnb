@@ -22,7 +22,7 @@ class CreateApartmentsTable extends Migration
             $table->string('city');
             $table->string('street');
             $table->string('number'); // numero civico
-            $table->integer('zip');
+            $table->string('zip');
             $table->float('lon', 9,6);
             $table->float('lat', 8,6);
             $table->integer('views'); // numero visualizzazioni pagina
