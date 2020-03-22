@@ -75,21 +75,21 @@ $(document).ready(function() {
 // ---------------------------- TOMTOM -----------------------------------------
 
 
-// ---------------------------- create blade -----------------------------------------
+// ---------------------------- create/edit blade -----------------------------------------
 $(document).ready(function() {
-    $("#create-btn").click(function() {
+    $("#submit-btn").click(function() {
         // nascondo eventuali messaggi d'errore precedentemente visualizzati
-        $('#err-create-list ul li').addClass('d-none').removeClass('d-block');
-        $('#err-create-list').addClass('d-none').removeClass('d-block');
+        $('#err-list ul li').addClass('d-none').removeClass('d-block');
+        $('#err-list').addClass('d-none').removeClass('d-block');
 
         // se non ci sono errori attivo il modal per procedere con la creazione dell'appartamento
-        if (checkCreateFormData()) {
+        if (checkFormData()) {
             // non ci sono errori, visualizzo il modal che chiede all'utente se procedere o meno con la creazione
-            $('#create-modal').modal();
+            $('#submit-modal').modal();
 
         } else {
             // ci sono errori sui dati del form, visualizzo il modal che avvisa l'utente che ci sono errori
-            $('#err-create-modal').modal();
+            $('#err-submit-modal').modal();
 
             // riporto lo scroll a inizio pagina per mostrare la lista errori all'utente
             $(window).scrollTop(0);
@@ -143,48 +143,48 @@ $(document).ready(function() {
 
 }); // end document ready
 
-function checkCreateFormData() {
-    // controlli di validità sui dati del form della pagina 'create'
+function checkFormData() {
+    // controlli di validità sui dati del form della pagina 'create' o 'edit'
 
     // se c'e un errore rendo visibili gli alert d'errore
-    // controllo che sia presente un valore e che sia diverso da "spazi"
+    // per ogni campo controllo che sia presente un valore e che sia diverso da "spazi"
     if (!$('#title').val().trim()) {
-        $('#err-create-title').removeClass('d-none').addClass('d-block');
+        $('#err-title').removeClass('d-none').addClass('d-block');
     }
     if (!$('.state-field').val().trim()) {
-        $('#err-create-state').removeClass('d-none').addClass('d-block');
+        $('#err-state').removeClass('d-none').addClass('d-block');
     }
     if (!$('.city-field').val().trim()) {
-        $('#err-create-city').removeClass('d-none').addClass('d-block');
+        $('#err-city').removeClass('d-none').addClass('d-block');
     }
     if (!$('.street-field').val().trim()) {
-        $('#err-create-street').removeClass('d-none').addClass('d-block');
+        $('#err-street').removeClass('d-none').addClass('d-block');
     }
     if (!$('.number-field').val().trim()) {
-        $('#err-create-number').removeClass('d-none').addClass('d-block');
+        $('#err-number').removeClass('d-none').addClass('d-block');
     }
     if (!$('.zip-field').val().trim()) {
-        $('#err-create-zip').removeClass('d-none').addClass('d-block');
+        $('#err-zip').removeClass('d-none').addClass('d-block');
     }
     if (!$('#summary').val().trim()) {
-        $('#err-create-summary').removeClass('d-none').addClass('d-block');
+        $('#err-summary').removeClass('d-none').addClass('d-block');
     }
     if (!$('#room_num').val().trim()) {
-        $('#err-create-room-num').removeClass('d-none').addClass('d-block');
+        $('#err-room-num').removeClass('d-none').addClass('d-block');
     }
     if (!$('#beds_num').val().trim()) {
-        $('#err-create-beds-num').removeClass('d-none').addClass('d-block');
+        $('#err-beds-num').removeClass('d-none').addClass('d-block');
     }
     if (!$('#bathroom_num').val().trim()) {
-        $('#err-create-bathroom').removeClass('d-none').addClass('d-block');
+        $('#err-bathroom').removeClass('d-none').addClass('d-block');
     }
     if (!$('#sq_mt').val().trim()) {
-        $('#err-create-sq-mt').removeClass('d-none').addClass('d-block');
+        $('#err-sq-mt').removeClass('d-none').addClass('d-block');
     }
 
-    if ($('#err-create-list ul li').hasClass('d-block')) {
+    if ($('#err-list ul li').hasClass('d-block')) {
         // se c'è almeno un alert che è stato reso visibile, rendo visibile il div che li contiene
-        $('#err-create-list').removeClass('d-none').addClass('d-block');
+        $('#err-list').removeClass('d-none').addClass('d-block');
 
         // ritorno falso per indicare che ci sono errori
         return false;
@@ -194,4 +194,4 @@ function checkCreateFormData() {
     }
 
 }
-// ---------------------------- create blade -----------------------------------------
+// ---------------------------- create/edit blade -----------------------------------------

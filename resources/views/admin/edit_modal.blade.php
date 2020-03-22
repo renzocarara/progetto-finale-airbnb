@@ -1,5 +1,5 @@
 <button id="submit-btn" type="button" class="btn btn-green">
-    Crea
+    Modifica
 </button>
 
 <!-- Modal per la conferma creazione appartamento -->
@@ -8,19 +8,19 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h5 class="modal-title" id="submit-modal-title">Creazione di un nuovo appartamento</h5>
+                <h5 class="modal-title" id="submit-modal-title">Modifica di un appartamento</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
             <div class="modal-body">
-                ATTENZIONE: stai per creare un nuovo annuncio, vuoi procedere?
+                ATTENZIONE: stai per modificare l'annuncio, vuoi procedere?
             </div>
 
             <div class="modal-footer">
                 <button id="proceed-btn" type="submit" class="btn btn-green">Procedi</button>
-                <button id="modify-btn" type="button" class="btn btn-blue" data-dismiss="modal">Modifica annuncio</button>
+                <button id="modify-btn" type="button" class="btn btn-blue" data-dismiss="modal">Rivedi annuncio</button>
             </div>
         </div>
     </div>

@@ -26,19 +26,19 @@
             @endif
 
             {{-- il blocco che segue serve per la validazione, 'lato client', dei dati del form --}}
-            <div id="err-create-list" class="alert alert-danger d-none">
+            <div id="err-list" class="alert alert-danger d-none">
                 <ul>
-                    <li id="err-create-title" class="d-none">Il campo Titolo è obbligatorio.</li>
-                    <li id="err-create-street" class="d-none">Il campo Via/Piazza è obbligatorio.</li>
-                    <li id="err-create-number" class="d-none">Il campo Numero civico è obbligatorio.</li>
-                    <li id="err-create-city" class="d-none">Il campo Città è obbligatorio.</li>
-                    <li id="err-create-zip" class="d-none">Il campo CAP è obbligatorio.</li>
-                    <li id="err-create-state" class="d-none">Il campo Stato è obbligatorio.</li>
-                    <li id="err-create-summary" class="d-none">Il campo Decrizione dettagliata è obbligatorio.</li>
-                    <li id="err-create-room-num" class="d-none">Il campo Numero di stanze è obbligatorio.</li>
-                    <li id="err-create-beds-num" class="d-none">Il campo Numero di letti è obbligatorio.</li>
-                    <li id="err-create-bathroom" class="d-none">Il campo Numero di bagni è obbligatorio.</li>
-                    <li id="err-create-sq-mt" class="d-none">Il campo Superficie(mq) è obbligatorio.</li>
+                    <li id="err-title" class="d-none">Il campo Titolo è obbligatorio.</li>
+                    <li id="err-street" class="d-none">Il campo Via/Piazza è obbligatorio.</li>
+                    <li id="err-number" class="d-none">Il campo Numero civico è obbligatorio.</li>
+                    <li id="err-city" class="d-none">Il campo Città è obbligatorio.</li>
+                    <li id="err-zip" class="d-none">Il campo CAP è obbligatorio.</li>
+                    <li id="err-state" class="d-none">Il campo Stato è obbligatorio.</li>
+                    <li id="err-summary" class="d-none">Il campo Decrizione dettagliata è obbligatorio.</li>
+                    <li id="err-room-num" class="d-none">Il campo Numero di stanze è obbligatorio.</li>
+                    <li id="err-beds-num" class="d-none">Il campo Numero di letti è obbligatorio.</li>
+                    <li id="err-bathroom" class="d-none">Il campo Numero di bagni è obbligatorio.</li>
+                    <li id="err-sq-mt" class="d-none">Il campo Superficie(mq) è obbligatorio.</li>
                 </ul>
             </div>
 

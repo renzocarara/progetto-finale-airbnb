@@ -25,8 +25,25 @@
             </div>
             @endif
 
-            {{-- al submit chiamo la route 'store' che non corrisponde ad una view da visualizzare, --}}
-            {{-- ma è solo del codice che elabora i dati del form e crea un oggetto Post da scrivere nel DB --}}
+            {{-- il blocco che segue serve per la validazione, 'lato client', dei dati del form --}}
+            <div id="err-list" class="alert alert-danger d-none">
+                <ul>
+                    <li id="err-title" class="d-none">Il campo Titolo è obbligatorio.</li>
+                    <li id="err-street" class="d-none">Il campo Via/Piazza è obbligatorio.</li>
+                    <li id="err-number" class="d-none">Il campo Numero civico è obbligatorio.</li>
+                    <li id="err-city" class="d-none">Il campo Città è obbligatorio.</li>
+                    <li id="err-zip" class="d-none">Il campo CAP è obbligatorio.</li>
+                    <li id="err-state" class="d-none">Il campo Stato è obbligatorio.</li>
+                    <li id="err-summary" class="d-none">Il campo Decrizione dettagliata è obbligatorio.</li>
+                    <li id="err-room-num" class="d-none">Il campo Numero di stanze è obbligatorio.</li>
+                    <li id="err-beds-num" class="d-none">Il campo Numero di letti è obbligatorio.</li>
+                    <li id="err-bathroom" class="d-none">Il campo Numero di bagni è obbligatorio.</li>
+                    <li id="err-sq-mt" class="d-none">Il campo Superficie(mq) è obbligatorio.</li>
+                </ul>
+            </div>
+
+            {{-- al submit chiamo la route 'update' che non corrisponde ad una view da visualizzare, --}}
+            {{-- ma è solo del codice che elabora i dati del form e crea un oggetto apartment da scrivere nel DB --}}
 
             {{-- NOTA: perchè il form possa gestire anche i file bisogna aggiungere questo attributo:
                  enctype="multipart/form-data" --}}
@@ -50,28 +67,34 @@
                     <div class="row apt-show-row">
                         <div class="form-group col-12 col-sm-9 col-lg-8">
                             <label for="street">Via/Piazza/etc (max 80 caratteri):</label>
-                            <input type="text" class="form-control" id="street" name="street" placeholder="inserisci l'indirizzo" value="{{ old('street', $apartment->street ) }}">
+                            <input type="text" class="form-control street-field" id="street" name="street" placeholder="inserisci l'indirizzo" value="{{ old('street', $apartment->street ) }}">
                         </div>
 
                         <div class="form-group col-5 col-sm-3 col-lg-2">
                             <label for="number">Numero civico:</label>
-                            <input type="text" class="form-control" id="number" name="number" placeholder="inserisci il numero civico" value="{{ old('number', $apartment->number ) }}">
+                            <input type="text" class="form-control number-field" id="number" name="number" placeholder="inserisci il numero civico" value="{{ old('number', $apartment->number ) }}">
                         </div>
 
                         <div class="form-group col-8 col-sm-6 col-lg-5">
                             <label for="city">Città (max 50 caratteri):</label>
-                            <input type="text" class="form-control" id="city" name="city" placeholder="inserisci la città" value="{{ old('city', $apartment->city ) }}">
+                            <input type="text" class="form-control city-field" id="city" name="city" placeholder="inserisci la città" value="{{ old('city', $apartment->city ) }}">
                         </div>
 
                         <div class="form-group col-4 col-sm-4 col-lg-3">
                             <label for="zip">CAP:</label>
-                            <input type="text" class="form-control" id="zip" name="zip" placeholder="inserisci il CAP" value="{{ old('zip', $apartment->zip ) }}">
+                            <input type="text" class="form-control zip-field" id="zip" name="zip" placeholder="inserisci il CAP" value="{{ old('zip', $apartment->zip ) }}">
                         </div>
 
                         <div class="form-group col-9 col-sm-6 col-lg-4">
                             <label for="state">Stato (max 50 caratteri):</label>
-                            <input type="text" class="form-control" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state', $apartment->state ) }}">
+                            <input type="text" class="form-control state-field" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state', $apartment->state ) }}">
                         </div>
+                    </div>
+
+                    {{-- campi nascosti per salvare i valori di latitudine e longitudine che arrivano da chiamata AJAX a TomTom --}}
+                    <div class="form-group">
+                      <input class="lat-input" type="hidden" name="lat" value="{{ old('lat', $apartment->lat) }}">
+                      <input class="lon-input" type="hidden" name="lon" value="{{ old('lon', $apartment->lon) }}">
                     </div>
 
                     <h5>Descrizione</h5>
@@ -161,8 +184,9 @@
                     {{--  ---------------- VALIDAZIONE DATI - GESTIONE ERRORI ------------------------------- --}}
 
 
-                    <button type="submit" class="btn btn-success">Modifica</button>
-                    <button type="reset" class="btn btn-warning">Reset</button>
+                    {{-- <button type="submit" class="btn btn-success">Modifica</button> --}}
+                    @include('admin.edit_modal')
+                    <button type="reset" class="btn btn-blue">Reset</button>
 
                 </div>
             </form>
