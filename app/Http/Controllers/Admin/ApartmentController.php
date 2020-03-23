@@ -199,10 +199,17 @@ class ApartmentController extends Controller
     // public function show(Apartment $apartment, Info $info)
     public function show(Apartment $apartment)
     {
-        // ritorno la view show passandogli la variabile $apartment ricevuta in ingresso
-        return view('admin.show',['apartment' => $apartment]);
-    }
+        if (Auth::user()->id == $apartment->user_id){
+            // l'appartamento da aggiornare appartiene all'utente attualmente loggato, l'update è permesso
 
+            // ritorno la view show passandogli la variabile $apartment ricevuta in ingresso
+            return view('admin.show',['apartment' => $apartment]);
+        } else {
+            // l'appartamento in aggiornamento non appartiene all'utente loggato
+            // visualizzo una pagina che lo informa
+             return view('admin.not_authorized');
+        }
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -212,12 +219,20 @@ class ApartmentController extends Controller
     public function edit(Apartment $apartment)
     {
         //
-        // leggo l'elenco  dei servizi presenti nel DB, ottengo una collection
-        $services = Service::all();
+        if (Auth::user()->id == $apartment->user_id){
+            // l'appartamento da aggiornare appartiene all'utente attualmente loggato, l'update è permesso
 
-        // gli passo anche l'elenco con i nomi dei servizi associabili all'appartemento
-        return view('admin.edit',['apartment' => $apartment, 'services' => $services ]);
+            // leggo l'elenco  dei servizi presenti nel DB, ottengo una collection
+            $services = Service::all();
 
+            // gli passo anche l'elenco con i nomi dei servizi associabili all'appartemento
+            return view('admin.edit',['apartment' => $apartment, 'services' => $services ]);
+
+        } else {
+            // l'appartamento in aggiornamento non appartiene all'utente loggato
+            // visualizzo una pagina che lo informa
+             return view('admin.not_authorized');
+        }
     }
 
     /**
@@ -231,7 +246,7 @@ class ApartmentController extends Controller
     {
         //
         if (Auth::user()->id == $apartment->user_id){
-            // l'appartamento da aggiornare appartiene al'utente attualmente loggato, l'update è permesso
+            // l'appartamento da aggiornare appartiene all'utente attualmente loggato, l'update è permesso
 
             // ----------------------------- VALIDAZIONE DATI -------------------------------------
             // questi sono tutti i dati che mi arrivano, sui quali applico delle regole di validazione
