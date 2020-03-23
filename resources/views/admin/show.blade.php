@@ -8,15 +8,21 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <h1 class="d-inline-block mb-3">Dettagli appartamento</h1>
-            <a class="return-button btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">I tuoi appartamenti</a>
+            <div class="d-flex">
+                <h1 class="d-inline-block mb-3">Dettagli appartamento</h1>
+            </div>
+            <div class="btn-show-container flex-row-reverse">
+                <a class="show-btn btn btn-primary float-right" href="#">Richieste</a>
+                <a class="show-btn btn btn-primary float-right" href="#">Statistiche</a>
+                <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">Elenco appartamenti</a>
+            </div>
         </div>
     </div>
 
     {{-- immagine e titolo --}}
     <div class="row">
-        <div class="card apt-show-row ">
-            <img class="card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
+        <div class="card-apt-show-sm card-apt-show-caract card-apt-show-space col-sm-12">
+            <img class="card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/')}}" alt="{{$apartment->title}}">
             <div class="card-body">
                 <h3 class="card-title">{{$apartment->title}}</h3>
             </div>
@@ -24,11 +30,11 @@
     </div>
 
     {{-- indirizzo --}}
-    <div class="row apt-show-row">
-        <div class="card-body">
+    <div class="row">
+        <div class="card-apt-show-sm card-body card-apt-show-caract card-apt-show-space col-sm-12">
             <h5 class="card-title">Indirizzo</h5>
             <p class="card-text">
-                <ul class="list-group col-6">
+                <ul class="list-group col-12 col-md-6 col-lg-5">
                 <li class="list-group-item">{{$apartment->street}}, {{$apartment->number}}</li>
                 <li class="list-group-item">{{$apartment->zip}} {{$apartment->city}}, {{$apartment->state}}</li>
             </ul>
@@ -37,15 +43,15 @@
     </div>
 
     {{-- descrizione, spazi e servizi --}}
-    <div class="row">
-        <div class="card-body apt-show-row col-9 col-sm-5 col-lg-6">
+    <div class="row margin-bottom-xl">
+        <div class="card-apt-show-sm card-body card-apt-show-caract col-sm-5 col-lg-6">
             <h5 class="card-title">Descrizione:</h5>
             <p class="card-text">{{$apartment->info->summary}}</p>
             <p class="card-text">{{$apartment->info->summary}}</p>
         </div>
 
-        <div class="card-body apt-show-row col-9 col-sm-5 offset-sm-2 col-lg-5 offset-lg-1">
-            <div class="">
+        <div class="card-apt-show-sm card-body card-apt-show-caract col-sm-5 offset-sm-2 col-lg-5 offset-lg-1">
+            <div>
                 <h5 class="card-title">Spazi</h5>
                 <p class="card-text">
                     <ul class="list-group">

@@ -1,34 +1,53 @@
+.bckg-container {
+    background-image: image("public/storage/background/apt-collage.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.blk-container {
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 5px;
+    width: 80%;
+    padding: 30px;
+}
+
 .control-panel {
-    margin-top: 100px;
+    padding-top: 150px;
+    padding-bottom: 150px;
 }
 
-.btn-container {
-    display: flex;
-    justify-content: space-around;
+.eye i {
+    color: $boolbnb_green;
+}
 
-    .btn-control {
-        width: 40%;
+.add i {
+    color: $boolbnb_blue;
+}
+
+.eye, .add {
+    background-color: white;
+    border-radius: 3px;
+    width: 46px;
+    height: 46px;
+    padding-top: 9px;
+}
+
+i {
+    font-size: 18px;
+    text-align: center;
+}
+
+.add {
+    margin-left: 30px;
+}
+
+@media screen and (max-width: 332px) {
+    .blk-container {
+        width: 90%;
+        padding: 10px;
     }
-}
 
-@media screen and (max-width: 529px) {
-    .btn-container {
-        display: flex;
-        justify-content: space-between;
-
-        .btn-control {
-            width: 48%;
-        }
-    }
-}
-
-@media screen and (max-width: 365px) {
-    .btn-container {
-        flex-wrap: wrap;
-
-        .btn-control {
-            margin-top: 10px;
-            width: 100%;
-        }
+    .add {
+        margin-left: 15px;
     }
 }

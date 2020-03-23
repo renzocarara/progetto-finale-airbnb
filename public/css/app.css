@@ -10910,6 +10910,14 @@ a.text-dark:focus {
   margin: 2px;
 }
 
+.margin-bottom-xl {
+  margin-bottom: 100px;
+}
+
+.margin-top-xl {
+  margin-top: 100px;
+}
+
 h1 {
   margin-top: 30px;
 }
@@ -10920,6 +10928,7 @@ h5 {
 
 .return-button {
   margin-top: 30px;
+  margin-left: 15px;
 }
 
 .apt-img {
@@ -10939,16 +10948,14 @@ input[id^=service_] {
   margin-left: 25px;
 }
 
-.apt-show-row {
+.card-apt-show-caract {
   border: 1px solid #61CE4E;
   border-radius: 5px;
   margin-bottom: 15px;
 }
 
-.btn-blue {
-  background-color: #1B3C59;
-  color: white;
-  border: 2px solid #61CE4E;
+.card-apt-show-space {
+  margin-left: 0;
 }
 
 .btn-blue {
@@ -10989,7 +10996,7 @@ input[id^=service_] {
 }
 
 .jumbo {
-  background-image: url(/images/jumbo-loft.jpg?bbc197b458e125a4058d5277cc2bf9c3);
+  background-image: image("public/storage/background/jumbo-loft.jpg");
   background-size: cover;
   background-position: center;
   padding-top: 150px;
@@ -11047,12 +11054,17 @@ input[id^=service_] {
   width: 100%;
 }
 
-.apt-show-row {
+.apt-show {
+  border-radius: 5px;
   margin-top: 15px;
 }
 
-.apt-show-row img {
+.apt-show img {
   width: 100%;
+}
+
+.address {
+  margin-top: 30px;
 }
 
 #map {
@@ -11064,6 +11076,41 @@ input[id^=service_] {
   .apt-show-row {
     margin-left: 15px;
     margin-right: 15px;
+  }
+}
+
+.show-btn {
+  margin-left: 10px;
+  margin-bottom: 30px;
+  width: 200px;
+}
+
+@media screen and (max-width: 991px) {
+  .show-btn {
+    margin-left: 10px;
+    margin-bottom: 30px;
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .show-btn {
+    margin-left: 5px;
+    width: 32%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .card-apt-show-sm {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+}
+
+@media screen and (max-width: 524px) {
+  .show-btn {
+    width: 70%;
+    margin-bottom: 10px;
   }
 }
 
@@ -11117,42 +11164,58 @@ table tbody tr td a.suspended {
   margin-top: 30px;
 }
 
+.bckg-container {
+  background-image: image("public/storage/background/apt-collage.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.blk-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 5px;
+  width: 80%;
+  padding: 30px;
+}
+
 .control-panel {
-  margin-top: 100px;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
-.btn-container {
-  display: flex;
-  justify-content: space-around;
+.eye i {
+  color: #61CE4E;
 }
 
-.btn-container .btn-control {
-  width: 40%;
+.add i {
+  color: #1B3C59;
 }
 
-@media screen and (max-width: 529px) {
-  .btn-container {
-    display: flex;
-    justify-content: space-between;
+.eye,
+.add {
+  background-color: white;
+  border-radius: 3px;
+  width: 46px;
+  height: 46px;
+  padding-top: 9px;
+}
+
+i {
+  font-size: 18px;
+  text-align: center;
+}
+
+.add {
+  margin-left: 30px;
+}
+
+@media screen and (max-width: 332px) {
+  .blk-container {
+    width: 90%;
+    padding: 10px;
   }
 
-  .btn-container .btn-control {
-    width: 48%;
+  .add {
+    margin-left: 15px;
   }
-}
-
-@media screen and (max-width: 365px) {
-  .btn-container {
-    flex-wrap: wrap;
-  }
-
-  .btn-container .btn-control {
-    margin-top: 10px;
-    width: 100%;
-  }
-}
-
-footer {
-  margin-top: 100px;
 }
 

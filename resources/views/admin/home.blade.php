@@ -5,25 +5,36 @@
 
 
 @section('content')
-<div class="container">
-    <div class="control-panel row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Pannello di controllo</div>
+<div class="bckg-container">
+    <div class="container">
+        <div class="control-panel row justify-content-center">
+            <div class="col-md-8 d-flex">
+                <div class="card blk-container m-auto">
+                    <div class="card-header wht">Pannello di controllo</div>
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success" role="alert">
+                                {{ session('status') }}
+                            </div>
+                        @endif
+
+                        <h2 class="wht">Benvenuto <strong>{{ Auth::user()->name }}</strong>! </h2>
+                        <p class="wht">Ti sei autenticato con la seguente e-mail:  <strong>{{ Auth::user()->email }}</strong></p>
+                        <div class="t">Cosa puoi fare:</p>
+                        <div class="btn-container">
+                            <p class="wht">Cosa puoi fare:</p>
+                            <div>
+                                <a class="btn eye" href="{{ route('admin.apartment.index') }}">
+                                    {{-- Visualizza i tuoi appartamenti --}}
+                                    <i class="far fa-eye fa-lg"></i>
+                                </a>
+                                <a class="btn add" href="{{ route('admin.apartment.create') }}">
+                                    {{-- Inserisci nuovi appartamenti --}}
+                                    <i class="fas fa-plus"></i>
+                                </a>
+                            </div>
                         </div>
-                    @endif
-
-                    <h2>Benvenuto <strong>{{ Auth::user()->name }}</strong>! </h2>
-                    <p>Ti sei autenticato con la seguente e-mail:  <strong>{{ Auth::user()->email }}</strong></p>
-                    <p>Cosa puoi fare:</p>
-                    <div class="btn-container">
-                        <a class="btn-control btn btn-success" href="{{ route('admin.apartment.index') }}">Visualizza i tuoi appartamenti</a>
-                        <a class="btn-control btn btn-primary" href="{{ route('admin.apartment.create') }}">Inserisci nuovi appartamenti</a>
                     </div>
                 </div>
             </div>

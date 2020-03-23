@@ -20,7 +20,7 @@
     <div class="row">
         <div class="col-12">
             <h1 class="d-inline-block mb-5">Tutti i tuoi appartamenti</h1>
-            <a class="btn btn-primary float-right" href="{{ route('admin.apartment.create') }}">Inserisci nuovo appartamento</a>
+            <a class="btn btn-primary float-right mt-4" href="{{ route('admin.apartment.create') }}">Inserisci nuovo appartamento</a>
         </div>
     </div>
     <div class="row">

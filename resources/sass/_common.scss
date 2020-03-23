@@ -24,6 +24,14 @@
     margin: 2px;
 }
 
+.margin-bottom-xl {
+    margin-bottom: 100px;
+}
+
+.margin-top-xl {
+    margin-top: 100px;
+}
+
 h1 {
     margin-top: 30px;
 }
@@ -34,6 +42,7 @@ h5 {
 
 .return-button {
     margin-top: 30px;
+    margin-left: 15px;
 }
 
 .apt-img {
@@ -51,16 +60,14 @@ input[id^="service_"] {
     margin-left: 25px;
 }
 
-.apt-show-row {
+.card-apt-show-caract {
     border: 1px solid $boolbnb_green;
     border-radius: 5px;
     margin-bottom: 15px;
 }
 
-.btn-blue {
-    background-color: $boolbnb_blue;
-    color: white;
-    border: 2px solid $boolbnb_green;
+.card-apt-show-space {
+    margin-left: 0;
 }
 
 .btn-blue {

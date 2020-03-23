@@ -8,32 +8,32 @@
 <div class="container">
 
     {{-- immagine, titolo e indirizzo --}}
-    <div class="row">
-        <div class="card apt-show-row col-sm-12 col-lg-6">
+    <div class="row margin-top-xl">
+        <div class="card apt-show col-sm-12 col-lg-6">
             <img class="card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
-            <div class="card-body">
-                <h3 class="card-title">{{$apartment->title}}</h3>
-            </div>
         </div>
-        <div class="card-body apt-show-row col-sm-12 col-lg-5 offset-lg-1">
-            <h5 class="card-title">Indirizzo</h5>
-            <p class="card-text">
-                <ul class="list-group">
-                <li class="list-group-item">{{$apartment->street}}, {{$apartment->number}}</li>
-                <li class="list-group-item">{{$apartment->city}}, {{$apartment->zip}}, {{$apartment->state}}</li>
-            </ul>
-            </p>
+        <div class="apt-show card card-body col-sm-12 col-lg-5 offset-lg-1">
+            <h2>{{$apartment->title}}</h2>
+            <div class="address">
+                <h5 class="card-title">Indirizzo</h5>
+                <p class="card-text">
+                    <ul class="list-group">
+                    <li class="list-group-item">{{$apartment->street}}, {{$apartment->number}}</li>
+                    <li class="list-group-item">{{$apartment->city}}, {{$apartment->zip}}, {{$apartment->state}}</li>
+                </ul>
+                </p>
+            </div>
         </div>
     </div>
 
     {{-- descrizione, spazi e servizi --}}
     <div class="row">
-        <div class="card-body apt-show-row col-sm-12 col-lg-6">
+        <div class="card apt-show card-body col-sm-12 col-lg-6">
             <h5 class="card-title">Descrizione</h5>
             <p class="card-text">{{$apartment->info->summary}}</p>
         </div>
 
-        <div class="card-body apt-show-row col-sm-12 col-lg-5 offset-lg-1">
+        <div class="apt-show card card-body col-sm-12 col-lg-5 offset-lg-1">
             <div class="">
                 <h5 class="card-title">Spazi</h5>
                 <p class="card-text">
@@ -60,14 +60,14 @@
     </div>
 
     {{-- mappa, email --}}
-    <div class="row">
-        <div class="map card-body apt-show-row col-sm-12 col-lg-6">
+    <div class="row margin-bottom-xl">
+        <div class="map card-body apt-show col-sm-12 col-lg-6">
             <div id="map" data-lat="{{ $apartment->lat }}" data-lon="{{ $apartment->lon }}"
                           data-address="{{ $apartment->street }} {{ $apartment->number }},
                                         {{ $apartment->zip }} {{ $apartment->city }}, {{ $apartment->state }}">
             </div>
         </div>
-        <div class="email card-body apt-show-row col-sm-12 col-lg-5 offset-lg-1">
+        <div class="email card card-body apt-show col-sm-12 col-lg-5 offset-lg-1">
             <form>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Indirizzo e-mail</label>
@@ -75,8 +75,11 @@
                 </div>
                 <div class="form-group">
                     <label for="exampleFormControlInput1">Messaggio:</label>
-                    <textarea name="email-text" rows="7" class="form-control" placeholder="Inserisci il testo dell'e-mail..."></textarea>
+                    <textarea name="email-text" rows="6" class="form-control" placeholder="Inserisci il testo dell'e-mail..."></textarea>
                 </div>
+                <button class="float-right btn btn-success" type="submit" name="invia" value="invia">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
             </form>
         </div>
     </div>
