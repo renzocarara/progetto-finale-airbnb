@@ -10996,7 +10996,7 @@ input[id^=service_] {
 }
 
 .jumbo {
-  background-image: image("public/storage/background/jumbo-loft.jpg");
+  background-image: url(/images/jumbo-loft.jpg?bbc197b458e125a4058d5277cc2bf9c3);
   background-size: cover;
   background-position: center;
   padding-top: 150px;
@@ -11165,7 +11165,7 @@ table tbody tr td a.suspended {
 }
 
 .bckg-container {
-  background-image: image("public/storage/background/apt-collage.jpg");
+  background-image: url(/images/apt-collage.jpg?3277902420b364c51c2c3c86ff7aaaf2);
   background-size: cover;
   background-position: center;
 }

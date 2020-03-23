@@ -163,9 +163,11 @@
                     non sia presente un valore "old" per quel campo, cioè l'utente non aveva valorizzato il campo  --}}
                     {{--  ---------------- VALIDAZIONE DATI - GESTIONE ERRORI ------------------------------- --}}
 
+                    <div class="margin-bottom-xl">
+                        <button type="reset" class="btn btn-blue">Reset</button>
+                        @include('admin.create_modal')
+                    </div>
 
-                    @include('admin.create_modal')
-                    <button type="reset" class="btn btn-blue">Reset</button>
 
                 </div>
             </form>

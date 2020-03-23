@@ -22,7 +22,7 @@
     {{-- immagine e titolo --}}
     <div class="row">
         <div class="card-apt-show-sm card-apt-show-caract card-apt-show-space col-sm-12">
-            <img class="card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/')}}" alt="{{$apartment->title}}">
+            <img class="card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
             <div class="card-body">
                 <h3 class="card-title">{{$apartment->title}}</h3>
             </div>
