@@ -1,34 +1,45 @@
 .show-btn {
     margin-left: 10px;
-    margin-bottom: 30px;
-    width: 200px;
 }
 
-@media screen and (max-width: 991px) {
-    .show-btn {
-        margin-left: 10px;
-        margin-bottom: 30px;
-        width: 30%;
-    }
+.title-btn {
+    align-items: center;
+}
+
+.show-title-container {
+    width: 80%;
+}
+
+.show-btn-container {
+    width: 20%;
 }
 
 @media screen and (max-width: 767px) {
-    .show-btn {
-        margin-left: 5px;
-        width: 32%;
+    .show-title-container {
+        width: 100%;
+    }
+
+    .show-btn-container {
+        width: 100%;
+        margin-bottom: 20px;
+
+        .show-btn {
+            width: 15%;
+            margin: auto;
+        }
     }
 }
 
-@media screen and (max-width: 575px) {
-    .card-apt-show-sm {
-        margin-left: 15px;
-        margin-right: 15px;
-    }
-}
-
-@media screen and (max-width: 524px) {
-    .show-btn {
-        width: 70%;
-        margin-bottom: 10px;
-    }
-}
+// @media screen and (max-width: 575px) {
+//     .card-apt-show-sm {
+//         margin-left: 15px;
+//         margin-right: 15px;
+//     }
+// }
+//
+// @media screen and (max-width: 524px) {
+//     .show-btn {
+//         width: 70%;
+//         margin-bottom: 10px;
+//     }
+// }

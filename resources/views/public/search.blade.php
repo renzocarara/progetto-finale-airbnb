@@ -31,38 +31,38 @@
                     </div>
                     <div class="form-inline">
                         <div class="frm-search form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="service" value="service">
+                            <label class="form-check-label" for="service">
                                 Wi-fi
                             </label>
                         </div>
                         <div class="frm-search form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="service" value="service">
+                            <label class="form-check-label" for="service">
                                 Swimming pool
                             </label>
                         </div>
                         <div class="frm-search form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="service" value="service">
+                            <label class="form-check-label" for="service">
                                 Reception
                             </label>
                         </div>
                         <div class="frm-search form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="service" value="service">
+                            <label class="form-check-label" for="service">
                                 Sauna
                             </label>
                         </div>
                         <div class="frm-search form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="service" value="service">
+                            <label class="form-check-label" for="service">
                                 Sea view
                             </label>
                         </div>
                         <div class="frm-search form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-                            <label class="form-check-label" for="exampleRadios2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="service" value="service">
+                            <label class="form-check-label" for="service">
                                 Parking
                             </label>
                         </div>
@@ -71,6 +71,54 @@
                 </form>
 
                 <h3>Risultati della ricerca</h3>
+                <a class="apt-card" href="#">
+                    <div class="card h-100">
+                        <div class="img-container">
+                            <img class="img-apt-card card-body card-img-top" src="#" alt="immagine appartamento">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Città</h5>
+                            <p class="card-text">Titolo appartamento</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="apt-card" href="#">
+                    <div class="card h-100">
+                        <div class="img-container">
+                            <img class="img-apt-card card-body card-img-top" src="#" alt="immagine appartamento">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Città</h5>
+                            <p class="card-text">Titolo appartamento</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="apt-card" href="#">
+                    <div class="card h-100">
+                        <div class="img-container">
+                            <img class="img-apt-card card-body card-img-top" src="#" alt="immagine appartamento">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Città</h5>
+                            <p class="card-text">Titolo appartamento</p>
+                        </div>
+                    </div>
+                </a>
+                <a class="apt-card" href="#">
+                    <div class="card h-100">
+                        <div class="img-container">
+                            <img class="img-apt-card card-body card-img-top" src="#" alt="immagine appartamento">
+                        </div>
+
+                        <div class="card-body">
+                            <h5 class="card-title">Città</h5>
+                            <p class="card-text">Titolo appartamento</p>
+                        </div>
+                    </div>
+                </a>
                 <a class="apt-card" href="#">
                     <div class="card h-100">
                         <div class="img-container">

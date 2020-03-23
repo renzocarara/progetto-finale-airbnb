@@ -6,16 +6,25 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-12">
+    <div class="row title-btn d-flex">
+        <div class="show-title-container">
             <div class="d-flex">
                 <h1 class="d-inline-block mb-3">Dettagli appartamento</h1>
             </div>
-            <div class="btn-show-container flex-row-reverse">
-                <a class="show-btn btn btn-primary float-right" href="#">Richieste</a>
-                <a class="show-btn btn btn-primary float-right" href="#">Statistiche</a>
-                <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">Elenco appartamenti</a>
-            </div>
+        </div>
+        <div class="show-btn-container d-flex flex-row-reverse">
+            <a class="show-btn btn btn-primary float-right" href="#">
+                {{-- Richieste --}}
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a class="show-btn btn btn-primary float-right" href="#">
+                {{-- Statistiche --}}
+                <i class="fas fa-chart-area"></i>
+            </a>
+            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">
+                {{-- Elenco appartamenti --}}
+                <i class="fas fa-list-ul"></i>
+            </a>
         </div>
     </div>
 
