@@ -9,8 +9,7 @@
     <div class="container">
         <div class="control-panel row justify-content-center">
             <div class="col-md-8 d-flex">
-                <div class="card blk-container m-auto">
-                    <div class="card-header wht">Pannello di controllo</div>
+                <div class="text-center card blk-container m-auto">
 
                     <div class="card-body">
                         @if (session('status'))
@@ -21,7 +20,6 @@
 
                         <h2 class="wht">Benvenuto <strong>{{ Auth::user()->name }}</strong>! </h2>
                         <p class="wht">Ti sei autenticato con la seguente e-mail:  <strong>{{ Auth::user()->email }}</strong></p>
-                        <div class="t">Cosa puoi fare:</p>
                         <div class="btn-container">
                             <p class="wht">Cosa puoi fare:</p>
                             <div>

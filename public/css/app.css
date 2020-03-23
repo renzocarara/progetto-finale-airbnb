@@ -11168,6 +11168,10 @@ table tbody tr td a.suspended {
   background-image: url(/images/apt-collage.jpg?3277902420b364c51c2c3c86ff7aaaf2);
   background-size: cover;
   background-position: center;
+  height: calc(100vh - 71px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .blk-container {

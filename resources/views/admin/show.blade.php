@@ -47,7 +47,6 @@
         <div class="card-apt-show-sm card-body card-apt-show-caract col-sm-5 col-lg-6">
             <h5 class="card-title">Descrizione:</h5>
             <p class="card-text">{{$apartment->info->summary}}</p>
-            <p class="card-text">{{$apartment->info->summary}}</p>
         </div>
 
         <div class="card-apt-show-sm card-body card-apt-show-caract col-sm-5 offset-sm-2 col-lg-5 offset-lg-1">
