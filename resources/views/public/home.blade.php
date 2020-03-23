@@ -21,7 +21,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $apt_sponsor->city }}</h5>
                             <p class="card-text"><strong>{{ $apt_sponsor->title }}</strong></p>
-                            <span>SPONSORIZZATO</span>
+                            <span class="neon-sponsor h5"><strong>SPONSORIZZATO</strong></span>
                         </div>
                     </div>
                 </a>

@@ -1,0 +1,27 @@
+/* home pubblica style */
+
+.neon-sponsor {
+    color: gray;
+    animation: mymove 5s infinite;
+}
+@keyframes mymove {
+    0% {
+        color: gray;
+    }
+
+    25% {
+        color: lightgreen;
+    }
+
+    50% {
+        color: lime;
+    }
+
+    75% {
+        color: seagreen;
+    }
+
+    100% {
+        color: teal;
+    }
+}
