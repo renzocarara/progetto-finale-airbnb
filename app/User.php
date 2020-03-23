@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     // relazione 1 a n tra users e apartments
     public function apartments() {
-        // ho una relazione 1 a n con la tabella requests (la parte dipendente che ha FK)
+        // ho una relazione 1 a n con la tabella messages (la parte dipendente che ha FK)
         // questa è la parte che comanda
         return $this->hasMany('App\Apartment');
 

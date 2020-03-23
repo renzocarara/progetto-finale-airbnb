@@ -2,7 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
-use App\Request;
+use App\Message;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -17,11 +17,9 @@ use Illuminate\Support\Str;
 |
 */
 
-$factory->define(Request::class, function (Faker $faker) {
+$factory->define(Message::class, function (Faker $faker) {
     return [
 
-        // $table->bigIncrements('id');
-        // $table->timestamps();
 
         'apartment_id' => $faker->numberBetween(1, 30),
         'email' => $faker->unique()->safeEmail,

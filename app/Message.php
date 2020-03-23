@@ -4,13 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Request extends Model
+class Message extends Model
 {
 
-
-    // protected $fillable = [
-    //     'apartment_id', 'email', 'message'
-    // ];
+    protected $fillable = [
+        'apartment_id', 'email', 'message'
+    ];
 
     //
     public function apartment() {

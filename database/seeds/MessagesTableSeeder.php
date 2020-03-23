@@ -3,10 +3,10 @@
 use Illuminate\Database\Seeder;
 
 // aggiungo il modello su cui devo lavorare
-use App\Request;
+use App\Message;
 
 
-class RequestsTableSeeder extends Seeder
+class MessagesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -20,7 +20,7 @@ class RequestsTableSeeder extends Seeder
     public function run()
     {
         // chiamo la funzione "factory" per $num_of_requests volte, per riempiere le righe della tabella
-        factory(App\Request::class, $this->num_of_requests)->create();
+        factory(App\Message::class, $this->num_of_requests)->create();
 
     }
 }

@@ -68,16 +68,17 @@
             </div>
         </div>
         <div class="email card card-body apt-show col-sm-12 col-lg-5 offset-lg-1">
-            <form>
+            <form method="post" action="{{ route("public.mail", ['apartment' => $apartment->id]) }}">
+                @csrf
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Indirizzo e-mail</label>
-                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Inserisci la tua e-mail">
+                    <label for="email">Indirizzo e-mail</label>
+                    <input name="email" type="email" class="form-control" id="email" placeholder="Inserisci la tua e-mail">
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlInput1">Messaggio:</label>
-                    <textarea name="email-text" rows="6" class="form-control" placeholder="Inserisci il testo dell'e-mail..."></textarea>
+                    <label for="msg">Messaggio:</label>
+                    <textarea id="msg" name="message" rows="6" class="form-control" placeholder="Inserisci il testo dell'e-mail..."></textarea>
                 </div>
-                <button class="float-right btn btn-success" type="submit" name="invia" value="invia">
+                <button class="float-right btn btn-success" type="submit">
                     <i class="fas fa-arrow-right"></i>
                 </button>
             </form>

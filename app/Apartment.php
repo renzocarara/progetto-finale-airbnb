@@ -21,11 +21,11 @@ class Apartment extends Model
 
     }
 
-    // relazione 1 a n tra apartments e requests
-    public function requests() {
-        // ho una relazione 1 a n con la tabella requests (la parte dipendente che ha FK)
+    // relazione 1 a n tra apartments e messages
+    public function messages() {
+        // ho una relazione 1 a n con la tabella messages (la parte dipendente che ha FK)
         // questa è la parte che comanda
-        return $this->hasMany('App\Request');
+        return $this->hasMany('App\Message');
 
     }
 

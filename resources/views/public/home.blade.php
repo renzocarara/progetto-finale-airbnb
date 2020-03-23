@@ -15,7 +15,7 @@
                 <a class="sponsor border border-danger apt-card" href="{{ route('public.show', [$apt_sponsor->id]) }}">
                     <div class="card h-100">
                         <div class="img-container">
-                            <img class="img-apt-card card-body card-img-top" src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/')}}" alt="{{$apt_sponsor->title}}">
+                            <img class="img-apt-card card-body card-img-top" src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_sponsor->title}}">
                         </div>
 
                         <div class="card-body">
