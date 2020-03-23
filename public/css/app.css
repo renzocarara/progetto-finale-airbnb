@@ -11194,8 +11194,8 @@ table tbody tr td a.suspended {
   color: #1B3C59;
 }
 
-.eye,
-.add {
+.add,
+.eye {
   background-color: white;
   border-radius: 3px;
   width: 46px;
@@ -11210,6 +11210,11 @@ i {
 
 .add {
   margin-left: 30px;
+  padding-left: 10px;
+}
+
+.eye {
+  padding-left: 6px;
 }
 
 @media screen and (max-width: 332px) {
