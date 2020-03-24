@@ -46,8 +46,6 @@ class HomeController extends Controller
         // salvo messaggio nel DB
         $new_message->save();
 
-        // dove lo mando???
-        return abort(404);
-        // return view('public.show', ["apartment"=>$apartment]);
+        return view('public.message_sent', ["apartment"=>$apartment, 'new_message' => $new_message]);
     }
 }
