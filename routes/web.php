@@ -71,6 +71,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     Route::post('/payment/{apartment}/make', 'PaymentsController@make')->name('payment.make');
 
+    Route::get('apartment/{apartment}/message', 'DataController@message')->name('apartment.messages');
+
 });
 
 ?>

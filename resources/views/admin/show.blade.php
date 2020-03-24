@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="show-btn-container d-flex flex-row-reverse mb-5">
-            <a class="show-btn btn btn-primary float-right" href="#" data-toggle="tooltip" data-placement="bottom" title="Richieste">
+            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.messages', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom" title="Richieste">
                 {{-- Richieste --}}
                 <i class="fas fa-envelope"></i>
             </a>

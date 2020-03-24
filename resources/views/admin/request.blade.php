@@ -29,11 +29,11 @@
                     <tbody>
                         @forelse ($messages as $message)
                         <tr>
-                            <td>{{ $messages->email }}</td>
+                            <td>{{ $message->email }}</td>
 
-                            <td>{{ $messages->message }}</td>
+                            <td>{{ $message->message }}</td>
 
-                            <td>{{ $messages->created_at }}</td>
+                            <td>{{ $message->created_at }}</td>
                         </tr>
                         @empty
                         <tr>
