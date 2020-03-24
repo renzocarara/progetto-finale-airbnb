@@ -72,7 +72,9 @@
                 @csrf
                 <div class="form-group">
                     <label for="email">Indirizzo e-mail</label>
-                    <input name="email" type="email" class="form-control" id="email" placeholder="Inserisci la tua e-mail">
+                    <input name="email" type="email" class="form-control" id="email" placeholder="Inserisci la tua e-mail"
+                    {{-- se l'utente è loggato, uso il suo indirizzo e-mail per autocompletaare ill campo di input --}}
+                    value="{{ Auth::check() ? Auth::user()->email : "" }}">
                 </div>
                 <div class="form-group">
                     <label for="msg">Messaggio:</label>

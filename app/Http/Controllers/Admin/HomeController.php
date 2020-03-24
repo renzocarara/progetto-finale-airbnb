@@ -25,11 +25,9 @@ class HomeController extends Controller
 
     // funzione per visualizzare i dati del profilo dell'utente
     public function account() {
-        App::setLocale('it');
-        // recupero l'utente corrente
-        // $user = Auth::user();
+
         // recupero i dettagli dell'utente corrente tramite la relazione uno a uno
-        $user_details =Auth::user();
+        $user_details = Auth::user();
         // ritorno la view admin.account e le passo i dettagli utente
         return view('admin.account', ['user_details' => $user_details]);
     }
