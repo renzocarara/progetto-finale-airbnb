@@ -358,17 +358,30 @@ class ApartmentController extends Controller
     // public function sponsor(Apartment $apartment)
     public function sponsor(Apartment $apartment)
     {
+        if (Auth::user()->id == $apartment->user_id){
+            // leggo l'elenco dele sponsorship presenti nel DB, ottengo una collection
+            $sponsorships = Sponsorship::all();
 
-        // leggo l'elenco dele sponsorship presenti nel DB, ottengo una collection
-        $sponsorships = Sponsorship::all();
+            return view('admin.sponsor', ['apartment' => $apartment, 'sponsorships' => $sponsorships]);
 
-        return view('admin.sponsor', ['apartment' => $apartment, 'sponsorships' => $sponsorships]);
+        } else {
+            // l'appartamento in aggiornamento non appartiene all'utente loggato
+            // visualizzo una pagina che lo informa
+            return view('admin.not_authorized');
+        }  
     }
 
 
     public function checkout(Request $request, Apartment $apartment)
     {
-        return view('admin.checkout', ['apartment' => $apartment]);
+        if (Auth::user()->id == $apartment->user_id){
+
+            return view('admin.checkout', ['apartment' => $apartment]);
+        } else {
+            // l'appartamento in aggiornamento non appartiene all'utente loggato
+            // visualizzo una pagina che lo informa
+            return view('admin.not_authorized');
+        }
 
     }
 
