@@ -10884,6 +10884,53 @@ a.text-dark:focus {
 
 /* variabili per lo style */
 
+.left-green,
+.right-blue {
+  width: 50%;
+  height: calc(100vh - 71px);
+  justify-content: center;
+  align-items: center;
+}
+
+.left-green {
+  background-color: #61CE4E;
+}
+
+.right-blue {
+  background-color: #1B3C59;
+  color: #61CE4E;
+}
+
+.sad {
+  height: 300px;
+}
+
+.error-404 {
+  font-size: 120px;
+}
+
+.error-return {
+  width: 280px;
+  font-size: 25px;
+  border-radius: 5px;
+  border: 0;
+  text-transform: uppercase;
+  background-color: #61CE4E;
+  color: #1B3C59;
+  margin-top: 60px;
+}
+
+.error-return:hover {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.content-blue-box {
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+}
+
 /* common style */
 
 .green {
@@ -11118,52 +11165,100 @@ input[id^=service_] {
 /* home pubblica style */
 
 .neon-sponsor {
-  color: gray;
-  -webkit-animation: mymove 5s infinite;
-          animation: mymove 5s infinite;
+  color: #CAEDC8;
+  -webkit-animation: mymove 10s infinite;
+          animation: mymove 10s infinite;
 }
 
 @-webkit-keyframes mymove {
   0% {
+    color: #CAEDC8;
+  }
+
+  10% {
+    color: #CAEDC8;
+  }
+
+  20% {
     color: gray;
   }
 
-  25% {
-    color: lightgreen;
+  30% {
+    color: #1B3C59;
+  }
+
+  40% {
+    color: #CAEDC8;
   }
 
   50% {
-    color: lime;
+    color: #1B3C59;
   }
 
-  75% {
-    color: seagreen;
+  60% {
+    color: #CAEDC8;
+  }
+
+  70% {
+    color: #1B3C59;
+  }
+
+  80% {
+    color: gray;
+  }
+
+  90% {
+    color: #CAEDC8;
   }
 
   100% {
-    color: teal;
+    color: #CAEDC8;
   }
 }
 
 @keyframes mymove {
   0% {
+    color: #CAEDC8;
+  }
+
+  10% {
+    color: #CAEDC8;
+  }
+
+  20% {
     color: gray;
   }
 
-  25% {
-    color: lightgreen;
+  30% {
+    color: #1B3C59;
+  }
+
+  40% {
+    color: #CAEDC8;
   }
 
   50% {
-    color: lime;
+    color: #1B3C59;
   }
 
-  75% {
-    color: seagreen;
+  60% {
+    color: #CAEDC8;
+  }
+
+  70% {
+    color: #1B3C59;
+  }
+
+  80% {
+    color: gray;
+  }
+
+  90% {
+    color: #CAEDC8;
   }
 
   100% {
-    color: teal;
+    color: #CAEDC8;
   }
 }
 

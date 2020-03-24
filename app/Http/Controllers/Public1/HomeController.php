@@ -47,6 +47,7 @@ class HomeController extends Controller
         $new_message->save();
 
         // dove lo mando???
-        return view('public.show', ["apartment"=>$apartment]);
+        return abort(404);
+        // return view('public.show', ["apartment"=>$apartment]);
     }
 }
