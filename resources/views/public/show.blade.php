@@ -7,6 +7,18 @@
 @section('content')
 <div class="container">
 
+    {{-- il blocco che segue serve per la validazione, 'lato server', dei dati del form --}}
+    @if ($errors->any())
+    <div class="alert alert-danger mt-5">
+        <ul>
+            @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
+
     {{-- immagine, titolo e indirizzo --}}
     <div class="row margin-top-xl">
         <div class="card apt-show col-sm-12 col-lg-6">
@@ -67,6 +79,7 @@
                                         {{ $apartment->zip }} {{ $apartment->city }}, {{ $apartment->state }}">
             </div>
         </div>
+
         <div class="email card card-body apt-show col-sm-12 col-lg-5 offset-lg-1">
             <form method="post" action="{{ route("public.mail", ['apartment' => $apartment->id]) }}">
                 @csrf
@@ -86,6 +99,9 @@
             </form>
         </div>
     </div>
+
+
+
 
 </div>
 @endsection

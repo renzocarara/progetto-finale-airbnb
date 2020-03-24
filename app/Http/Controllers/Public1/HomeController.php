@@ -43,6 +43,10 @@ class HomeController extends Controller
     }
     public function mail(Request $request, Apartment $apartment) {
 
+        $request->validate([
+            // tabella messages
+            'message' => 'required|max:1000', // richiesto e massimo lungo 1000caratteri
+        ]);
 
         $form_data_received = $request->all();
 
