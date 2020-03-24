@@ -19,7 +19,7 @@
 // +-----------+-----------------------------------+-------------------------+--------------------------------------------------------+--------------+
 Route::get('/', 'Public1\HomeController@index')->name('public');
 
-Route::get('/apartment/{id}', 'Public1\HomeController@show')->name('public.show');
+Route::get('/apartment/{apartment}', 'Public1\HomeController@show')->name('public.show');
 Route::post('/apartment/{apartment}', 'Public1\HomeController@mail')->name('public.mail');
 
 // ROTTE DI DEFAULT PER GESTIRE LOGIN E REGISTRAZIONE (controllers in Auth)

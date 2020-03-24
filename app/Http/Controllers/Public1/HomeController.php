@@ -10,12 +10,16 @@ use App\Info;
 use App\Message;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
+// use Illuminate\Support\Facades\Session; 
 
 
 
 
 class HomeController extends Controller
 {
+
+
+
     public function index() {
 
         $apartments = Apartment::all()->shuffle();
@@ -26,14 +30,22 @@ class HomeController extends Controller
         return view('public.home', ["apartments"=>$apartments, 'apts_sponsor'=>$apt_sponsor]);
     }
 
-    public function show($id) {
+    public function show(Apartment $apartment) {
 
-        $apartment = Apartment::find($id);
-        // dd ($apartment);
+      $Key = 'apartment/' . $apartment->id;
+      // dd($Key);
+         // if (\Session::has($Key)) {
+
+          DB::table('apartments')
+           ->where('id', $apartment->id)
+           ->increment('views', 1);
+           // \Session::put($Key, 1);
+          // }
 
         return view('public.show', ["apartment"=>$apartment]);
     }
     public function mail(Request $request, Apartment $apartment) {
+
 
         $form_data_received = $request->all();
 
@@ -48,4 +60,7 @@ class HomeController extends Controller
 
         return view('public.message_sent', ["apartment"=>$apartment, 'new_message' => $new_message]);
     }
+
+
+
 }
