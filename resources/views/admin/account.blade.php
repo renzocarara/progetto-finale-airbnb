@@ -5,10 +5,10 @@
 
 
 @section('content')
-<div class="container">
+<div class="container margin-top-xl margin-bottom-xl">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <h1>Il tuo profilo</h1>
+            <h1 class="mb-5">Il tuo profilo</h1>
             <div class="card">
                 <div class="card-header">Ciao <strong class="green h5">{{ Auth::user()->name }}</strong> !</div>
 

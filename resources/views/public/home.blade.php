@@ -7,12 +7,12 @@
 @section('content')
     @include("layouts.jumbo")
     <div class="container">
-        <h2>Appartamenti in evidenza</h2>
-        <div class="bd-example">
+        <h2 class="mb-4">Appartamenti in evidenza</h2>
+        <div class="bd-example margin-bottom-xl">
             <div class="row row-cols-1 row-cols-md-3">
             @foreach($apts_sponsor as $apt_sponsor)
               @break($loop->index > 2)
-                <a class="border apt-card" href="{{ route('public.show', [$apt_sponsor->id]) }}">
+                <a class="apt-card mb-3" href="{{ route('public.show', [$apt_sponsor->id]) }}">
                     <div class="sponsor card h-100">
                         <div class="img-container">
                             <img class="img-apt-card card-body card-img-top" src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_sponsor->title}}">
@@ -29,7 +29,7 @@
 
               @foreach($apartments as $apartment)
               @break($loop->index > 2)
-                <a class="apt-card margin-bottom-xl" href="{{ route('public.show', [$apartment->id]) }}">
+                <a class="apt-card mb-3" href="{{ route('public.show', [$apartment->id]) }}">
                     <div class="card h-100">
                         <div class="img-container">
                             <img class="img-apt-card card-body card-img-top" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/')}}" alt="{{$apartment->title}}">

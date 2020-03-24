@@ -10,7 +10,7 @@
     {{-- immagine, titolo e indirizzo --}}
     <div class="row margin-top-xl">
         <div class="card apt-show col-sm-12 col-lg-6">
-            <img class="card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
+            <img class="card-img-top apt-img-lg mt-3 mb-3" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
         </div>
         <div class="apt-show card card-body col-sm-12 col-lg-5 offset-lg-1">
             <h2>{{$apartment->title}}</h2>
@@ -61,7 +61,7 @@
 
     {{-- mappa, email --}}
     <div class="row margin-bottom-xl">
-        <div class="map card-body apt-show col-sm-12 col-lg-6">
+        <div class="map card card-body apt-show col-sm-12 col-lg-6">
             <div id="map" data-lat="{{ $apartment->lat }}" data-lon="{{ $apartment->lon }}"
                           data-address="{{ $apartment->street }} {{ $apartment->number }},
                                         {{ $apartment->zip }} {{ $apartment->city }}, {{ $apartment->state }}">

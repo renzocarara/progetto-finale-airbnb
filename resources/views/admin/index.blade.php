@@ -17,15 +17,18 @@
 
  @section('content')
  <div class="container">
-    <div class="row">
+    <div class="row margin-top-xl">
         <div class="col-12">
             <h1 class="d-inline-block mb-5">Tutti i tuoi appartamenti</h1>
-            <a class="btn btn-primary float-right mt-4" href="{{ route('admin.apartment.create') }}">Inserisci nuovo appartamento</a>
+            <a class="btn btn-primary float-right mb-5" href="{{ route('admin.apartment.create') }}" data-toggle="tooltip" data-placement="bottom" title="inserisci un nuovo appartamento">
+                {{-- Inserisci nuovo appartamento --}}
+                <i class="fas fa-plus fa-2x"></i>
+            </a>
         </div>
     </div>
     <div class="row">
         <div class="col-12">
-            <table class="table">
+            <table class="table margin-bottom-xl">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -46,17 +49,17 @@
                                 {{-- Visualizza --}}
                                 <i class="far fa-eye fa-lg"></i>
                             </a>
-                            <a  id="modify_apt"class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.edit', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="modifica">
-                            {{-- Modifica --}}
-                            <i class="fas fa-pen fa-lg"></i>
+                            <a  id="modify_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.edit', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="modifica">
+                                {{-- Modifica --}}
+                                <i class="fas fa-pen fa-lg"></i>
                             </a>
                             <form class="d-inline-block" action="{{ route('admin.apartment.destroy', ['apartment' => $apartment->id]) }}" method="post">
-                            @csrf
-                            @method('DELETE')
-                            <button  id="suspend_apt" class="sm-margin btn btn-secondary mt-1" type="submit" name="button" data-toggle="tooltip" data-placement="top" title="sospendi annuncio">
-                                {{-- Sospendi annuncio --}}
-                                <i class="fas fa-pause fa-lg"></i>
-                            </button>
+                                @csrf
+                                @method('DELETE')
+                                <button  id="suspend_apt" class="sm-margin btn btn-secondary mt-1" type="submit" name="button" data-toggle="tooltip" data-placement="top" title="sospendi annuncio">
+                                    {{-- Sospendi annuncio --}}
+                                    <i class="fas fa-pause fa-lg"></i>
+                                </button>
                             </form>
 
                             @if(!in_array( $apartment->id, $active_sponsorships))

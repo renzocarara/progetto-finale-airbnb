@@ -6,22 +6,22 @@
 
 @section('content')
 <div class="container">
-    <div class="row title-btn d-flex">
+    <div class="margin-top-xl row title-btn d-flex">
         <div class="show-title-container">
             <div class="d-flex">
-                <h1 class="d-inline-block mb-3">Dettagli appartamento</h1>
+                <h1 class="title-show-admin d-inline-block mb-5">Dettagli appartamento</h1>
             </div>
         </div>
-        <div class="show-btn-container d-flex flex-row-reverse">
-            <a class="show-btn btn btn-primary float-right" href="#">
+        <div class="show-btn-container d-flex flex-row-reverse mb-5">
+            <a class="show-btn btn btn-primary float-right" href="#" data-toggle="tooltip" data-placement="bottom" title="Richieste">
                 {{-- Richieste --}}
                 <i class="fas fa-envelope"></i>
             </a>
-            <a class="show-btn btn btn-primary float-right" href="#">
+            <a class="show-btn btn btn-primary float-right" href="#" data-toggle="tooltip" data-placement="bottom" title="Statistiche">
                 {{-- Statistiche --}}
                 <i class="fas fa-chart-area"></i>
             </a>
-            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}">
+            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom" title="Elenco appartamenti">
                 {{-- Elenco appartamenti --}}
                 <i class="fas fa-list-ul"></i>
             </a>
@@ -31,7 +31,7 @@
     {{-- immagine e titolo --}}
     <div class="row">
         <div class="card-apt-show-sm card-apt-show-caract card-apt-show-space col-sm-12">
-            <img class="card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
+            <img class="img-show-admin card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
             <div class="card-body">
                 <h3 class="card-title">{{$apartment->title}}</h3>
             </div>
@@ -58,7 +58,7 @@
             <p class="card-text">{{$apartment->info->summary}}</p>
         </div>
 
-        <div class="card-apt-show-sm card-body card-apt-show-caract col-sm-5 offset-sm-2 col-lg-5 offset-lg-1">
+        <div class="margin-bottom-xl card-apt-show-sm card-body card-apt-show-caract col-sm-5 offset-sm-2 col-lg-5 offset-lg-1">
             <div>
                 <h5 class="card-title">Spazi</h5>
                 <p class="card-text">

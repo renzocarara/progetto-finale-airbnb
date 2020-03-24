@@ -9,19 +9,30 @@
 
 
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <h1>IL TUO MESSAGGIO E' STATO INVIATO!</h1>
-                <div class="card">
-                    <div class="card-header">Il proprietario dell'appartamento ha ricevuto la tua richiesta di informazioni.</div>
-
-                    <div class="card-body">
-                        <h2>La tua richiesta per: <strong>{{$apartment->title}}</strong></h2>
-                        <p>
-                            {{ $new_message->message }}
-                            {{-- {{ $new_message->created_at }} --}}
-                        </p>
-                    </div>
+        <div class="row justify-content-center margin-top-xl margin-bottom-xl">
+            <div class="col-md-8 clearfix">
+                <h1 class="d-inline-block col-7 mb-5">MESSAGGIO INVIATO!</h1>
+                <a class="btn-edit return-button btn btn-primary float-right" href="{{ route('public') }}" data-toggle="tooltip" data-placement="bottom" title="Elenco dei tuoi appartamenti">
+                    {{-- I tuoi appartamenti --}}
+                    <i class="fas fa-list-ul"></i>
+                </a>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <strong>
+                        Il proprietario dell'appartamento ha ricevuto la tua richiesta di informazioni.
+                    </strong>
+                </div>
+                <div class="card-body">
+                    <p>La tua richiesta per:
+                        <strong>
+                            {{$apartment->title}}
+                        </strong>
+                    </p>
+                    <p>
+                        Questo è il testo del messaggio che hai inviato: "<em>{{ $new_message->message }}</em>"
+                        {{-- {{ $new_message->created_at }} --}}
+                    </p>
                 </div>
             </div>
         </div>
