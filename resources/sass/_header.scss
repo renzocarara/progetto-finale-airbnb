@@ -28,6 +28,21 @@
         }
     }
 }
+
+#header_nav .navbar-nav .nav-link.active {
+    color: $boolbnb_green;
+}
+
+#header_nav .navbar-nav .nav-link:hover {
+    color: $boolbnb_green;
+}
+
+#header_nav .dropdown-item:focus,
+#header_nav .dropdown-item:hover {
+    color: $boolbnb_green;
+    text-decoration: none;
+    // background-color: #f8f9fa;
+}
 @media screen and (max-width: 768px) {
     .jumbo {
         .blk-form-container {

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav id="header_nav" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
     <div class="container">
         <a class="logo-link d-inline-block navbar-brand" href="{{ route('public') }}">
             {{-- {{ config('app.name', 'Boolbnb') }} --}}
@@ -35,9 +35,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="{{ route('admin.home') }}">Pannello di controllo</a>
                             <a class="dropdown-item" href="{{ route('admin.account') }}">Profilo</a>
-                            <a class="dropdown-item" href="{{ route('admin.apartment.create') }}">Nuovo appartamento</a>
+                            {{-- <a class="dropdown-item" href="{{ route('admin.apartment.create') }}">Nuovo appartamento</a> --}}
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                                 document.getElementById('logout-form').submit();">
