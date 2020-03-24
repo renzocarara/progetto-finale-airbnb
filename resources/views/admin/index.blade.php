@@ -57,26 +57,19 @@
                                 {{-- Sospendi annuncio --}}
                                 <i class="fas fa-pause fa-lg"></i>
                             </button>
-
                             </form>
 
-{{-- if(!in_array( $apartment->id, $elenco_sponsor_attivi)
-nel controller creare un array $elenco_sponsor_attivi e poi passarlo alla view
-usare (carbon) per i confronti tra date
-(bisogna leggere dal DB tabella apartments_sponsorship:
-tutti i record con id=apartment_id)
-e con (now() > data_fine_sponsorizzazione)  --}}
-
-                            <a  id="sponsor_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.sponsor', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="sponsorizza">
-                                {{-- Sponsorizza --}}
-                                <i class="fas fa-award fa-lg"></i>
-                            </a>
-
-{{-- else (c'è una sponsorizzazione attiva per quell'appartamento)
-
-visualizzo dicitura "SPONSORIZZAZIONI GIA' ATTIVA" e non permetto al'uteNTE di attivarne altre --}}
-
-{{-- @endif --}}
+                            @if(!in_array( $apartment->id, $active_sponsorships))
+                                <a  id="sponsor_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.sponsor', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="sponsorizza">
+                                    {{-- Sponsorizza --}}
+                                    <i class="fas fa-award fa-lg"></i>
+                                </a>
+                            @else
+                                {{-- (c'è una sponsorizzazione attiva per quell'appartamento) --}}
+                                <button id="sponsored_apt" class="sm-margin btn btn-secondary mt-1" data-toggle="tooltip" data-placement="top" title="già sponsorizzato">
+                                    <i class="fas fa-award fa-lg"></i>
+                                </button>
+                            @endif
                             @else
                                 <a  id="display_apt"class="suspended sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}" data-toggle="tooltip" data-placement="top" title="ripristina annuncio">
                                     {{-- Ripristina --}}

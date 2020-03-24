@@ -11291,6 +11291,16 @@ table tbody tr td a.suspended {
   border-color: blue;
 }
 
+#sponsored_apt {
+  background-color: transparent;
+  border: 2px solid gray;
+  cursor: default;
+}
+
+#sponsored_apt i {
+  color: #61CE4E;
+}
+
 .trashed_apt {
   font-style: italic;
   color: gray;
@@ -11298,8 +11308,9 @@ table tbody tr td a.suspended {
 
 #display_apt,
 #modify_apt,
-#suspend_apt,
-#sponsor_apt {
+#sponsor_apt,
+#sponsored_apt,
+#suspend_apt {
   width: 35px;
   padding: 2px;
 }

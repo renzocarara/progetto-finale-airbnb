@@ -11,6 +11,7 @@ use App\Sponsorship;
 use Illuminate\Support\Facades\DB;
 // aggiungo questa 'use' per poter usare la funzione Storage()
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Carbon;
 
 
 use App\Http\Controllers\Controller;
@@ -34,11 +35,44 @@ class ApartmentController extends Controller
         // leggo dal DB tutti gli appartamenti associati all'utente loggato e ottengo una collection
         $apartments = Apartment::where('user_id', $user_id)->withTrashed()->get();
 
-        // $elenco_sponsor_attivi= [2, 5, 8] // contiene gli id degli apt con sponsorizzazione
+        $active_sponsorships = []; // contiene gli id degli apt con sponsorizzazione
 
+        $all_sponsorships=[]; // contiene tutte le sponsorizzazioni di tutti gli appartamenti
+
+        foreach ($apartments as $apartment) {
+            array_push($all_sponsorships, DB::table('apartment_sponsorship')->where('apartment_id', $apartment->id)->get());
+        }
+
+        for ($i=0; $i < count($all_sponsorships); $i++) {
+            for ($j=0; $j < count($all_sponsorships[$i]); $j++) {
+                $start_date = $all_sponsorships[$i][$j]->{'start_date'};
+
+                $start_date = Carbon::create($start_date);
+
+                $type = $all_sponsorships[$i][$j]->{'sponsorship_id'};
+
+                // duarta della sponsorizzazione
+                $num_of_days = ($type == 3 ? 6 : $type);
+
+                // if ($type ==3) {
+                //     $num_of_days=6;
+                // } else {
+                //     $num_of_days = $type;
+                // }
+
+                // calcolare la end date sommando alla start date la durata del tipo di sponsorizzazione
+                $end_date = $start_date->addDay($num_of_days);
+
+                if ($end_date > now('Europe/Rome')) {
+
+                    array_push($active_sponsorships, $all_sponsorships[$i][$j]->{'apartment_id'});
+                }
+
+            }
+        }
 
         // ritorno la view che visualizzerà una pagina con l'elenco degli appartamenti dell'utente loggato
-        return view('admin.index', ['apartments' => $apartments]);
+        return view('admin.index', ['apartments' => $apartments, 'active_sponsorships' =>$active_sponsorships]);
     }
 
     /**
@@ -368,7 +402,7 @@ class ApartmentController extends Controller
             // l'appartamento in aggiornamento non appartiene all'utente loggato
             // visualizzo una pagina che lo informa
             return view('admin.not_authorized');
-        }  
+        }
     }
 
 
