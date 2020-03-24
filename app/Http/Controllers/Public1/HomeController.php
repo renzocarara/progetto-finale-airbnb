@@ -17,9 +17,6 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-
-
-
     public function index() {
 
         $apartments = Apartment::all()->shuffle();
@@ -59,6 +56,10 @@ class HomeController extends Controller
         $new_message->save();
 
         return view('public.message_sent', ["apartment"=>$apartment, 'new_message' => $new_message]);
+    }
+    public function go_back() {
+
+        return back();
     }
 
 

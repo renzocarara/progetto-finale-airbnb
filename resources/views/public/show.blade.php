@@ -78,7 +78,7 @@
                 </div>
                 <div class="form-group">
                     <label for="msg">Messaggio:</label>
-                    <textarea id="msg" name="message" rows="6" class="form-control" placeholder="Inserisci il testo dell'e-mail..."></textarea>
+                    <textarea id="msg" name="message" rows="6" class="form-control" placeholder="Inserisci il testo dell'e-mail..." required></textarea>
                 </div>
                 <button class="float-right btn btn-success" type="submit">
                     <i class="fas fa-arrow-right"></i>

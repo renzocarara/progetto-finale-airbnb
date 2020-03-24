@@ -22,6 +22,9 @@ Route::get('/', 'Public1\HomeController@index')->name('public');
 Route::get('/apartment/{apartment}', 'Public1\HomeController@show')->name('public.show');
 Route::post('/apartment/{apartment}', 'Public1\HomeController@mail')->name('public.mail');
 
+Route::get('/back', 'Public1\HomeController@go_back')->name('public.go_back');
+
+
 // ROTTE DI DEFAULT PER GESTIRE LOGIN E REGISTRAZIONE (controllers in Auth)
 Auth::routes();
 
