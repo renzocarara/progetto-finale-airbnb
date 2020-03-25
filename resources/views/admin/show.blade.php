@@ -15,15 +15,15 @@
         <div class="show-btn-container d-flex flex-row-reverse mb-5">
             <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.messages', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom" title="Richieste">
                 {{-- Richieste --}}
-                <i class="fas fa-envelope"></i>
+                <i class="fas fa-envelope fa-2x"></i>
             </a>
             <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.statistics', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom" title="Statistiche">
                 {{-- Statistiche --}}
-                <i class="fas fa-chart-area"></i>
+                <i class="fas fa-chart-area fa-2x"></i>
             </a>
             <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom" title="Elenco appartamenti">
                 {{-- Elenco appartamenti --}}
-                <i class="fas fa-list-ul"></i>
+                <i class="fas fa-list-ul fa-2x"></i>
             </a>
         </div>
     </div>

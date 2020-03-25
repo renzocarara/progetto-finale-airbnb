@@ -11096,6 +11096,20 @@ input[id^=service_] {
   margin-left: 5px;
 }
 
+#header_nav .navbar-nav .nav-link.active {
+  color: #61CE4E;
+}
+
+#header_nav .navbar-nav .nav-link:hover {
+  color: #61CE4E;
+}
+
+#header_nav .dropdown-item:focus,
+#header_nav .dropdown-item:hover {
+  color: #61CE4E;
+  text-decoration: none;
+}
+
 @media screen and (max-width: 768px) {
   .jumbo .blk-form-container {
     width: 100%;
@@ -11195,7 +11209,7 @@ input[id^=service_] {
   }
 
   .show-btn-container .show-btn {
-    width: 15%;
+    width: 18%;
     margin: auto;
   }
 

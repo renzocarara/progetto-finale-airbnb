@@ -111,22 +111,22 @@
                     <h5>Spazi</h5>
                     <div class="row apt-show-row">
                         <div class="form-group col-6 col-sm-3">
-                            <label for="room_num">Num. stanze:</label>
+                            <label for="room_num">N. stanze:</label>
                             <input type="number" class="form-control" id="room_num" name="room_num" min="1" max="10" placeholder="inserisci numero di stanze" value="{{ old('room_num') }}">
                         </div>
 
                         <div class="form-group col-6 col-sm-3">
-                            <label for="beds_num">Num. letti:</label>
+                            <label for="beds_num">N. letti:</label>
                             <input type="number" class="form-control" id="beds_num" name="beds_num" min="1" max="10" placeholder="inserisci numero di letti" value="{{ old('beds_num') }}">
                         </div>
 
                         <div class="form-group col-6 col-sm-3">
-                            <label for="bathroom_num">Num. bagni:</label>
+                            <label for="bathroom_num">N. bagni:</label>
                             <input type="number" class="form-control" id="bathroom_num" name="bathroom_num" min="1" max="5" placeholder="inserisci numero di bagni" value="{{ old('bathroom_num') }}">
                         </div>
 
                         <div class="form-group col-6 col-sm-3">
-                            <label for="sq_mt">superficie(mq):</label>
+                            <label for="sq_mt">Superficie(mq):</label>
                             <input type="number" class="form-control" id="sq_mt" name="sq_mt" min="25" max="200" placeholder="inserisci la metratura" value="{{ old('sq_mt') }}">
                         </div>
                     </div>

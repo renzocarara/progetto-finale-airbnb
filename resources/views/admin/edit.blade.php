@@ -10,10 +10,10 @@
     <section class="container margin-top-xl margin-bottom-xl">
 
         <div class="clearfix">
-            <h1 class="d-inline-block col-7 mb-3">Modifica appartamento</h1>
-            <a class="btn-edit return-button btn btn-primary float-right" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom" title="Elenco dei tuoi appartamenti">
+            <h1 class="d-inline-block col-10 mb-3">Modifica appartamento</h1>
+            <a class="btn-edit return-button btn btn-primary float-right mb-3" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom" title="Elenco dei tuoi appartamenti">
                 {{-- I tuoi appartamenti --}}
-                <i class="fas fa-list-ul"></i>
+                <i class="fas fa-list-ul fa-2x"></i>
             </a>
         </div>
 
@@ -62,7 +62,7 @@
                     <h5>Titolo</h5>
                     <div class="row apt-show-row">
                         <div class="form-group col-12">
-                            <label for="title">Descrizione sintetica (max 255 caratteri):</label>
+                            <label for="title">Descrizione sintetica:</label>
                             <input type="text" class="form-control" id="title" name="title" placeholder="descrivi brevemente il tuo appartamento" value="{{  $apartment->title }}">
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                     <h5>Indirizzo</h5>
                     <div class="row apt-show-row">
                         <div class="form-group col-12 col-sm-9 col-lg-8">
-                            <label for="street">Via/Piazza/etc (max 80 caratteri):</label>
+                            <label for="street">Via/Piazza/etc:</label>
                             <input type="text" class="form-control street-field" id="street" name="street" placeholder="inserisci l'indirizzo" value="{{ old('street', $apartment->street ) }}">
                         </div>
 
@@ -80,18 +80,18 @@
                             <input type="text" class="form-control number-field" id="number" name="number" placeholder="inserisci il numero civico" value="{{ old('number', $apartment->number ) }}">
                         </div>
 
-                        <div class="form-group col-8 col-sm-6 col-lg-5">
-                            <label for="city">Città (max 50 caratteri):</label>
+                        <div class="form-group col-10 col-sm-6 col-lg-5">
+                            <label for="city">Città:</label>
                             <input type="text" class="form-control city-field" id="city" name="city" placeholder="inserisci la città" value="{{ old('city', $apartment->city ) }}">
                         </div>
 
-                        <div class="form-group col-4 col-sm-4 col-lg-3">
+                        <div class="form-group col-10 col-sm-4 col-lg-3">
                             <label for="zip">CAP:</label>
                             <input type="text" class="form-control zip-field" id="zip" name="zip" placeholder="inserisci il CAP" value="{{ old('zip', $apartment->zip ) }}">
                         </div>
 
-                        <div class="form-group col-9 col-sm-6 col-lg-4">
-                            <label for="state">Stato (max 50 caratteri):</label>
+                        <div class="form-group col-10 col-sm-6 col-lg-4">
+                            <label for="state">Stato:</label>
                             <input type="text" class="form-control state-field" id="state" name="state" placeholder="inserisci la nazione" value="{{ old('state', $apartment->state ) }}">
                         </div>
                     </div>
@@ -113,22 +113,22 @@
                     <h5>Spazi</h5>
                     <div class="row apt-show-row">
                         <div class="form-group col-6 col-sm-3">
-                            <label for="room_num">Numero stanze:</label>
+                            <label for="room_num">N. stanze:</label>
                             <input type="number" class="form-control" id="room_num" name="room_num" min="1" max="10" placeholder="inserisci numero di stanze" value="{{ old('room_num', $apartment->info->room_num ) }}">
                         </div>
 
                         <div class="form-group col-6 col-sm-3">
-                            <label for="beds_num">Numero letti:</label>
+                            <label for="beds_num">N. letti:</label>
                             <input type="number" class="form-control" id="beds_num" name="beds_num" min="1" max="10" placeholder="inserisci numero di letti" value="{{ old('beds_num', $apartment->info->beds_num ) }}">
                         </div>
 
                         <div class="form-group col-6 col-sm-3">
-                            <label for="bathroom_num">Numero bagni:</label>
+                            <label for="bathroom_num">N. bagni:</label>
                             <input type="number" class="form-control" id="bathroom_num" name="bathroom_num" min="1" max="5" placeholder="inserisci numero di bagni" value="{{ old('bathroom_num', $apartment->info->bathroom_num ) }}">
                         </div>
 
                         <div class="form-group col-6 col-sm-3">
-                            <label for="sq_mt">superficie(mq):</label>
+                            <label for="sq_mt">Superficie(mq):</label>
                             <input type="number" class="form-control" id="sq_mt" name="sq_mt" min="25" max="200" placeholder="inserisci la metratura" value="{{ old('sq_mt', $apartment->info->sq_mt ) }}">
                         </div>
                     </div>
