@@ -17,9 +17,10 @@
                     <ul>
                         <li>Nome: <strong>{{ $user_details->name }}</strong></li>
                         <li>Cognome: <strong>{{ $user_details->lastname }}</strong></li>
-                        <li>Data di nascita: <strong>{{ $user_details->date_of_birth }}</strong></li>
+                        <li>Data di nascita: <strong>{{ $date_of_birth }}</strong></li>
                         <li>E-mail di autenticazione: <strong>{{ $user_details->email }}</strong></li>
-                        <li>Registrato dal: <strong>{{ $user_details->created_at }}</strong></li>
+                        <li>Registrato dal: <strong>{{ $reg_date }}</strong></li>
+                        {{-- <li>{{ $days_to_birthday }}</li> --}}
 
                     </ul>
                 </div>
