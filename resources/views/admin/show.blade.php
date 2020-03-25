@@ -13,15 +13,15 @@
             </div>
         </div>
         <div class="show-btn-container d-flex flex-row-reverse mb-5">
-            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.messages', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom" title="Richieste">
+            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.messages', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Richieste ricevute</span>">
                 {{-- Richieste --}}
                 <i class="fas fa-envelope fa-2x"></i>
             </a>
-            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.statistics', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom" title="Statistiche">
+            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.statistics', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Statistiche</span>">
                 {{-- Statistiche --}}
                 <i class="fas fa-chart-area fa-2x"></i>
             </a>
-            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom" title="Elenco appartamenti">
+            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Elenco appartamenti</span>">
                 {{-- Elenco appartamenti --}}
                 <i class="fas fa-list-ul fa-2x"></i>
             </a>

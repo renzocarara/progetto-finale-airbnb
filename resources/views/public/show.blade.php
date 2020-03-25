@@ -93,8 +93,8 @@
                     <label for="msg">Messaggio:</label>
                     <textarea id="msg" name="message" rows="6" class="form-control" placeholder="Inserisci il testo dell'e-mail..." required></textarea>
                 </div>
-                <button class="float-right btn btn-success" type="submit">
-                    <i class="fab fa-telegram-plane"></i>
+                <button class="float-right btn btn-success" type="submit" data-toggle="tooltip" data-placement="left"  data-html="true" title="<span class='green-text'>Invia il messaggio</span>">
+                    <i class="fab fa-telegram-plane fa-2x"></i>
                 </button>
             </form>
         </div>

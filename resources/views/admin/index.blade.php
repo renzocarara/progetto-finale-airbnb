@@ -20,7 +20,7 @@
     <div class="row margin-top-xl">
         <div class="col-12">
             <h1 class="d-inline-block mb-5">Tutti i tuoi appartamenti</h1>
-            <a class="btn btn-primary float-right mb-5" href="{{ route('admin.apartment.create') }}" data-toggle="tooltip" data-placement="bottom" title="inserisci un nuovo appartamento">
+            <a class="btn btn-primary float-right mb-5" href="{{ route('admin.apartment.create') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Inserisci un nuovo appartamento</span>">
                 {{-- Inserisci nuovo appartamento --}}
                 <i class="fas fa-plus fa-2x"></i>
             </a>
@@ -45,36 +45,36 @@
 
                         <td>
                         @if(!$apartment->trashed())
-                            <a id="display_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.show', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="visualizza">
+                            <a id="display_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.show', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top"  data-html="true" title="<span class='green-text'>Visualizza</span>">
                                 {{-- Visualizza --}}
                                 <i class="far fa-eye fa-lg"></i>
                             </a>
-                            <a  id="modify_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.edit', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="modifica">
+                            <a  id="modify_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.edit', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top"  data-html="true" title="<span class='green-text'>Modifica</span>">
                                 {{-- Modifica --}}
                                 <i class="fas fa-pen fa-lg"></i>
                             </a>
                             <form class="d-inline-block" action="{{ route('admin.apartment.destroy', ['apartment' => $apartment->id]) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button  id="suspend_apt" class="sm-margin btn btn-secondary mt-1" type="submit" name="button" data-toggle="tooltip" data-placement="top" title="sospendi annuncio">
+                                <button  id="suspend_apt" class="sm-margin btn btn-secondary mt-1" type="submit" name="button" data-toggle="tooltip" data-placement="top"  data-html="true" title="<span class='green-text'>Sospendi annuncio</span>">
                                     {{-- Sospendi annuncio --}}
                                     <i class="fas fa-pause fa-lg"></i>
                                 </button>
                             </form>
 
                             @if(!in_array( $apartment->id, $active_sponsorships))
-                                <a  id="sponsor_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.sponsor', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top" title="sponsorizza">
+                                <a  id="sponsor_apt" class="sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.sponsor', ['apartment' => $apartment->id ]) }}" data-toggle="tooltip" data-placement="top"  data-html="true" title="<span class='green-text'>Sponsorizza</span>">
                                     {{-- Sponsorizza --}}
                                     <i class="fas fa-award fa-lg"></i>
                                 </a>
                             @else
                                 {{-- (c'è una sponsorizzazione attiva per quell'appartamento) --}}
-                                <button id="sponsored_apt" class="sm-margin btn btn-secondary mt-1" data-toggle="tooltip" data-placement="top" title="già sponsorizzato">
+                                <button id="sponsored_apt" class="sm-margin btn btn-secondary mt-1" data-toggle="tooltip" data-placement="top"  data-html="true" title="<span class='green-text'>Sponsorizzazione già attivata</span>">
                                     <i class="fas fa-award fa-lg"></i>
                                 </button>
                             @endif
                             @else
-                                <a  id="display_apt"class="suspended sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}" data-toggle="tooltip" data-placement="top" title="ripristina annuncio">
+                                <a  id="display_apt"class="suspended sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}" data-toggle="tooltip" data-placement="top"  data-html="true" title="<span class='green-text'>Riattiva annuncio</span>">
                                     {{-- Ripristina --}}
                                     <i class="fas fa-trash-restore-alt fa-lg"></i>
                                 </a>

@@ -11055,6 +11055,10 @@ input[id^=service_] {
   transition: 0.4s ease-in-out;
 }
 
+.green-text {
+  color: #61CE4E;
+}
+
 @media screen and (max-width: 568px) {
   .margin-bottom-xl {
     margin-bottom: 50px;

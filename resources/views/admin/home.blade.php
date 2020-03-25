@@ -26,11 +26,11 @@
                         <div class="btn-container">
                             <p class="wht">Cosa puoi fare:</p>
                             <div>
-                                <a class="btn eye" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom" title="visualizza i tuoi appartamenti">
+                                <a class="btn eye" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<span class='green-text'>visualizza i tuoi appartamenti</span>">
                                     {{-- Visualizza i tuoi appartamenti --}}
                                     <i class="far fa-eye fa-2x"></i>
                                 </a>
-                                <a class="btn add" href="{{ route('admin.apartment.create') }}" data-toggle="tooltip" data-placement="bottom" title="inserisci un nuovo appartamento">
+                                <a class="btn add" href="{{ route('admin.apartment.create') }}" data-toggle="tooltip" data-placement="bottom" data-html="true" title="<span class='green-text'>inserisci un nuovo appartamento</span>">
                                     {{-- Inserisci nuovi appartamenti --}}
                                     <i class="fas fa-plus fa-2x"></i>
                                 </a>

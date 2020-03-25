@@ -11,9 +11,9 @@
 
         <div class="clearfix">
             <h1 class="d-inline-block col-9 mb-3">Inserimento nuovo appartamento</h1>
-            <a class="btn-edit return-button btn btn-primary float-right" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom" title="Elenco dei tuoi appartamenti">
-                {{-- I tuoi appartamenti --}}
-                <i class="fas fa-list-ul"></i>
+            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Elenco appartamenti</span>">
+                {{-- Elenco appartamenti --}}
+                <i class="fas fa-list-ul fa-2x"></i>
             </a>
         </div>
 

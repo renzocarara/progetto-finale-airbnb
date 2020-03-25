@@ -91,6 +91,9 @@ input[id^="service_"] {
     }
 }
 
+.green-text {
+    color: $boolbnb_green;
+}
 @media screen and (max-width: 568px) {
     .margin-bottom-xl {
         margin-bottom: 50px;
