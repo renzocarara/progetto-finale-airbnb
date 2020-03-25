@@ -33,7 +33,8 @@ class ApartmentController extends Controller
         $user_id = Auth::user()->id;
 
         // leggo dal DB tutti gli appartamenti associati all'utente loggato e ottengo una collection
-        $apartments = Apartment::where('user_id', $user_id)->withTrashed()->get();
+        // imposto anche la paginazione automatica di Laravel
+        $apartments = Apartment::where('user_id', $user_id)->withTrashed()->paginate(5);
 
         // contiene tutte le sponsorizzazioni di tutti gli appartamenti di quell'utente (sia scadute che attive)
         $all_sponsorships=[];

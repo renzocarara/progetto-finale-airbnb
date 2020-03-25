@@ -13,20 +13,20 @@ use Illuminate\Http\Request;
 class DataController extends Controller
 {
     public function message(Apartment $apartment) {
-        
+
         if (Auth::user()->id == $apartment->user_id){
-            $messages = Message::where('apartment_id', $apartment->id)->get();
+            $messages = Message::where('apartment_id', $apartment->id)->paginate(5);
 
             return view('admin.request', ['apartment' => $apartment, 'messages' => $messages]);
         } else {
             // l'appartamento in aggiornamento non appartiene all'utente loggato
             // visualizzo una pagina che lo informa
             return view('admin.not_authorized');
-        } 
+        }
     }
 
     public function statistics(Apartment $apartment) {
-        
+
         if (Auth::user()->id == $apartment->user_id){
             $messages = count(Message::where('apartment_id', $apartment->id)->get());
 
@@ -36,7 +36,6 @@ class DataController extends Controller
             // l'appartamento in aggiornamento non appartiene all'utente loggato
             // visualizzo una pagina che lo informa
             return view('admin.not_authorized');
-        } 
+        }
     }
 }
-

@@ -93,7 +93,7 @@
                 </tbody>
             </table>
             {{-- paginazione fatta automaticamente da Laravel --}}
-            {{-- {{ $apartments->links() }} --}}
+            {{ $apartments->links() }}
         </div>
     </div>
 </div>
