@@ -57,7 +57,7 @@ class HomeController extends Controller
 
         // calcolo del indice per il foreach dello stamapa card apt
         $apt_num = count($apt_sponsor) >= 3 ? 2 : 5 - count($apt_sponsor);
-        
+
         return view('public.home', ["apartments"=>$apartments, 'apts_sponsor'=>$apt_sponsor, 'apt_num' => $apt_num]);
     }
 
@@ -79,7 +79,8 @@ class HomeController extends Controller
     public function mail(Request $request, Apartment $apartment) {
 
         $request->validate([
-            // tabella messages
+            //
+            'email' => ['required', 'string', 'email', 'max:80'],
             'message' => 'required|max:1000', // richiesto e massimo lungo 1000caratteri
         ]);
 
@@ -96,7 +97,7 @@ class HomeController extends Controller
 
         return view('public.message_sent', ["apartment"=>$apartment, 'new_message' => $new_message]);
     }
-    
+
     public function go_back() {
 
         return back();
