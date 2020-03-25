@@ -16,6 +16,9 @@
                 <a class="return-button btn btn-primary float-right mb-5" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Elenco appartamenti</span>">
                    <i class="fas fa-list-ul fa-2x"></i>
                 </a>
+                <a class="return-button btn btn-primary float-right mb-5" href="{{ url()->previous() }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Indietro</span>">
+                   <i class="fas fa-arrow-circle-left fa-2x"></i>
+                </a>
             </div>
         </div>
         <div class="row">

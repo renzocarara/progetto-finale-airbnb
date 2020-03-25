@@ -97,12 +97,4 @@ class HomeController extends Controller
 
         return view('public.message_sent', ["apartment"=>$apartment, 'new_message' => $new_message]);
     }
-
-    public function go_back() {
-
-        return back();
-    }
-
-
-
 }

@@ -12,13 +12,13 @@
         <div class="row justify-content-center margin-top-xl margin-bottom-xl">
             <div class="col-md-8 clearfix">
                 <h1 class="d-inline-block col-7 mb-5">MESSAGGIO INVIATO!</h1>
-                <a class="btn-edit return-button btn btn-primary float-right" href="{{ route('public') }}" data-toggle="tooltip" data-placement="bottom" title="homepage">
+                <a class="btn-edit return-button btn btn-primary float-right" href="{{ route('public') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Homepage</span>">
                     {{-- homepage --}}
-                    <i class="fas fa-home fa-lg"></i>
+                    <i class="fas fa-home fa-2x"></i>
                 </a>
-                <a class="btn-edit return-button btn btn-primary float-right" href="{{ route('public.go_back') }}" data-toggle="tooltip" data-placement="bottom" title="back">
+                <a class="btn-edit return-button btn btn-primary float-right mb-5" href="{{ url()->previous() }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Indietro</span>">
                     {{-- back --}}
-                    <i class="fas fa-arrow-circle-left fa-lg"></i>
+                    <i class="fas fa-arrow-circle-left fa-2x"></i>
                 </a>
             </div>
             <div class="card">
