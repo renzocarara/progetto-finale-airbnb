@@ -73,6 +73,8 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')->
 
     Route::get('apartment/{apartment}/message', 'DataController@message')->name('apartment.messages');
 
+    Route::get('apartment/{apartment}/statistics', 'DataController@statistics')->name('apartment.statistics');
+
 });
 
 ?>

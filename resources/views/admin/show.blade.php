@@ -17,7 +17,7 @@
                 {{-- Richieste --}}
                 <i class="fas fa-envelope"></i>
             </a>
-            <a class="show-btn btn btn-primary float-right" href="#" data-toggle="tooltip" data-placement="bottom" title="Statistiche">
+            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.statistics', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom" title="Statistiche">
                 {{-- Statistiche --}}
                 <i class="fas fa-chart-area"></i>
             </a>

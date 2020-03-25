@@ -24,5 +24,19 @@ class DataController extends Controller
             return view('admin.not_authorized');
         } 
     }
+
+    public function statistics(Apartment $apartment) {
+        
+        if (Auth::user()->id == $apartment->user_id){
+            $messages = count(Message::where('apartment_id', $apartment->id)->get());
+
+            return view('admin.statistics', ['apartment' => $apartment, 'messages' => $messages]);
+
+        } else {
+            // l'appartamento in aggiornamento non appartiene all'utente loggato
+            // visualizzo una pagina che lo informa
+            return view('admin.not_authorized');
+        } 
+    }
 }
 
