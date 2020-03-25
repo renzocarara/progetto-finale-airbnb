@@ -71,67 +71,38 @@
                 </form>
 
                 <h3>Risultati della ricerca</h3>
-                <a class="apt-card" href="#">
-                    <div class="card h-100">
-                        <div class="img-container">
-                            <img class="img-apt-card card-body card-img-top" src="#" alt="immagine appartamento">
-                        </div>
 
-                        <div class="card-body">
-                            <h5 class="card-title">Città</h5>
-                            <p class="card-text">Titolo appartamento</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="apt-card" href="#">
-                    <div class="card h-100">
-                        <div class="img-container">
-                            <img class="img-apt-card card-body card-img-top" src="#" alt="immagine appartamento">
-                        </div>
+                @foreach($apts_sponsor as $apt_sponsor)
+                    {{-- @break($loop->index > 2) --}}
+                        <a class="apt-card mb-3" href="{{ route('public.show', [$apt_sponsor->id]) }}">
+                            <div class="sponsor card h-100">
+                                <div class="img-container">
+                                    <img class="img-apt-card card-body card-img-top" src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_sponsor->title}}">
+                                </div>
 
-                        <div class="card-body">
-                            <h5 class="card-title">Città</h5>
-                            <p class="card-text">Titolo appartamento</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="apt-card" href="#">
-                    <div class="card h-100">
-                        <div class="img-container">
-                            <img class="img-apt-card card-body card-img-top" src="#" alt="immagine appartamento">
-                        </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $apt_sponsor->city }}</h5>
+                                    <p class="card-text"><strong>{{ $apt_sponsor->title }}</strong></p>
+                                    <span class="neon-sponsor h5"><strong>SPONSORIZZATO</strong></span>
+                                </div>
+                            </div>
+                        </a>
+                    @endforeach
 
-                        <div class="card-body">
-                            <h5 class="card-title">Città</h5>
-                            <p class="card-text">Titolo appartamento</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="apt-card" href="#">
-                    <div class="card h-100">
-                        <div class="img-container">
-                            <img class="img-apt-card card-body card-img-top" src="#" alt="immagine appartamento">
-                        </div>
+                @foreach ($places as $place)
+                    <a class="apt-card" href="{{ route('public.show', $place->id) }}">
+                        <div class="card h-100">
+                            <div class="img-container">
+                                <img class="img-apt-card card-body card-img-top" src="{{$place->info->image ? asset('storage/' . $place->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$place->title}}">
+                            </div>
 
-                        <div class="card-body">
-                            <h5 class="card-title">Città</h5>
-                            <p class="card-text">Titolo appartamento</p>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $place->city }}</h5>
+                                <p class="card-text">{{ $place->title }}</p>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <a class="apt-card" href="#">
-                    <div class="card h-100">
-                        <div class="img-container">
-                            <img class="img-apt-card card-body card-img-top" src="#" alt="immagine appartamento">
-                        </div>
-
-                        <div class="card-body">
-                            <h5 class="card-title">Città</h5>
-                            <p class="card-text">Titolo appartamento</p>
-                        </div>
-                    </div>
-                </a>
-
+                    </a>
+                @endforeach
 
             </div>
         </div>
