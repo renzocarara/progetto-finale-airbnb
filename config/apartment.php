@@ -113,7 +113,7 @@ return [
         'lon' => 14.246427,
         'views' => 1288],
 
-        ['user_id' => 11,
+        ['user_id' => 9,
         'title' => "Grattacielo sul mare nel centro città",
         'state' => 'Italy',
         'city' => "Genova",
@@ -124,7 +124,7 @@ return [
         'lon' => 8.900687,
         'views' => 2590],
 
-        ['user_id' => 12,
+        ['user_id' => 8,
         'title' => "Stanza matrimoniale in pieno centro a Genova",
         'state' => 'Italy',
         'city' => "Genova",
@@ -135,7 +135,7 @@ return [
         'lon' => 8.938595,
         'views' => 962],
 
-        ['user_id' => 13,
+        ['user_id' => 6,
         'title' => "Casa di Claudio: lovely flat in the old town",
         'state' => 'Italy',
         'city' => "Genova",
@@ -146,7 +146,7 @@ return [
         'lon' => 8.932637,
         'views' => 852],
 
-        ['user_id' => 14,
+        ['user_id' => 7,
         'title' => "Centralissimo a Bologna",
         'state' => 'Italy',
         'city' => "Bologna",
@@ -157,7 +157,7 @@ return [
         'lon' => 11.344726,
         'views' => 1503],
 
-        ['user_id' => 15,
+        ['user_id' => 5,
         'title' => "I portici di via Piella",
         'state' => 'Italy',
         'city' => "Bologna",
@@ -168,7 +168,7 @@ return [
         'lon' =>  11.345215,
         'views' => 1574],
 
-        ['user_id' => 16,
+        ['user_id' => 4,
         'title' => "Downtown Loft",
         'state' => 'Italy',
         'city' => "Bologna",
@@ -179,7 +179,7 @@ return [
         'lon' =>  11.341870,
         'views' => 156],
 
-        ['user_id' => 17,
+        ['user_id' => 3,
         'title' => "Appartamento di charme con patio a pochi passi dal Duomo",
         'state' => 'Italy',
         'city' => "Firenze",
@@ -190,7 +190,7 @@ return [
         'lon' =>  11.253567,
         'views' => 3424],
 
-        ['user_id' => 18,
+        ['user_id' => 2,
         'title' => "Loft con terrazza in Santo Spirito",
         'state' => 'Italy',
         'city' => "Firenze",
@@ -201,7 +201,7 @@ return [
         'lon' => 11.249343,
         'views' => 4230],
 
-        ['user_id' => 19,
+        ['user_id' => 1,
         'title' => "Apartment Florence City Centre",
         'state' => 'Italy',
         'city' => "Firenze",
@@ -212,7 +212,7 @@ return [
         'lon' => 11.258192,
         'views' => 1201],
 
-        ['user_id' => 20,
+        ['user_id' => 7,
         'title' => "Suite Leonardo",
         'state' => 'Italy',
         'city' => "Roma",
@@ -223,7 +223,7 @@ return [
         'lon' => 12.493430,
         'views' => 983],
 
-        ['user_id' => 21,
+        ['user_id' => 5,
         'title' => "Loft Garden San Lorenzo",
         'state' => 'Italy',
         'city' => "Roma",
@@ -234,7 +234,7 @@ return [
         'lon' => 12.517550,
         'views' => 3547],
 
-        ['user_id' => 22,
+        ['user_id' => 4,
         'title' => "Appartamento elegante e centrale",
         'state' => 'Italy',
         'city' => "Roma",
@@ -245,7 +245,7 @@ return [
         'lon' => 12.513824,
         'views' => 2587],
 
-        ['user_id' => 23,
+        ['user_id' => 9,
         'title' => "Casa Colosseum",
         'state' => 'Italy',
         'city' => "Roma",
@@ -256,7 +256,7 @@ return [
         'lon' => 12.486789,
         'views' => 2573],
 
-        ['user_id' => 24,
+        ['user_id' => 10,
         'title' => "Solo il cuore nel cuore di Lecce B&B familiare",
         'state' => 'Italy',
         'city' => "Lecce",
@@ -267,7 +267,7 @@ return [
         'lon' => 18.169952,
         'views' => 1254],
 
-        ['user_id' => 25,
+        ['user_id' => 5,
         'title' => "La Suite del Duca",
         'state' => 'Italy',
         'city' => "Lecce",
@@ -278,7 +278,7 @@ return [
         'lon' =>  18.177448,
         'views' => 1549],
 
-        ['user_id' => 26,
+        ['user_id' => 10,
         'title' => "Nel cuore dei Sassi - grazioso monolocale",
         'state' => 'Italy',
         'city' => "Matera",
@@ -289,7 +289,7 @@ return [
         'lon' => 16.608298,
         'views' => 3511],
 
-        ['user_id' => 27,
+        ['user_id' => 2,
         'title' => "Rialto Design Suite",
         'state' => 'Italy',
         'city' => "Venezia",
@@ -300,7 +300,7 @@ return [
         'lon' => 12.335293,
         'views' => 6548],
 
-        ['user_id' => 28,
+        ['user_id' => 1,
         'title' => "La Casa Perfetta nel Posto Perfetto",
         'state' => 'Italy',
         'city' => "Palermo",
@@ -311,7 +311,7 @@ return [
         'lon' => 13.360366,
         'views' => 2411],
 
-        ['user_id' => 29,
+        ['user_id' => 1,
         'title' => "Splendida Suite al centro storico",
         'state' => 'Italy',
         'city' => "Alghero",
@@ -322,7 +322,7 @@ return [
         'lon' => 8.312007,
         'views' => 2108],
 
-        ['user_id' => 30,
+        ['user_id' => 8,
         'title' => "Vivi La Maddalena-Apartment",
         'state' => 'Italy',
         'city' => "La Maddalena",
