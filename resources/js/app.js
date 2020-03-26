@@ -97,8 +97,8 @@ $(document).ready(function() {
     }); // end click event
 
     // simulo il click sul bottone cerca quando viene premuto il tasto enter
-    $('#where').keyup(function(event){
-        if(event.which == 13) {
+    $('#where').keyup(function(event) {
+        if (event.which == 13) {
             $('#submit-search').click();
         }
     });
@@ -148,20 +148,20 @@ $(document).ready(function() {
             }); // end ajax call
         } // end if
     }); // end focusout event
-    
-// Il codice JS che segue gira quando l/'utente si trova sulla pagina home publica 
-    $('#where').keyup(function(){
+
+    // Il codice JS che segue gira quando l/'utente si trova sulla pagina home publica
+    $('#where').keyup(function() {
 
         var apiKey = "BG5ffg9ACWQBPZZHShDaXxBnheo0bD36";
 
         var place = $('#where').val().trim();
 
-        if (place) {
+        if ((place) && (place.length >= 2)) {
 
             var baseUrl = "https://api.tomtom.com/";
             var endPoint = "search/2/geocode/";
             var apiUrl = baseUrl + endPoint + place + ".json";
-            
+
             $.ajax({
                 type: "GET",
                 url: apiUrl,
@@ -171,7 +171,7 @@ $(document).ready(function() {
                 },
 
                 success: function(data) {
-                    
+
                     // recupero lat e lon dalla risposta che mi è arrivata
                     var lat = data.results[0].position.lat;
                     var lon = data.results[0].position.lon;
