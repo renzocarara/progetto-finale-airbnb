@@ -73,32 +73,40 @@
                 <h3>Risultati della ricerca</h3>
 
                 @foreach($apts_sponsor as $apt_sponsor)
-                    {{-- @break($loop->index > 2) --}}
-                        <a class="apt-card mb-3" href="{{ route('public.show', [$apt_sponsor->id]) }}">
-                            <div class="sponsor card h-100">
-                                <div class="img-container">
-                                    <img class="img-apt-card card-body card-img-top" src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_sponsor->title}}">
+                    @break($loop->index > 0)
+                    <a class="apt-card mb-3" href="{{ route('public.show', [$apt_sponsor->id]) }}">
+                        <div class="card sponsor mb-3">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_sponsor->title}}" class="card-img m-2">
                                 </div>
-
-                                <div class="card-body">
-                                    <h5 class="card-title">{{ $apt_sponsor->city }}</h5>
-                                    <p class="card-text"><strong>{{ $apt_sponsor->title }}</strong></p>
-                                    <span class="neon-sponsor h5"><strong>SPONSORIZZATO</strong></span>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title d-inline-block"><strong>{{ $apt_sponsor->city }}</strong></h5>
+                                        <span class="neon-sponsor float-right h6"><strong>SPONSORIZZATO</strong></span>
+                                        <p class="card-text"><strong>{{ $apt_sponsor->title }}</strong></p>
+                                        <p class="card-text">{{ $apt_sponsor->info->summary }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </a>
-                    @endforeach
+                        </div>
+                    </a>  
+                @endforeach
 
                 @foreach ($places as $place)
                     <a class="apt-card" href="{{ route('public.show', $place->id) }}">
-                        <div class="card h-100">
-                            <div class="img-container">
-                                <img class="img-apt-card card-body card-img-top" src="{{$place->info->image ? asset('storage/' . $place->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$place->title}}">
-                            </div>
-
-                            <div class="card-body">
-                                <h5 class="card-title">{{ $place->city }}</h5>
-                                <p class="card-text">{{ $place->title }}</p>
+                    <div class="card mb-3">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    <img src="{{$place->info->image ? asset('storage/' . $place->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$place->title}}" class="card-img m-2">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title d-inline-block"><strong>{{ $place->city }}</strong></h5>
+                                        <p class="card-text"><strong>{{ $place->title }}</strong></p>
+                                        <p class="card-text">{{ $place->info->summary }}</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </a>

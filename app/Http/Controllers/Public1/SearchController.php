@@ -16,7 +16,7 @@ class SearchController extends Controller
         $data = $request->all();
         // leggere dalla tabella apartments tutti gli appartamentoi con sponsorship attive
         // uso l'array apts_sponsor, che contiene un elenco di id, degli appartamenti con sponsor attive
-        $apt_sponsor = Apartment::whereIn('id', $data['apts_sponsor'])->get();
+        $apt_sponsor = Apartment::whereIn('id', $data['apts_sponsor'])->get()->shuffle();
 
         $places = Apartment::where('city', $data['place'])->get();
 

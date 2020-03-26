@@ -11,7 +11,7 @@
             <h1 class="title-checkout col-md-10 d-inline-block mb-4">Complimenti, pagamento effettuato</h1>
             <a class="show-btn btn btn-primary float-right mb-4" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip"data-html="true" data-placement="bottom" data-html="true" title="<span class='green-text'>Elenco appartamenti</span>">
                 {{-- Elenco appartamenti --}}
-                <i class="fas fa-list-ul fa-lg"></i>
+                <i class="fas fa-list-ul fa-2x"></i>
             </a>
         </div>
     </div>
