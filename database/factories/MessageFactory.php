@@ -23,6 +23,7 @@ $factory->define(Message::class, function (Faker $faker) {
 
         'apartment_id' => $faker->numberBetween(1, 30),
         'email' => $faker->unique()->safeEmail,
-        'message' => $faker->text()
+        'message' => $faker->text(),
+        'created_at' => $faker->dateTimeBetween($startDate = '-1 years', $endDate = 'now', $timezone = null)
     ];
 });

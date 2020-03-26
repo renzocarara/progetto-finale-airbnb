@@ -13,7 +13,7 @@ class UsersTableSeeder extends Seeder
      * @return void
      */
      // numero di utenti "fake" da creare
-     public $num_of_users = 20;
+     public $num_of_users = 10;
 
     public function run()
     {

@@ -28,10 +28,12 @@
         </div>
         <div class="row margin-bottom-xl">
             <div class="col-12">
-                <h4>Ha ricevuto <strong>{{ $messages }}</strong> richieste<h4>
+                <h4>Ha ricevuto <strong>{{ $messages_count }}</strong> richieste<h4>
+                {!! $chart->container() !!}
             </div>
         </div>
     </div>
+    {!! $chart->script() !!}
 
 </main>
 @endsection

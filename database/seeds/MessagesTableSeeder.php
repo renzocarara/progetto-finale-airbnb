@@ -14,7 +14,7 @@ class MessagesTableSeeder extends Seeder
      * @return void
      */
      // numero di richieste "fake" da creare
-     public $num_of_requests = 30;
+     public $num_of_requests = 200;
 
 
     public function run()
