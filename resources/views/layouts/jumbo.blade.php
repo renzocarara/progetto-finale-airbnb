@@ -7,13 +7,28 @@
                 </div>
                 <div class="col mb-4 flex">
 
+                {{-- il blocco che segue serve per la validazione, 'lato server', dei dati del form --}}
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                 @endif
                     <form method="post" action="{{ route('public.search') }}">
-
+                    @csrf
                         @foreach ($apts_sponsor as $apt_sponsor)
                             <input type="hidden" name="apts_sponsor[]" value="{{ $apt_sponsor->id }}">
                         @endforeach
 
-                        @csrf
+                        {{-- campi nascosti per salvare i valori di latitudine e longitudine che arrivano da chiamata AJAX a TomTom --}}
+                        <div class="form-group">
+                            <input class="lat-input" type="hidden" name="lat" value="{{ old('lat') }}">
+                            <input class="lon-input" type="hidden" name="lon" value="{{ old('lon') }}">
+                        </div>
+
                         <div class="form-group mb-8">
                             <label for="place" class="wht">
                                 Dove vuoi andare?
@@ -21,7 +36,7 @@
                             </label>
                             <input type="text" class="form-control" id="where" name="place" placeholder="Indica una città">
                         </div>
-                        <button type="submit" class="btn bckg-green wht">cerca</button>
+                        <button type="submit" id="submit-search" class="btn bckg-green wht">cerca</button>
                     </form>
                 </div>
             </div>

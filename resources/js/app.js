@@ -96,6 +96,14 @@ $(document).ready(function() {
         }
     }); // end click event
 
+    // simulo il click sul bottone cerca quando viene premuto il tasto enter
+    $('#where').keyup(function(event){
+        if(event.which == 13) {
+            $('#submit-search').click();
+        }
+    });
+
+
     // intercetto l'evento 'perdita del focus' sui campi della sezione indirizzo
     $('.street-field, .number-field, .city-field, .state-field').on('focusout', function() {
         console.log("focusout");
@@ -140,6 +148,47 @@ $(document).ready(function() {
             }); // end ajax call
         } // end if
     }); // end focusout event
+    
+// Il codice JS che segue gira quando l/'utente si trova sulla pagina home publica 
+    $('#where').keyup(function(){
+
+        var apiKey = "BG5ffg9ACWQBPZZHShDaXxBnheo0bD36";
+
+        var place = $('#where').val().trim();
+
+        if (place) {
+
+            var baseUrl = "https://api.tomtom.com/";
+            var endPoint = "search/2/geocode/";
+            var apiUrl = baseUrl + endPoint + place + ".json";
+            
+            $.ajax({
+                type: "GET",
+                url: apiUrl,
+                data: {
+                    "countrySet": 'IT',
+                    "key": apiKey
+                },
+
+                success: function(data) {
+                    
+                    // recupero lat e lon dalla risposta che mi è arrivata
+                    var lat = data.results[0].position.lat;
+                    var lon = data.results[0].position.lon;
+                    // inserisco i valori di lat e lon nel form, in 2 campi 'input' nascosti
+                    $('.lat-input').val(lat);
+                    $('.lon-input').val(lon);
+
+                    console.log($('.lat-input').val());
+                    console.log($('.lon-input').val());
+                },
+
+                error: function() {
+                    alert("Indirizzo non trovato!");
+                }
+            }); // end ajax call
+        } // end if
+    }); // end click event
 
 }); // end document ready
 
