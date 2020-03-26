@@ -172,12 +172,16 @@ $(document).ready(function() {
 
                 success: function(data) {
 
-                    // recupero lat e lon dalla risposta che mi è arrivata
-                    var lat = data.results[0].position.lat;
-                    var lon = data.results[0].position.lon;
-                    // inserisco i valori di lat e lon nel form, in 2 campi 'input' nascosti
-                    $('.lat-input').val(lat);
-                    $('.lon-input').val(lon);
+                    // verifico che tomtom mi abbia restituito dei valori di lat e lon
+                    if (typeof(data.results[0]) !== 'undefined') {
+
+                        // recupero lat e lon dalla risposta che mi è arrivata
+                        var lat = data.results[0].position.lat;
+                        var lon = data.results[0].position.lon;
+                        // inserisco i valori di lat e lon nel form, in 2 campi 'input' nascosti
+                        $('.lat-input').val(lat);
+                        $('.lon-input').val(lon);
+                    }
 
                     console.log($('.lat-input').val());
                     console.log($('.lon-input').val());
