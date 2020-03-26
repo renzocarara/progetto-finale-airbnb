@@ -44,6 +44,7 @@ class SearchController extends Controller
 
         $places = Apartment::where('city', $data['place'])->get();
 
-        return view('public.search', ['places' => $places, 'apts_sponsor' => $apt_sponsor]);
+        return view('public.search', ['places' => $places, 'apts_sponsor' => $apt_sponsor,
+                    'place' => $data['place']]);
     }
 }
