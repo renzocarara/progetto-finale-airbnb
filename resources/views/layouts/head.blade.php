@@ -20,7 +20,9 @@
 
 <!-- Fonts -->
 <link rel="dns-prefetch" href="//fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+{{-- <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet"> --}}
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 
 {{-- Media Query --}}
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

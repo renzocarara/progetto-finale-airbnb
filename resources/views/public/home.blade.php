@@ -12,7 +12,7 @@
             <div class="row row-cols-1 row-cols-md-3">
             @foreach($apts_sponsor as $apt_sponsor)
                 @break($loop->index > 2)
-                    <a class="apt-card mb-3" href="{{ route('public.show', [$apt_sponsor->id]) }}">
+                    <a class="apt-card mb-3 card-deck mr-1" href="{{ route('public.show', [$apt_sponsor->id]) }}">
                         <div class="sponsor card h-100">
                             <div class="img-container">
                                 <img class="img-apt-card card-body card-img-top" src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_sponsor->title}}">
@@ -27,9 +27,11 @@
                     </a>
                 @endforeach
 
+
                 @foreach($apartments as $apartment)
                 @break($loop->index > $apt_num)
-                    <a class="apt-card mb-3" href="{{ route('public.show', [$apartment->id]) }}">
+                    <a class="apt-card mb-3 card-deck mr-1" href="{{ route('public.show', [$apartment->id]) }}">
+
                         <div class="card h-100">
                             <div class="img-container">
                                 <img class="img-apt-card card-body card-img-top" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/')}}" alt="{{$apartment->title}}">
