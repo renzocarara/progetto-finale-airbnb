@@ -40,17 +40,17 @@
                 @endforeach
 
                 @forelse ($nearby_apts as $nearby_apt)
-                    <a class="apt-card" href="{{ route('public.show', $nearby_apt[0]->id) }}">
+                    <a class="apt-card" href="{{ route('public.show', $nearby_apt->id) }}">
                     <div class="card mb-3">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="{{$nearby_apt[0]->info->image ? asset('storage/' . $nearby_apt[0]->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$nearby_apt[0]->title}}" class="card-img m-2">
+                                    <img src="{{$nearby_apt->info->image ? asset('storage/' . $nearby_apt->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$nearby_apt->title}}" class="card-img m-2">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body module line-clamp">
-                                        <h5 class="card-title d-inline-block"><strong>{{ $nearby_apt[0]->city }}</strong></h5>
-                                        <p class="card-text"><strong>{{ $nearby_apt[0]->title }}</strong></p>
-                                        <p class="card-text ellips">{{ $nearby_apt[0]->info->summary }}</p>
+                                        <h5 class="card-title d-inline-block"><strong>{{ $nearby_apt->city }}</strong></h5>
+                                        <p class="card-text"><strong>{{ $nearby_apt->title }}</strong></p>
+                                        <p class="card-text ellips">{{ $nearby_apt->info->summary }}</p>
                                     </div>
                                 </div>
                             </div>

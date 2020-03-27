@@ -45,7 +45,8 @@ class SearchController extends Controller
 
         $apartments = Apartment::whereNotIn('id', $data['apts_sponsor'])->get();
 
-        $nearby_apts = [];
+        $apt_and_distance=[];
+        $apts_id_dist = [];
 
         foreach ($apartments as $apartment) {
             $lat2= $apartment->lat;
@@ -54,13 +55,23 @@ class SearchController extends Controller
             $distance = $this->get_distance($lat1, $lon1, $lat2, $lon2);
 
             if($distance <= 20000) {
-
-                $nearby_apt = Apartment::where('id', $apartment->id)->get();
-                
-                array_push($nearby_apts, $nearby_apt);
+                // creo array associativo, dove la chiave è l'id appartamento e la distanza è il valore
+                $apts_id_dist = $apts_id_dist + [($apartment->id) =>$distance];
             }
         }
+        // ordino l'array associativo in base alle distanze [id => distanza]
+        asort($apts_id_dist);
 
+        // estraggo i soli id, che sono ordinati in base alle distanze
+        $apts_ids=array_keys($apts_id_dist);
+
+        // leggo dal DB gli appartamenti e mi creo una collection ordinata in base all'array di ids
+        $ids_ordered = implode(',', $apts_ids);
+        $nearby_apts = Apartment::whereIn('id', $apts_ids)
+         ->orderByRaw("FIELD(id, $ids_ordered)")
+         ->get();
+// dd($nearby_apts);
+        // passo alla view: la lista degli apts in ordine di distanza, la lista degli apt sponsorizzati, il nome della localià ricercata
         return view('public.search', ['nearby_apts' => $nearby_apts, 'apts_sponsor' => $apts_sponsor, 'place' => $data['place']]);
     }
 }
