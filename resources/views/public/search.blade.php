@@ -17,7 +17,7 @@
                         </label>
                         <input type="text" class="form-control" value="{{ $place }}">
                     </div>
- 
+
                 @foreach($apts_sponsor as $apt_sponsor)
                     @break($loop->index > 1)
                     <a class="apt-card mb-3" href="{{ route('public.show', [$apt_sponsor->id]) }}">
@@ -27,11 +27,11 @@
                                     <img src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_sponsor->title}}" class="card-img m-2">
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="card-body">
+                                    <div class="card-body module line-clamp">
                                         <h5 class="card-title d-inline-block"><strong>{{ $apt_sponsor->city }}</strong></h5>
                                         <span class="neon-sponsor float-right h6"><strong>SPONSORIZZATO</strong></span>
                                         <p class="card-text"><strong>{{ $apt_sponsor->title }}</strong></p>
-                                        <p class="card-text">{{ $apt_sponsor->info->summary }}</p>
+                                        <p class="card-text ellips">{{ $apt_sponsor->info->summary }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -47,10 +47,10 @@
                                     <img src="{{$nearby_apt[0]->info->image ? asset('storage/' . $nearby_apt[0]->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$nearby_apt[0]->title}}" class="card-img m-2">
                                 </div>
                                 <div class="col-md-8">
-                                    <div class="card-body">
+                                    <div class="card-body module line-clamp">
                                         <h5 class="card-title d-inline-block"><strong>{{ $nearby_apt[0]->city }}</strong></h5>
                                         <p class="card-text"><strong>{{ $nearby_apt[0]->title }}</strong></p>
-                                        <p class="card-text">{{ $nearby_apt[0]->info->summary }}</p>
+                                        <p class="card-text ellips">{{ $nearby_apt[0]->info->summary }}</p>
                                     </div>
                                 </div>
                             </div>
