@@ -29,7 +29,7 @@
                                 <div class="col-md-8">
                                     <div class="card-body module line-clamp">
                                         <h5 class="card-title d-inline-block"><strong>{{ $apt_sponsor->city }}</strong></h5>
-                                        <span class="neon-sponsor float-right h6"><strong>SPONSORIZZATO</strong></span>
+                                        <span class="neon-sponsor float-right h6"><strong>IN EVIDENZA</strong></span>
                                         <p class="card-text"><strong>{{ $apt_sponsor->title }}</strong></p>
                                         <p class="card-text ellips">{{ $apt_sponsor->info->summary }}</p>
                                     </div>
