@@ -1,4 +1,5 @@
 /* common style */
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -118,9 +119,8 @@ input[id^="service_"] {
 }
 
 .green-text {
-    color: $boolbnb_green;
+    color: white;
 }
-
 @media screen and (max-width: 568px) {
     .margin-bottom-xl {
         margin-bottom: 50px;
