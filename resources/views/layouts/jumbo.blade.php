@@ -36,7 +36,7 @@
                             </label>
                             <input type="text" class="form-control" id="where" name="place" placeholder="Indica una città">
                         </div>
-                        <button type="submit" id="submit-search" class="btn bckg-green wht">cerca</button>
+                        <button type="submit" id="submit-search" class="btn bckg-green wht">Cerca</button>
                     </form>
                 </div>
             </div>

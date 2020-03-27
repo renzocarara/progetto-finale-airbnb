@@ -10,17 +10,16 @@
     <div class="container">
         <div class="white-form-container">
             <div class="flex">
-                <h1 class="display-5 mb-3 mt-5">Risultati ricerca</h1>
-
-                <div class="form-group">
-                    <label for="exampleInputEmail1">
-                        <h5>Località ricercata:</h5>
-                    </label>
-                    <input type="text" class="form-control" value="{{ $place }}">
-                </div>
-
+                <h1 class="display-5 mb-3 mt-5">Risultati ricerca su: <strong>{{ $place }}</strong></h1>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">
+                            <h5>Località ricercata:</h5>
+                        </label>
+                        <input type="text" class="form-control" value="{{ $place }}">
+                    </div>
+ 
                 @foreach($apts_sponsor as $apt_sponsor)
-                    @break($loop->index > 0)
+                    @break($loop->index > 1)
                     <a class="apt-card mb-3" href="{{ route('public.show', [$apt_sponsor->id]) }}">
                         <div class="card sponsor mb-3">
                             <div class="row no-gutters">

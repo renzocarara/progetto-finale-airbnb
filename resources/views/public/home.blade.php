@@ -28,18 +28,18 @@
                 @endforeach
 
 
-                @foreach($apartments as $apartment)
+                @foreach($apts_not_sponsor as $apt_not_sponsor)
                 @break($loop->index > $apt_num)
-                    <a class="apt-card mb-3 card-deck mr-1" href="{{ route('public.show', [$apartment->id]) }}">
+                    <a class="apt-card mb-3 card-deck mr-1" href="{{ route('public.show', [$apt_not_sponsor->id]) }}">
 
                         <div class="card h-100">
                             <div class="img-container">
-                                <img class="img-apt-card card-body card-img-top" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/')}}" alt="{{$apartment->title}}">
+                                <img class="img-apt-card card-body card-img-top" src="{{$apt_not_sponsor->info->image ? asset('storage/' . $apt_not_sponsor->info->image) : asset('storage/')}}" alt="{{$apt_not_sponsor->title}}">
                             </div>
 
                             <div class="card-body">
-                                <h5 class="card-title">{{ $apartment->city }}</h5>
-                                <p class="card-text">{{ $apartment->title }}</p>
+                                <h5 class="card-title">{{ $apt_not_sponsor->city }}</h5>
+                                <p class="card-text">{{ $apt_not_sponsor->title }}</p>
                             </div>
                         </div>
                     </a>

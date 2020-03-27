@@ -53,12 +53,18 @@ class HomeController extends Controller
             }
         }
 
-        $apt_sponsor = Apartment::whereIn('id', $active_sponsorships)->get()->shuffle();
+        $apts_sponsor = Apartment::whereIn('id', $active_sponsorships)->get()->shuffle();
+
+        // dd($apts_sponsor);
+
+        $apts_not_sponsor = Apartment::whereNotIn('id', $active_sponsorships)->get()->shuffle();
+
+        // dd($apts_not_sponsor);
 
         // calcolo del indice per il foreach dello stamapa card apt
-        $apt_num = count($apt_sponsor) >= 3 ? 2 : 5 - count($apt_sponsor);
+        $apt_num = count($apts_sponsor) >= 3 ? 2 : 5 - count($apts_sponsor);
 
-        return view('public.home', ["apartments"=>$apartments, 'apts_sponsor'=>$apt_sponsor, 'apt_num' => $apt_num]);
+        return view('public.home', ["apts_not_sponsor"=>$apts_not_sponsor, 'apts_sponsor'=>$apts_sponsor, 'apt_num' => $apt_num]);
     }
 
     public function show(Apartment $apartment) {
