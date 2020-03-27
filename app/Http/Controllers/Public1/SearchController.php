@@ -37,29 +37,27 @@ class SearchController extends Controller
 
         $apartments = Apartment::all();
 
-        $distanze =[];
+        $nearby_apts =[];
 
         foreach ($apartments as $apartment) {
             $lat2= $apartment->lat;
             $lon2= $apartment->lon;
 
             $distance = $this->get_distance($lat1, $lon1, $lat2, $lon2);
-            //$distance = (3958*3.1415926*sqrt(($lat2-$lat1)*($lat2-$lat1) + cos($lat2/57.29578)*cos($lat1/57.29578)*($lon2-$lon1)*($lon2-$lon1))/180);
 
-            array_push($distanze, $distance);
+            if($distance <= 20000) {
+
+                $nearby_apt = Apartment::where('id', $apartment->id)->get();
+    
+                array_push($nearby_apts, $nearby_apt);
+            }
 
         }
-
-        dd($distanze);
-
-
+        
         // leggere dalla tabella apartments tutti gli appartamentoi con sponsorship attive
         // uso l'array apts_sponsor, che contiene un elenco di id, degli appartamenti con sponsor attive
-        $apt_sponsor = Apartment::whereIn('id', $data['apts_sponsor'])->get()->shuffle();
+        $apts_sponsor = Apartment::whereIn('id', $data['apts_sponsor'])->get()->shuffle();
 
-        $places = Apartment::where('city', $data['place'])->get();
-
-        return view('public.search', ['places' => $places, 'apts_sponsor' => $apt_sponsor,
-                    'place' => $data['place']]);
+        return view('public.search', ['nearby_apts' => $nearby_apts, 'apts_sponsor' => $apts_sponsor, 'place' => $data['place']]);
     }
 }

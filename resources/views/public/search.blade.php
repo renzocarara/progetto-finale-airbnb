@@ -17,7 +17,7 @@
                         <h5>Località ricercata:</h5>
                     </label>
                     <input type="text" class="form-control" value="{{ $place }}">
-                </div
+                </div>
 
                 @foreach($apts_sponsor as $apt_sponsor)
                     @break($loop->index > 0)
@@ -40,18 +40,18 @@
                     </a>
                 @endforeach
 
-                @forelse ($places as $place)
-                    <a class="apt-card" href="{{ route('public.show', $place->id) }}">
+                @forelse ($nearby_apts as $nearby_apt)
+                    <a class="apt-card" href="{{ route('public.show', $nearby_apt[0]->id) }}">
                     <div class="card mb-3">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="{{$place->info->image ? asset('storage/' . $place->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$place->title}}" class="card-img m-2">
+                                    <img src="{{$nearby_apt[0]->info->image ? asset('storage/' . $nearby_apt[0]->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$nearby_apt[0]->title}}" class="card-img m-2">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <h5 class="card-title d-inline-block"><strong>{{ $place->city }}</strong></h5>
-                                        <p class="card-text"><strong>{{ $place->title }}</strong></p>
-                                        <p class="card-text">{{ $place->info->summary }}</p>
+                                        <h5 class="card-title d-inline-block"><strong>{{ $nearby_apt[0]->city }}</strong></h5>
+                                        <p class="card-text"><strong>{{ $nearby_apt[0]->title }}</strong></p>
+                                        <p class="card-text">{{ $nearby_apt[0]->info->summary }}</p>
                                     </div>
                                 </div>
                             </div>
@@ -63,6 +63,9 @@
                     </div>
 
                 @endforelse
+
+
+                
 
                 <h3>Raffina la tua ricerca</h3>
 
