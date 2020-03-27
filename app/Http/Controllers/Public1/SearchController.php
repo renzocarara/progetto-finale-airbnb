@@ -48,15 +48,19 @@ class SearchController extends Controller
             if($distance <= 20000) {
 
                 $nearby_apt = Apartment::where('id', $apartment->id)->get();
-    
+
                 array_push($nearby_apts, $nearby_apt);
             }
 
         }
-        
+
+        if (isset($data['apts_sponsor'])) {
         // leggere dalla tabella apartments tutti gli appartamentoi con sponsorship attive
         // uso l'array apts_sponsor, che contiene un elenco di id, degli appartamenti con sponsor attive
         $apts_sponsor = Apartment::whereIn('id', $data['apts_sponsor'])->get()->shuffle();
+        } else {
+            $apts_sponsor = [];
+        }
 
         return view('public.search', ['nearby_apts' => $nearby_apts, 'apts_sponsor' => $apts_sponsor, 'place' => $data['place']]);
     }

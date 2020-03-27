@@ -188,7 +188,7 @@ $(document).ready(function() {
                 },
 
                 error: function() {
-                    alert("Indirizzo non trovato!");
+                    // alert("Indirizzo non trovato!");
                 }
             }); // end ajax call
         } // end if
