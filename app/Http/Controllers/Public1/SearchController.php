@@ -19,7 +19,7 @@ class SearchController extends Controller
       // $yards = $feet / 3;
       $kilometers = $miles * 1.609344;
       $meters = $kilometers * 1000;
-      return compact('meters');
+      return $meters;
     }
 
     //
