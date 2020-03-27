@@ -9,7 +9,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Rubik', sans-serif;
 }
 
 .green {
@@ -90,6 +90,20 @@ input[id^="service_"] {
     }
 }
 
+.icon-blue {
+    background-color: $boolbnb_blue;
+    color: white;
+    font-weight: bold;
+    border: 2px solid $boolbnb_blue;
+
+    &:hover {
+        background-color: $boolbnb_green;
+        color: white;
+        border: 2px solid $boolbnb_green;
+        transition: 0.4s ease-in-out;
+    }
+}
+
 .btn-green {
     background-color: $boolbnb_green;
     color: white;
@@ -106,6 +120,7 @@ input[id^="service_"] {
 .green-text {
     color: $boolbnb_green;
 }
+
 @media screen and (max-width: 568px) {
     .margin-bottom-xl {
         margin-bottom: 50px;

@@ -49583,7 +49583,13 @@ $(document).ready(function () {
       $(window).scrollTop(0);
     }
   }); // end click event
-  // intercetto l'evento 'perdita del focus' sui campi della sezione indirizzo
+  // simulo il click sul bottone cerca quando viene premuto il tasto enter
+
+  $('#where').keyup(function (event) {
+    if (event.which == 13) {
+      $('#submit-search').click();
+    }
+  }); // intercetto l'evento 'perdita del focus' sui campi della sezione indirizzo
 
   $('.street-field, .number-field, .city-field, .state-field').on('focusout', function () {
     console.log("focusout");
@@ -49624,6 +49630,43 @@ $(document).ready(function () {
     } // end if
 
   }); // end focusout event
+  // Il codice JS che segue gira quando l/'utente si trova sulla pagina home publica
+
+  $('#where').keyup(function () {
+    var apiKey = "BG5ffg9ACWQBPZZHShDaXxBnheo0bD36";
+    var place = $('#where').val().trim();
+
+    if (place && place.length >= 2) {
+      var baseUrl = "https://api.tomtom.com/";
+      var endPoint = "search/2/geocode/";
+      var apiUrl = baseUrl + endPoint + place + ".json";
+      $.ajax({
+        type: "GET",
+        url: apiUrl,
+        data: {
+          "countrySet": 'IT',
+          "key": apiKey
+        },
+        success: function success(data) {
+          // verifico che tomtom mi abbia restituito dei valori di lat e lon
+          if (typeof data.results[0] !== 'undefined') {
+            // recupero lat e lon dalla risposta che mi è arrivata
+            var lat = data.results[0].position.lat;
+            var lon = data.results[0].position.lon; // inserisco i valori di lat e lon nel form, in 2 campi 'input' nascosti
+
+            $('.lat-input').val(lat);
+            $('.lon-input').val(lon);
+          }
+
+          console.log($('.lat-input').val());
+          console.log($('.lon-input').val());
+        },
+        error: function error() {// alert("Indirizzo non trovato!");
+        }
+      }); // end ajax call
+    } // end if
+
+  }); // end click event
 }); // end document ready
 
 function checkFormData() {

@@ -10972,7 +10972,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 .green {
@@ -11050,6 +11050,20 @@ input[id^=service_] {
 }
 
 .btn-blue:hover {
+  color: white;
+  border: 2px solid #61CE4E;
+  transition: 0.4s ease-in-out;
+}
+
+.icon-blue {
+  background-color: #1B3C59;
+  color: white;
+  font-weight: bold;
+  border: 2px solid #1B3C59;
+}
+
+.icon-blue:hover {
+  background-color: #61CE4E;
   color: white;
   border: 2px solid #61CE4E;
   transition: 0.4s ease-in-out;
@@ -11193,6 +11207,10 @@ input[id^=service_] {
     margin-left: 15px;
     margin-right: 15px;
   }
+}
+
+.img-show-admin {
+  width: 100%;
 }
 
 .show-btn {

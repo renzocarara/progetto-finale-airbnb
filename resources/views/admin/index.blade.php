@@ -20,7 +20,7 @@
     <div class="row margin-top-xl">
         <div class="col-12">
             <h1 class="d-inline-block mb-5">Tutti i tuoi appartamenti</h1>
-            <a class="btn btn-primary float-right mb-5" href="{{ route('admin.apartment.create') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Inserisci un nuovo appartamento</span>">
+            <a class="icon-blue btn btn-primary float-right mb-5" href="{{ route('admin.apartment.create') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Inserisci un nuovo appartamento</span>">
                 {{-- Inserisci nuovo appartamento --}}
                 <i class="fas fa-plus fa-2x"></i>
             </a>
@@ -28,7 +28,7 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <table class="table margin-bottom-xl">
+            <table class="table mb-5">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -92,8 +92,10 @@
                 @endforelse
                 </tbody>
             </table>
-            {{-- paginazione fatta automaticamente da Laravel --}}
-            {{ $apartments->links() }}
+            <div class="margin-bottom-xl d-flex justify-content-center">
+                {{-- paginazione fatta automaticamente da Laravel --}}
+                {{ $apartments->links() }}
+            </div>
         </div>
     </div>
 </div>

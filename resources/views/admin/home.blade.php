@@ -21,7 +21,7 @@
                         <h2 class="wht">Benvenuto <strong>{{ Auth::user()->name }}</strong>! </h2>
                         <p class="wht">
                             Ti sei autenticato con la seguente e-mail:
-                            <strong>{{ Auth::user()->email }}</strong>
+                            <strong class="green">{{ Auth::user()->email }}</strong>
                         </p>
                         <div class="btn-container">
                             <p class="wht">Cosa puoi fare:</p>

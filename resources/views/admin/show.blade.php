@@ -13,37 +13,31 @@
             </div>
         </div>
         <div class="show-btn-container d-flex flex-row-reverse mb-5">
-            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.messages', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Richieste ricevute</span>">
+            <a class="icon-blue show-btn btn btn-primary float-right" href="{{ route('admin.apartment.messages', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Richieste ricevute</span>">
                 {{-- Richieste --}}
                 <i class="fas fa-envelope fa-2x"></i>
             </a>
-            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.statistics', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Statistiche</span>">
+            <a class="icon-blue show-btn btn btn-primary float-right" href="{{ route('admin.apartment.statistics', ['apartment' => $apartment->id]) }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Statistiche</span>">
                 {{-- Statistiche --}}
                 <i class="fas fa-chart-area fa-2x"></i>
             </a>
-            <a class="show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Elenco appartamenti</span>">
+            <a class="icon-blue show-btn btn btn-primary float-right" href="{{ route('admin.apartment.index') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Elenco appartamenti</span>">
                 {{-- Elenco appartamenti --}}
                 <i class="fas fa-list-ul fa-2x"></i>
             </a>
         </div>
     </div>
 
-    {{-- immagine e titolo --}}
+    {{-- immagine, titolo e indirizzo --}}
     <div class="row">
-        <div class="card-apt-show-sm card-apt-show-caract card-apt-show-space col-sm-12">
+        <div class="card-apt-show-sm card-apt-show-caract card-apt-show-space col-md-12 col-lg-6">
             <img class="img-show-admin card-body card-img-top apt-img-lg" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}">
-            <div class="card-body">
-                <h3 class="card-title">{{$apartment->title}}</h3>
-            </div>
         </div>
-    </div>
-
-    {{-- indirizzo --}}
-    <div class="row">
-        <div class="card-apt-show-sm card-body card-apt-show-caract card-apt-show-space col-sm-12">
+        <div class="card-apt-show-sm card-body card-apt-show-caract col-md-12 col-lg-5 offset-lg-1">
+            <h3 class="card-title mb-5">{{$apartment->title}}</h3>
             <h5 class="card-title">Indirizzo</h5>
             <p class="card-text">
-                <ul class="list-group col-12 col-md-6 col-lg-5">
+                <ul class="list-group">
                 <li class="list-group-item">{{$apartment->street}}, {{$apartment->number}}</li>
                 <li class="list-group-item">{{$apartment->zip}} {{$apartment->city}}, {{$apartment->state}}</li>
             </ul>
