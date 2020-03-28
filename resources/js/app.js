@@ -198,18 +198,25 @@ function checkFormData() {
 // ----------------------- home blade (pubblica)--------------------------------
 $(document).ready(function() {
 
-    // simulo il click sul bottone cerca quando viene premuto il tasto enter
+    // simulo il click sul bottone cerca quando viene premuto il tasto ENTER
     $('#home-where-input').keyup(function(event) {
         if (event.which == 13) {
             $('#home-submit-search').click();
         }
     });
 
+    // quando viene caricata la pagina, resetto il campo di ricerca della località, il campo sarebbe valorizzato se
+    // l'utente, che aveva fatto una ricerca, torna sulla pagina home premendo la freccia "back" del browser
+    if ($('#home-where-input').length) { // verifico se l'id è definito, cioè se sono sulla pagina home
+        // ripulisco il campo di ricerca della località
+        $('#home-where-input').val("");
+    }
+
     $('#home-where-input').keyup(function() {
 
         var apiKey = "BG5ffg9ACWQBPZZHShDaXxBnheo0bD36";
 
-        var place = $('#home-where-input').val().trim();
+        place = $('#home-where-input').val().trim();
 
         if ((place) && (place.length >= 2)) {
 
@@ -250,6 +257,7 @@ $(document).ready(function() {
     }); // end keyup event
 
     // $('#home-submit-search').click(function() {
+    //     alert("go for serach");
     //     // ripulisco il campo di ricerca della località
     //     $('#home-where-input').val("");
     // }); // end click event

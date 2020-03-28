@@ -30,7 +30,7 @@ class SearchController extends Controller
         ]);
 
         $data = $request->all();
-// dd($data);
+
         if (isset($data['apts_sponsor'])) {
             // leggere dalla tabella apartments tutti gli appartamentoi con sponsorship attive
             // uso l'array apts_sponsor, che contiene un elenco di id, degli appartamenti con sponsor attive
