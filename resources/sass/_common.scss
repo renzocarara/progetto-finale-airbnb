@@ -1,5 +1,4 @@
 /* common style */
-
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -82,11 +81,12 @@ input[id^="service_"] {
     background-color: $boolbnb_blue;
     color: white;
     font-weight: bold;
-    border: 2px solid $boolbnb_blue;
+    border: 2px solid #F8FAFC;
+    border-radius: 5px;
 
     &:hover {
         color: white;
-        border: 2px solid $boolbnb_green;
+        border: 2px solid $boolbnb_blue;
         transition: 0.4s ease-in-out;
     }
 }
@@ -109,11 +109,12 @@ input[id^="service_"] {
     background-color: $boolbnb_green;
     color: white;
     font-weight: bold;
-    border: 2px solid $boolbnb_green;
+    border: 2px solid #F8FAFC;
+    border-radius: 5px;
 
     &:hover {
         color: white;
-        border: 2px solid $boolbnb_blue;
+        border: 2px solid $boolbnb_green;
         transition: 0.4s ease-in-out;
     }
 }

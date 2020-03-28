@@ -192,7 +192,7 @@
 
                     {{-- <button type="submit" class="btn btn-success">Modifica</button> --}}
                     @include('admin.edit_modal')
-                    <button type="reset" class="btn btn-blue">Reset</button>
+                    <button type="reset" class="btn icon-blue">Reset</button>
 
                 </div>
             </form>

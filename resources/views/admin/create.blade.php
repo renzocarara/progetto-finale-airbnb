@@ -168,7 +168,7 @@
                     {{--  ---------------- VALIDAZIONE DATI - GESTIONE ERRORI ------------------------------- --}}
 
                     <div class="margin-bottom-xl">
-                        <button type="reset" class="btn btn-blue">Reset</button>
+                        <button type="reset" class="btn icon-blue">Reset</button>
                         @include('admin.create_modal')
                     </div>
 

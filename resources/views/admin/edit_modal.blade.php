@@ -1,4 +1,4 @@
-<button id="submit-btn" type="button" class="btn btn-green">
+<button id="submit-btn" type="button" class="btn icon-blue">
     Modifica
 </button>
 
