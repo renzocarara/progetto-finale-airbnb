@@ -42,7 +42,7 @@ class SearchController extends Controller
         // lat e lon della località inserita dall'utente
         $lat1= $data['lat'];
         $lon1= $data['lon'];
-        
+
         $apartments = Apartment::whereNotIn('id', $apts_sponsor)->get();
 
         $apts_id_dist = []; // conterrà una lista di: [id_appartamento => distanza]
@@ -79,6 +79,6 @@ class SearchController extends Controller
         }
 
         // passo alla view: la lista degli apts in ordine di distanza, la lista degli apt sponsorizzati, il nome della localià ricercata
-        return view('public.search', ['nearby_apts' => $nearby_apts, 'apts_sponsor' => $apts_sponsor, 'place' => $data['place']]);
+        return view('public.search', ['nearby_apts' => $nearby_apts, 'apts_sponsor' => $apts_sponsor, 'place' => $data['place'], 'apts_id_dist' => $apts_id_dist]);
     }
 }

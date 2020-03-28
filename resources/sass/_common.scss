@@ -1,5 +1,4 @@
 /* common style */
-
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -124,6 +123,10 @@ input[id^="service_"] {
     color: white;
 }
 
+.blue-text {
+    color: $boolbnb_blue;
+}
+
 .page-item.active .page-link {
     color: #fff;
     background-color: $boolbnb_blue;
@@ -137,15 +140,13 @@ input[id^="service_"] {
 }
 
 .on-hover {
-    transition: 0.3s; 
+    transition: 0.3s;
 }
 
 .on-hover:hover {
     background-color: rgba(27, 60, 89, 0.1);
     box-shadow: 0 10px 50px -5px rgba(51, 71, 91, 0.12);
-
 }
-
 @media screen and (max-width: 568px) {
     .margin-bottom-xl {
         margin-bottom: 50px;

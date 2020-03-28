@@ -49,6 +49,9 @@
                                 <div class="col-md-8">
                                     <div class="card-body module line-clamp">
                                         <h5 class="card-title d-inline-block"><strong>{{ $nearby_apt->city }}</strong></h5>
+                                        <span class="float-right h6 a-km blue-text">
+                                            <strong>a {{ round(($apts_id_dist[$nearby_apt->id]/1000), 2) }} km</strong>
+                                        </span>
                                         <p class="card-text"><strong>{{ $nearby_apt->title }}</strong></p>
                                         <p class="card-text ellips">{{ $nearby_apt->info->summary }}</p>
                                     </div>
@@ -58,7 +61,7 @@
                     </a>
                 @empty
                     <div class="alert alert-warning" role="alert">
-                        Non ci sono risultati corrispondenti alla tua ricerca DB!
+                        Non ci sono risultati corrispondenti alla tua ricerca!
                     </div>
 
                 @endforelse
