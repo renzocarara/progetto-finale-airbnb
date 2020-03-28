@@ -42,8 +42,8 @@ class SearchController extends Controller
         // lat e lon della località inserita dall'utente
         $lat1= $data['lat'];
         $lon1= $data['lon'];
-
-        $apartments = Apartment::whereNotIn('id', $data['apts_sponsor'])->get();
+        
+        $apartments = Apartment::whereNotIn('id', $apts_sponsor)->get();
 
         $apts_id_dist = []; // conterrà una lista di: [id_appartamento => distanza]
         $nearby_apts =[]; // conterrà una collection di appartamenti che soddisfano il raggio di ricerca e sono ordinati per distanza

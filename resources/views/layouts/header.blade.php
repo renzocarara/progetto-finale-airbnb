@@ -47,6 +47,12 @@
                             </form>
                         </div>
                     </li>
+                    <li>
+                        <a class="btn-edit return-button btn btn-primary float-right icon-blue" href="{{ route('public') }}" data-toggle="tooltip" data-placement="bottom"  data-html="true" title="<span class='green-text'>Homepage</span>">
+                            {{-- homepage --}}
+                            <i class="fas fa-home"></i>
+                        </a>
+                    </li>    
                 @endguest
             </ul>
         </div>

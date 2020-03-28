@@ -30,9 +30,9 @@
                             Dove vuoi andare?
                             <i class="fas fa-map-marker-alt"></i>
                         </label>
-                        <input type="text" class="form-control col-9" id="home-where-input" name="place" value="" placeholder="Indica una città">
+                        <input type="text" class="form-control col-9" id="home-where-input" name="place" value="" placeholder="Indica una località">
                     </div>
-                    <button type="submit" id="home-submit-search" class="btn bckg-green wht">cerca</button>
+                    <button type="submit" id="home-submit-search" class="btn bckg-green wht pr-4 pl-4">Cerca</button>
                 </form>
             </div>
         </div>

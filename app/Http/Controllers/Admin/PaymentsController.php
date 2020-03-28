@@ -23,7 +23,7 @@ class PaymentsController extends Controller
     $nonce = $payload['nonce'];
 
     $status = Braintree_Transaction::sale([
-                            'amount' => '10.00',
+                            'amount' => '2.99',
                             'paymentMethodNonce' => $nonce,
                             'options' => [
                                        'submitForSettlement' => True

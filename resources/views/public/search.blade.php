@@ -8,23 +8,23 @@
 
 @section('content')
     <div class="container">
-        <div class="white-form-container">
-            <div class="flex">
-                <h1 class="display-5 mb-3 mt-5">Risultati ricerca su: <strong>{{ $place }}</strong></h1>
-                    <div class="form-group">
+        {{-- <div class="white-form-container"> --}}
+            <div class="flex margin-bottom-xl">
+                <h1 class="display-5 mb-5 mt-5">Risultati ricerca su: <strong>{{ $place }}</strong></h1>
+                    {{-- <div class="form-group">
                         <label for="exampleInputEmail1">
                             <h5>Località ricercata:</h5>
                         </label>
                         <input type="text" class="form-control" value="{{ $place }}">
-                    </div>
+                    </div> --}}
 
                 @foreach($apts_sponsor as $apt_sponsor)
                     @break($loop->index > 1)
                     <a class="apt-card mb-3" href="{{ route('public.show', [$apt_sponsor->id]) }}">
-                        <div class="card sponsor mb-3">
+                        <div class="card sponsor mb-3 on-hover">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_sponsor->title}}" class="card-img m-2">
+                                    <img src="{{$apt_sponsor->info->image ? asset('storage/' . $apt_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_sponsor->title}}" class="card-img p-2">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body module line-clamp">
@@ -41,10 +41,10 @@
 
                 @forelse ($nearby_apts as $nearby_apt)
                     <a class="apt-card" href="{{ route('public.show', $nearby_apt->id) }}">
-                    <div class="card mb-3">
+                    <div class="card mb-3 on-hover">
                             <div class="row no-gutters">
                                 <div class="col-md-4">
-                                    <img src="{{$nearby_apt->info->image ? asset('storage/' . $nearby_apt->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$nearby_apt->title}}" class="card-img m-2">
+                                    <img src="{{$nearby_apt->info->image ? asset('storage/' . $nearby_apt->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$nearby_apt->title}}" class="card-img p-2">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body module line-clamp">
@@ -63,9 +63,9 @@
 
                 @endforelse
 
-                <h3>Raffina la tua ricerca</h3>
+                {{-- <h3>Raffina la tua ricerca</h3> --}}
 
-                <form>
+                {{-- <form>
                     <div class="form-group">
                         <label for="distance">Raggio di ricerca(km):</label>
                         <input type="number" name="distance" class="form-control">
@@ -121,9 +121,9 @@
                         </div>
                     </div>
                     <button type="submit" class="btn bckg-green wht research mb-5">Cerca</button>
-                </form>
+                </form> --}}
 
             </div>
-        </div>
+        {{-- </div> --}}
     </div>
 @endsection

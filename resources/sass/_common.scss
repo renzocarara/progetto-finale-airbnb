@@ -135,6 +135,17 @@ input[id^="service_"] {
     background-color: #fff;
     border: 1px solid #dee2e6;
 }
+
+.on-hover {
+    transition: 0.3s; 
+}
+
+.on-hover:hover {
+    background-color: rgba(27, 60, 89, 0.1);
+    box-shadow: 0 10px 50px -5px rgba(51, 71, 91, 0.12);
+
+}
+
 @media screen and (max-width: 568px) {
     .margin-bottom-xl {
         margin-bottom: 50px;

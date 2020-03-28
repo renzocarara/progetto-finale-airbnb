@@ -9,7 +9,7 @@
     <div class="container">
         <div class="row margin-top-xl">
             <div class="col-12">
-                <h3 class="d-inline-block mb-5">Il locale
+                <h3 class="d-inline-block col-10 mb-5">Il locale
                     <br>
                     <strong class="green">{{ $apartment->title }}</strong>
                 </h3>
