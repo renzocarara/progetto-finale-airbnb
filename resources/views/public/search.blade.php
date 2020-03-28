@@ -50,7 +50,7 @@
                                     <div class="card-body module line-clamp">
                                         <h5 class="card-title d-inline-block"><strong>{{ $nearby_apt->city }}</strong></h5>
                                         <span class="float-right h6 a-km blue-text">
-                                            <strong>a {{ round(($apts_id_dist[$nearby_apt->id]/1000), 2) }} km</strong>
+                                            <strong>a {{ number_format(($apts_id_dist[$nearby_apt->id]/1000), 2) }} km</strong>
                                         </span>
                                         <p class="card-text"><strong>{{ $nearby_apt->title }}</strong></p>
                                         <p class="card-text ellips">{{ $nearby_apt->info->summary }}</p>
