@@ -1,4 +1,5 @@
 /* common style */
+
 body {
     font-family: 'Open Sans', sans-serif;
 }
@@ -121,6 +122,18 @@ input[id^="service_"] {
 
 .green-text {
     color: white;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: $boolbnb_blue;
+    border-color: $boolbnb_blue;
+}
+
+.page-link {
+    color: $boolbnb_blue;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
 }
 @media screen and (max-width: 568px) {
     .margin-bottom-xl {
