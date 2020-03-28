@@ -63,9 +63,6 @@
 
                 @endforelse
 
-
-
-
                 <h3>Raffina la tua ricerca</h3>
 
                 <form>

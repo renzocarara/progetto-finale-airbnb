@@ -26,11 +26,11 @@ class SearchController extends Controller
     public function search(Request $request) {
 
         $request->validate([
-            'place' => 'required|max:50'
+            'place' => 'required|max:50|min:3'
         ]);
 
         $data = $request->all();
-
+// dd($data);
         if (isset($data['apts_sponsor'])) {
             // leggere dalla tabella apartments tutti gli appartamentoi con sponsorship attive
             // uso l'array apts_sponsor, che contiene un elenco di id, degli appartamenti con sponsor attive
@@ -45,8 +45,8 @@ class SearchController extends Controller
 
         $apartments = Apartment::whereNotIn('id', $data['apts_sponsor'])->get();
 
-        $apt_and_distance=[];
-        $apts_id_dist = [];
+        $apts_id_dist = []; // conterrà una lista di: [id_appartamento => distanza]
+        $nearby_apts =[]; // conterrà una collection di appartamenti che soddisfano il raggio di ricerca e sono ordinati per distanza
 
         foreach ($apartments as $apartment) {
             $lat2= $apartment->lat;
@@ -54,23 +54,30 @@ class SearchController extends Controller
 
             $distance = $this->get_distance($lat1, $lon1, $lat2, $lon2);
 
+            // cerco appartamenti nel raggio di 20000 metri dalla località scelta dall'utente
             if($distance <= 20000) {
                 // creo array associativo, dove la chiave è l'id appartamento e la distanza è il valore
                 $apts_id_dist = $apts_id_dist + [($apartment->id) =>$distance];
             }
         }
-        // ordino l'array associativo in base alle distanze [id => distanza]
-        asort($apts_id_dist);
 
-        // estraggo i soli id, che sono ordinati in base alle distanze
-        $apts_ids=array_keys($apts_id_dist);
+        // se c'e' almeno 1 appartamento che si trova nel raggio cercato, costruisco un array ordinato
+        // per distanza, dal più vicino al più lontano
+        if (!empty($apts_id_dist)) {
 
-        // leggo dal DB gli appartamenti e mi creo una collection ordinata in base all'array di ids
-        $ids_ordered = implode(',', $apts_ids);
-        $nearby_apts = Apartment::whereIn('id', $apts_ids)
-         ->orderByRaw("FIELD(id, $ids_ordered)")
-         ->get();
-// dd($nearby_apts);
+            // ordino l'array associativo ([id => distanza]) in base alle distanze
+            asort($apts_id_dist);
+
+            // estraggo soli gli id, che sono in ordine di distanza (dalla minore alla maggiore)
+            $apts_ids=array_keys($apts_id_dist);
+
+            // leggo dal DB gli appartamenti e mi creo una collection ordinata in base all'ordine dell'array di ids
+            $ids_ordered = implode(',', $apts_ids);
+            $nearby_apts = Apartment::whereIn('id', $apts_ids)
+             ->orderByRaw("FIELD(id, $ids_ordered)")
+             ->get();
+        }
+
         // passo alla view: la lista degli apts in ordine di distanza, la lista degli apt sponsorizzati, il nome della localià ricercata
         return view('public.search', ['nearby_apts' => $nearby_apts, 'apts_sponsor' => $apts_sponsor, 'place' => $data['place']]);
     }
