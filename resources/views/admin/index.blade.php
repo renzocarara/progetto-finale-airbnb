@@ -75,7 +75,7 @@
                                 </button>
                             @endif
                             @else
-                                <a  id="display_apt"class="suspended sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}" data-toggle="tooltip" data-placement="top"  data-html="true" title="<span class='green-text'>Riattiva annuncio</span>">
+                                <a  id="display_apt"class="suspended sm-margin btn btn-secondary mt-1" href="{{ route('admin.apartment.restore', $apartment->id) }}" data-toggle="tooltip" data-placement="left"  data-html="true" title="<span class='green-text'>Sospespo da <strong>{{ $apartment->deleted_at->locale('it')->isoFormat('dddd, D MMMM YYYY, H:mm') }}</strong>, clicca per riattivare l'annuncio</span>">
                                     {{-- Ripristina --}}
                                     <i class="fas fa-trash-restore-alt fa-lg"></i>
                                 </a>
