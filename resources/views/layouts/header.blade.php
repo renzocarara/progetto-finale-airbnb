@@ -1,4 +1,4 @@
-<nav id="header_nav" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav id="header_nav" class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
         <a class="logo-link d-inline-block navbar-brand" href="{{ route('public') }}">
             {{-- {{ config('app.name', 'Boolbnb') }} --}}
@@ -52,7 +52,7 @@
                             {{-- homepage --}}
                             <i class="fas fa-home"></i>
                         </a>
-                    </li>    
+                    </li>
                 @endguest
             </ul>
         </div>
