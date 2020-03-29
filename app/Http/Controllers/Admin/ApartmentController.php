@@ -44,6 +44,8 @@ class ApartmentController extends Controller
 
         // contiene gli id degli apt con associata una sponsorizzazione attiva
         $active_sponsorships = [];
+        $type_sponsorships = [];
+        $end_sponsorships = [];
         // scorro la lista di tutte le sponsorizzazioni per gli appartamenti dell'utente e mi ricavo solo quelle attive
         for ($i=0; $i < count($all_sponsorships); $i++) {
             for ($j=0; $j < count($all_sponsorships[$i]); $j++) {
@@ -67,16 +69,42 @@ class ApartmentController extends Controller
                 $end_date = $start_date->addDay($num_of_days);
 
                 // verifico se la sponsorizzazione è ancora attiva
+                //dd($end_date, now('Europe/Rome'));
                 if ($end_date > now('Europe/Rome')) {
                     // la sponsorizzazione è attiva, la metto in elenco nell'array, pushando l'id dell'appartamento
                     array_push($active_sponsorships, $all_sponsorships[$i][$j]->{'apartment_id'});
+
+                    switch ($type) {
+                        case '1':
+                            $type_string = "BASE";
+                            break;
+                        case '2':
+                            $type_string = "DOUBLE";
+                            break;
+                        case '3':
+                            $type_string = "PREMIUM";
+                            break;
+                        default:
+                            $type_string = "BASE";
+                            break;
+                    }
+                    array_push($type_sponsorships, $type_string); // tipo di sponsorizzazione
+
+                    // trasforma la data in un formato localizzato "italiano"
+                    $end_date = $end_date->locale('it')->isoFormat('dddd, D MMMM YYYY, H:mm');
+                    array_push($end_sponsorships, $end_date); // data di fine sponsorizzazione
                 }
             }
         }
 
+        //dd($active_sponsorships, $type_sponsorships, $end_sponsorships);
+
         // ritorno la view che visualizzerà una pagina con l'elenco degli appartamenti dell'utente loggato
         // gli passo anche l'elenco delle sponsorizzazioni attive
-        return view('admin.index', ['apartments' => $apartments, 'active_sponsorships' =>$active_sponsorships]);
+        return view('admin.index', ['apartments' => $apartments,
+                    'active_sponsorships' =>$active_sponsorships,
+                    'type_sponsorships' =>$type_sponsorships,
+                    'end_sponsorships' =>$end_sponsorships]);
     }
 
     /**

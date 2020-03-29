@@ -31,7 +31,7 @@ table tbody tr td a.suspended {
 #sponsored_apt {
     background-color: transparent;
     border: 2px solid gray;
-    cursor: default;
+    cursor: not-allowed;
 
     i {
         color: $boolbnb_green;

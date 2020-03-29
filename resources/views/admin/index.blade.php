@@ -39,9 +39,9 @@
                 <tbody>
                     @forelse ($apartments as $apartment)
                     <tr>
-                        <td>{{ $apartment->id }}</td>
+                        <td class="{{($apartment->trashed() ? 'trashed_apt' : '')}}"> {{ $apartment->id }}</td>
 
-                        <td class="{{($apartment->trashed() ? 'trashed_apt' : '')}}">{{ $apartment->title }}</td>
+                        <td class="{{($apartment->trashed() ? 'trashed_apt' : '')}}"> {{ $apartment->title }}</td>
 
                         <td>
                         @if(!$apartment->trashed())
@@ -69,7 +69,10 @@
                                 </a>
                             @else
                                 {{-- (c'è una sponsorizzazione attiva per quell'appartamento) --}}
-                                <button id="sponsored_apt" class="sm-margin btn btn-secondary mt-1" data-toggle="tooltip" data-placement="top"  data-html="true" title="<span class='green-text'>Sponsorizzazione già attivata</span>">
+                                <button id="sponsored_apt" class="sm-margin btn btn-secondary mt-1" data-toggle="tooltip" data-placement="top"  data-html="true"
+                                 title="<span class='green-text'>Sponsorizzazione di tipo
+                                      <strong>{{ $type_sponsorships[$loop->index] }}</strong> già attiva fino a
+                                      <strong>{{ $end_sponsorships[$loop->index] }}</strong></span>">
                                     <i class="fas fa-award fa-lg"></i>
                                 </button>
                             @endif
