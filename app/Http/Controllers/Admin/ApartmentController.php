@@ -36,6 +36,8 @@ class ApartmentController extends Controller
         // imposto anche la paginazione automatica di Laravel
         $apartments = Apartment::where('user_id', $user_id)->withTrashed()->paginate(5);
 
+// dd(count($apartments));
+
         // contiene tutte le sponsorizzazioni di tutti gli appartamenti di quell'utente (sia scadute che attive)
         $all_sponsorships=[];
         foreach ($apartments as $apartment) {
@@ -46,9 +48,12 @@ class ApartmentController extends Controller
         $active_sponsorships = [];
         $type_sponsorships = [];
         $end_sponsorships = [];
+        $ext_type = [];
+        $ext_end = [];
+        // dd($all_sponsorships);
         // scorro la lista di tutte le sponsorizzazioni per gli appartamenti dell'utente e mi ricavo solo quelle attive
-        for ($i=0; $i < count($all_sponsorships); $i++) {
-            for ($j=0; $j < count($all_sponsorships[$i]); $j++) {
+        for ($i=0; $i < count($all_sponsorships); $i++) { // scorro gli appartamenti
+            for ($j=0; $j < count($all_sponsorships[$i]); $j++) { // scorro le sponsorizzazioni di 1 appartamento
                 // leggo la data di inizio sponsorizzazione
                 $start_date = $all_sponsorships[$i][$j]->{'start_date'};
                 // la trasformo in un oggettoo Carbon
@@ -97,14 +102,33 @@ class ApartmentController extends Controller
             }
         }
 
+        // scorro apartments se id in apartments c'e' in active_sponsorships, scrivo il type in ext_type, e incremto indice su type,
+        // altrimenti scrivo 0 in ext_type
+        //
+        // stessa cosa per apartments e end_date scrivero un ext_end_date
+        $index=0;
+        foreach ($apartments as $apartment) {
+           // ciclo tutti gli appartamenti dell'utente
+            if (in_array($apartment->id, $active_sponsorships)) {
+                array_push($ext_type, $type_sponsorships[$index]);
+                array_push($ext_end, $end_sponsorships[$index]);
+                $index++;
+            } else {
+                array_push($ext_type, "");
+                array_push($ext_end, "");
+            }
+        }
+
+// dd($active_sponsorships, $ext_type, $ext_end);
+
         //dd($active_sponsorships, $type_sponsorships, $end_sponsorships);
 
         // ritorno la view che visualizzerà una pagina con l'elenco degli appartamenti dell'utente loggato
         // gli passo anche l'elenco delle sponsorizzazioni attive
         return view('admin.index', ['apartments' => $apartments,
                     'active_sponsorships' =>$active_sponsorships,
-                    'type_sponsorships' =>$type_sponsorships,
-                    'end_sponsorships' =>$end_sponsorships]);
+                    'type_sponsorships' =>$ext_type,
+                    'end_sponsorships' =>$ext_end]);
     }
 
     /**
