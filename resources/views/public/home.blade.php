@@ -36,7 +36,7 @@
 
                         <div class="card h-100 on-hover">
                             <div class="img-container">
-                                <img class="img-apt-card card-body card-img-top" src="{{$apt_not_sponsor->info->image ? asset('storage/' . $apt_not_sponsor->info->image) : asset('storage/')}}" alt="{{$apt_not_sponsor->title}}">
+                                <img class="img-apt-card card-body card-img-top" src="{{$apt_not_sponsor->info->image ? asset('storage/' . $apt_not_sponsor->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apt_not_sponsor->title}}">
                             </div>
 
                             <div class="card-body">
