@@ -172,7 +172,7 @@
 
                     <div class="row apt-show-row">
                         <div class="form-group  col-12">
-                            <p class="mt-3"><img class="card-img-top apt-img" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/')}}" alt="{{$apartment->title}}"></p>
+                            <p class="mt-3"><img class="card-img-top apt-img" src="{{$apartment->info->image ? asset('storage/' . $apartment->info->image) : asset('storage/uploads/no_apt_img.png')}}" alt="{{$apartment->title}}"></p>
                             <label for="image">Carica una nuova immagine:</label>
                             <input type="file" class="form-control-file" id="image" name="image">
                         </div>
