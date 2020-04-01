@@ -2371,7 +2371,7 @@ textarea.form-control {
   font-size: 0.7875rem;
   line-height: 1.6;
   color: #fff;
-  background-color: rgba(56, 193, 114, 0.9);
+  background-color: #38c172;
   border-radius: 0.25rem;
 }
 
@@ -2485,7 +2485,7 @@ textarea.form-control.is-valid {
   font-size: 0.7875rem;
   line-height: 1.6;
   color: #fff;
-  background-color: rgba(227, 52, 47, 0.9);
+  background-color: #e3342f;
   border-radius: 0.25rem;
 }
 
@@ -6396,13 +6396,13 @@ a.close.disabled {
 }
 
 .tooltip.show {
-  opacity: 0.9;
+  opacity: 1;
 }
 
 .tooltip .arrow {
   position: absolute;
   display: block;
-  width: 0.8rem;
+  width: 5px;
   height: 0.4rem;
 }
 
@@ -6426,8 +6426,8 @@ a.close.disabled {
 .bs-tooltip-top .arrow::before,
 .bs-tooltip-auto[x-placement^=top] .arrow::before {
   top: 0;
-  border-width: 0.4rem 0.4rem 0;
-  border-top-color: #000;
+  border-width: 0.4rem 2.5px 0;
+  border-top-color: #61CE4E;
 }
 
 .bs-tooltip-right,
@@ -6439,14 +6439,14 @@ a.close.disabled {
 .bs-tooltip-auto[x-placement^=right] .arrow {
   left: 0;
   width: 0.4rem;
-  height: 0.8rem;
+  height: 5px;
 }
 
 .bs-tooltip-right .arrow::before,
 .bs-tooltip-auto[x-placement^=right] .arrow::before {
   right: 0;
-  border-width: 0.4rem 0.4rem 0.4rem 0;
-  border-right-color: #000;
+  border-width: 2.5px 0.4rem 2.5px 0;
+  border-right-color: #61CE4E;
 }
 
 .bs-tooltip-bottom,
@@ -6462,8 +6462,8 @@ a.close.disabled {
 .bs-tooltip-bottom .arrow::before,
 .bs-tooltip-auto[x-placement^=bottom] .arrow::before {
   bottom: 0;
-  border-width: 0 0.4rem 0.4rem;
-  border-bottom-color: #000;
+  border-width: 0 2.5px 0.4rem;
+  border-bottom-color: #61CE4E;
 }
 
 .bs-tooltip-left,
@@ -6475,14 +6475,14 @@ a.close.disabled {
 .bs-tooltip-auto[x-placement^=left] .arrow {
   right: 0;
   width: 0.4rem;
-  height: 0.8rem;
+  height: 5px;
 }
 
 .bs-tooltip-left .arrow::before,
 .bs-tooltip-auto[x-placement^=left] .arrow::before {
   left: 0;
-  border-width: 0.4rem 0 0.4rem 0.4rem;
-  border-left-color: #000;
+  border-width: 2.5px 0 2.5px 0.4rem;
+  border-left-color: #61CE4E;
 }
 
 .tooltip-inner {
@@ -6490,7 +6490,7 @@ a.close.disabled {
   padding: 0.25rem 0.5rem;
   color: #fff;
   text-align: center;
-  background-color: #000;
+  background-color: #61CE4E;
   border-radius: 0.25rem;
 }
 
@@ -10884,10 +10884,14 @@ a.text-dark:focus {
 
 /* variabili per lo style */
 
+main {
+  padding-top: 72px;
+}
+
 .left-green,
 .right-blue {
   width: 50%;
-  height: calc(100vh - 71px);
+  height: calc(100vh - 50px);
   justify-content: center;
   align-items: center;
 }
@@ -10964,6 +10968,10 @@ a.text-dark:focus {
 
 body {
   font-family: "Open Sans", sans-serif;
+}
+
+main {
+  padding-top: 50px;
 }
 
 h1,
@@ -11046,12 +11054,13 @@ input[id^=service_] {
   background-color: #1B3C59;
   color: white;
   font-weight: bold;
-  border: 2px solid #1B3C59;
+  border: 2px solid #F8FAFC;
+  border-radius: 5px;
 }
 
 .btn-blue:hover {
   color: white;
-  border: 2px solid #61CE4E;
+  border: 2px solid #1B3C59;
   transition: 0.4s ease-in-out;
 }
 
@@ -11073,17 +11082,43 @@ input[id^=service_] {
   background-color: #61CE4E;
   color: white;
   font-weight: bold;
-  border: 2px solid #61CE4E;
+  border: 2px solid #F8FAFC;
+  border-radius: 5px;
 }
 
 .btn-green:hover {
   color: white;
-  border: 2px solid #1B3C59;
+  border: 2px solid #61CE4E;
   transition: 0.4s ease-in-out;
 }
 
 .green-text {
-  color: #61CE4E;
+  color: white;
+}
+
+.blue-text {
+  color: #1B3C59;
+}
+
+.page-item.active .page-link {
+  color: #fff;
+  background-color: #1B3C59;
+  border-color: #1B3C59;
+}
+
+.page-link {
+  color: #1B3C59;
+  background-color: #fff;
+  border: 1px solid #dee2e6;
+}
+
+.on-hover {
+  transition: 0.3s;
+}
+
+.on-hover:hover {
+  background-color: rgba(27, 60, 89, 0.1);
+  box-shadow: 0 10px 50px -5px rgba(51, 71, 91, 0.12);
 }
 
 @media screen and (max-width: 568px) {
@@ -11392,7 +11427,7 @@ table tbody tr td a.suspended {
 #sponsored_apt {
   background-color: transparent;
   border: 2px solid gray;
-  cursor: default;
+  cursor: not-allowed;
 }
 
 #sponsored_apt i {
@@ -11419,6 +11454,22 @@ table tbody tr td a.suspended {
 
 .research {
   margin-top: 30px;
+}
+
+.module .ellips {
+  margin: 0;
+  margin-bottom: -16px;
+}
+
+.module {
+  overflow: hidden;
+  margin: 0 0 1em 0;
+}
+
+.line-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
 }
 
 .bckg-container {
