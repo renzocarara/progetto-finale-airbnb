@@ -13,7 +13,7 @@
             <div class="content-blue-box text-center">
                 <p class="error-404"><strong>404</strong></p>
                 <p>page not found!!</p>
-                <a class="btn error-return" href="{{ route('public') }}">Torna in homepage</a>
+                <a class="btn error-return" href="{{ route('public') }}">Torna in Homepage</a>
 
             </div>
         </div>
