@@ -4,7 +4,7 @@
 @section('page-title', "BoolBnB - Statistiche")
 
 @section('content')
-<main>
+
 
     <div class="container">
         <div class="row margin-top-xl">
@@ -35,5 +35,5 @@
     </div>
     {!! $chart->script() !!}
 
-</main>
+
 @endsection

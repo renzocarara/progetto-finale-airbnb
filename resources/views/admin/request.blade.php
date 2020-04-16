@@ -4,8 +4,6 @@
 @section('page-title', "BoolBnB - Elenco richieste")
 
 @section('content')
-<main>
-
     <div class="container">
        <div class="row margin-top-xl">
            <div class="col-12">
@@ -59,6 +57,4 @@
         {{ $messages->links() }}
 
     </div>
-
-</main>
 @endsection

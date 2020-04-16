@@ -4,9 +4,6 @@
 @section('page-title', "BoolBnB - Modifica appartamento")
 
 @section('content')
-
-<main>
-
     <section class="container margin-top-xl margin-bottom-xl">
 
         <div class="clearfix">
@@ -200,7 +197,4 @@
         </div>
 
     </section>
-
-</main>
-
 @endsection
