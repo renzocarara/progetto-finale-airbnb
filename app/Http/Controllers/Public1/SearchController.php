@@ -32,7 +32,7 @@ class SearchController extends Controller
         $data = $request->all();
 
         if (isset($data['apts_sponsor'])) {
-            // leggere dalla tabella apartments tutti gli appartamentoi con sponsorship attive
+            // leggere dalla tabella apartments tutti gli appartamenti con sponsorship attive
             // uso l'array apts_sponsor, che contiene un elenco di id, degli appartamenti con sponsor attive
             $apts_sponsor = Apartment::whereIn('id', $data['apts_sponsor'])->get()->shuffle();
         } else {

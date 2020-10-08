@@ -19,8 +19,8 @@ class PaymentsController extends Controller
     public function make(Request $request, Apartment $apartment){   
 
     $payload = $request->input('payload', false);
-
-    $nonce = $payload['nonce'];
+    // ATTENZIONE: $payload assume un valore booleano, non è un array!
+    $nonce = $payload;
 
     $status = Braintree_Transaction::sale([
                             'amount' => '2.99',
