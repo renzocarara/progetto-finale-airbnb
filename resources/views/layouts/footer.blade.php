@@ -114,7 +114,7 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright text-center text-black-50 py-3">© 2020 Copyright: Airbnb, Inc. All rights reserved.
+    <div class="footer-copyright text-center text-black-50 py-3">© 2020 Boolbnb - All rights reserved.
     </div>
     <!-- Copyright -->
 </footer>
