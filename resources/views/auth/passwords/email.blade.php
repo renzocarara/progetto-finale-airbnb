@@ -1,9 +1,11 @@
 @extends('layouts.view_structure')
+{{-- imposto il titolo della pagina --}}
+@section('page-title', "BoolBnB - Reset Password")
 
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="margin-top-xl margin-bottom-xl col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Reset Password') }}</div>
 
