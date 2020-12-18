@@ -30,7 +30,7 @@ class DataController extends Controller
     public function statistics(Apartment $apartment) {
 
         if (Auth::user()->id == $apartment->user_id){
-            
+
             $messages_count = count(Message::where('apartment_id', $apartment->id)->get());
 
             $gennaio = Message::where('apartment_id', $apartment->id)->whereMonth('created_at', date('01'))->count();
@@ -53,9 +53,9 @@ class DataController extends Controller
             $chart = new Graphic;
             $chart->labels(['Gennaio', 'Febbraio', 'Marzo', 'Aprile', 'Maggio', 'Giugno', 'Luglio', 'Agosto', 'Settembre', 'Ottobre', 'Novembre', 'Dicembre']);
             $chart->dataset('Messaggi', 'line', [$gennaio, $febbraio, $marzo, $aprile, $maggio, $giugno, $luglio, $agosto, $settembre, $ottobre, $novembre, $dicembre])->color($color_message);
-            
+
             return view('admin.statistics', ['apartment' => $apartment, 'messages_count' => $messages_count, 'chart' => $chart]);
-            
+
         } else {
             // l'appartamento in aggiornamento non appartiene all'utente loggato
             // visualizzo una pagina che lo informa
